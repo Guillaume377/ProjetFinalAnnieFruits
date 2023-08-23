@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('nom', 100);
-            $table->string('description', 255);
-            $table->text('description_detaillee');
+            $table->text('description');
             $table->string('image', 50);
             $table->float('prix');
-            $table->enum ('type_prix',array('pièce','kilo'));
-            $table->float('note');
+            $table->enum('type_prix',array('pièce','kilo'));
             $table->integer('stock');
+            $table->float('note');
             $table->timestamps();
 
             $table->foreignId('gamme_id')->nullable()->constrained()->onDelete('set null');

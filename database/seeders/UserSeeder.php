@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('Admin2023!'),
             'email' => 'admin@admin.fr',
             'email_verified_at' => now(),
+            'telephone' => '0123456789',
             'remember_token' => Str::random(10),
             'role_id' => 2,
         ]);
@@ -31,6 +32,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('User2023!'),
             'email' => 'user@user.fr',
             'email_verified_at' => now(),
+            'telephone' => '0123456789',
             'remember_token' => Str::random(10),
             'role_id' => 1,
         ]);

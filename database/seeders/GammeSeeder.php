@@ -20,9 +20,6 @@ class GammeSeeder extends Seeder
             'nom' => 'Nos légumes'
           ]);
           Gamme::create([
-            'nom' => 'Nos jus de fruits'
-          ]);
-          Gamme::create([
             'nom' => 'Nos fromages'
           ]);
     }

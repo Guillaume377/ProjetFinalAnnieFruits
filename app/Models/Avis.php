@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Avis extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'commentaire',
+        'note',
+    ];
 }

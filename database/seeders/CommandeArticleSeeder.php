@@ -19,7 +19,7 @@ class CommandeArticleSeeder extends Seeder
             DB::table('commandes_articles')->insert([
                 'article_id' => rand(1, Article::count()),
                 'commande_id' => $i,
-                'quantite' => rand(1, 10),
+                'quantite' => rand(1, 3),
             ]);
         }
     }

@@ -9,7 +9,7 @@ use App\Models\Article;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class AvisFActoryFactory extends Factory
+class AvisFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,7 @@ class AvisFActoryFactory extends Factory
     {
         return [
             'commentaire' =>$this->faker->paragraph(),
-            'note' =>$this->faker->numberBetween(1, 5),
+            'note' =>$this->faker->numberBetween(3, 5),
             'user_id' =>rand(1, User::count()),
             'article_id' =>rand(1, Article::count()),
         ];
