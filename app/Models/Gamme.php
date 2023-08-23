@@ -12,4 +12,12 @@ class Gamme extends Model
     protected $fillable = [
         'nom',
     ];
+
+    //nom au pluriel car une gamme peut regrouper plusieurs articles
+    //cardinalité 1,n
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
 }

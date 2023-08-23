@@ -18,4 +18,38 @@ class Article extends Model
         'stock',
         'note',
     ];
+
+    //nom au pluriel car plusieurs articles peuvent être associés à une commande
+    // cardinalité 0,n
+    public function commandes(){
+        return $this->belongsToMany(Commande::class, 'commandes_articles')->withPivot('quantite');
+    }
+
+    //nom au pluriel car plusieurs articles peuvent être mis dans les favoris
+    // cardinalité 0,n
+
+    // relation avec les utilisateurs qui mettent l'article en favori
+    // on précise le nom table intermédiaire : favoris (= users_articles)
+
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'favoris');
+
+    }
+    
+
+    //nom au pluriel car plusieurs articles peuvent être associé à un avis
+    // cardinalité 0,n
+    public function avis() 
+    {
+        return $this->hasMany(Avis::class);
+    }
+
+    //nom au singulier car article ne peut appartenir qu'à une seule gamme
+    // // cardinalité 1,1
+    public function gamme() 
+    {
+        return $this->belongsTo(Gamme::class);
+    } 
 }
