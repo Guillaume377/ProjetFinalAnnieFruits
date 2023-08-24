@@ -1,7 +1,117 @@
 
+/* DOCUMENT INFORMATION
+    - Document: Projet final Annie fruits
+    - Version: 1.0.0
+    - Author: Guillaume
+*/
+
+/* COLORS
+
+limegreen
+#F50D1B
+
+
+    -default body text 
+    -h1                
+    -h4                    
+    -h5                 
+
+    -button             
+
+    -button:hover       
+
+    -icon               
+                    
+    -border             
+*/
+
+/* FONTS
+    -Default       font-family: 'Paprika', cursive;
+
+*/
+
+/* CSS DIRECTORY
+    1. =GLOBAL
+    2. =HEADER
+    3. =INDEX
+    4. =PANIER et VALIDATION
+    5. =INSCRIPTION
+    6. =MON COMPTE
+    7. =MODIFINFOS et MODIFADRESSE
+    8. =MODIFMDP
+    9. =FOOTER
+
+
+
+*/
+
+/* ==================================*/
+ 
+
+
+
+
+
+
+/* NAVBAR */
+
+nav {
+    background-color:limegreen;
+}
+
+.logo_navbar{
+    width:30%;
+}
+
+
+.btn-ghost{
+    background-color: #F50D1B;
+    color: white;
+    font-family: 'Paprika', cursive;
+}
+
+.btn-ghost:hover{
+    background-color: white;
+    color: #F50D1B;
+}
+
+.fa-solid {
+    font-size: 200%;
+}
+
+.dropdown-item{
+    font-family: 'Paprika', cursive;
+    color:limegreen;
+}
+
+.dropdown-item:hover{
+    color:#F50D1B;
+}
+
+
+
+
+/*EDIT.BLADE.php*/
+
+.card-header{
+    background-color: limegreen;
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* FOOTER */
-
+ footer {
+    background-color: limegreen;
+ }
 
 .logo_footer {
     width: 70%;
