@@ -46,6 +46,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/favoris', \App\Http\Controllers\FavoriController::class)->except('create', 'show', 'update', 'edit');
 
 
+//***************** Route pour les méthodes du Controller contact *****************************/
+
+// Route::get('/contact', \App\Http\Controllers\ContactController::class);
+
 
 // **************** Les routes de gestion du panier **************** //
 

@@ -51,17 +51,17 @@
                                     alt="Logo">
                             </a>
 
-                            <a class="btn btn-ghost nav-brand" aria-current="articles"
+                            <a class="btn btn-ghost" aria-current="articles"
                                 href="{{ route('articles.index') }}">
                                 <p>Nos produits</p>
                             </a>
 
-                            <a class="btn btn-ghost navbar-brand" href="#">
+                            <a class="btn btn-ghost" href="#">
                                 <p>Nous contacter</p>
                             </a>
 
                             <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}"><i
-                                    class="fa-solid fa-cart-shopping" style="color: #f50d1b;"></i>
+                                    class="fa-solid fa-cart-shopping mt-3" style="color: #f50d1b;"></i>
                             </a>
 
 
@@ -72,13 +72,13 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                            <a class="btn btn-ghost nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                            <a class="btn btn-ghost nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                         </li>
                                     @endif
 

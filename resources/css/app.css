@@ -61,13 +61,14 @@ nav {
 
 .logo_navbar{
     width:30%;
+    border-radius: 50%;
 }
-
 
 .btn-ghost{
     background-color: #F50D1B;
     color: white;
     font-family: 'Paprika', cursive;
+    margin:0% 1% 2% 1%;
 }
 
 .btn-ghost:hover{
@@ -115,6 +116,7 @@ nav {
 
 .logo_footer {
     width: 70%;
+    border-radius: 50%;
 }
 .logo_facebook {
     width: 30%;
