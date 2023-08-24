@@ -53,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nom' => ['required', 'string', 'max:50'],
             'prenom' => ['required', 'string', 'max:50'],
-            'telephone' => ['required', 'string', 'min:9', 'max:10'],
+            'telephone' => ['required', 'digits:10'], //digits:10 = imposer le nombre de 10 chiffres
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => ['required', 'confirmed',
                 Password::min(8)    // minimum 8 caractères 
