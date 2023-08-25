@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div class="base_line">
-        <h1 class="base_line_h1 text-center">Bienvenue chez Annie fruits!</h1>
-        <h2 class="text-center pb-5">Votre magasin de proximité à Rochefort.</h2>
-    </div> --}}
-
 
 
     <div id="carouselExampleCaptions" class="carousel slide">
@@ -93,7 +88,7 @@
                     <p class="text-justify">Il se situe au 50 avenue du 11 novembre 1918 17300 ROCHEFORT (entre les magasins BUT et BRICORAMA).
                     </p>
                     <p class="text-justify">Il a été repris par M. Claude DELMOTTE au 01 octobre 2015.</p>
-                    <p class="text-justify">L'équipe est constituée de 3 personnes : le gérant M.DELMOTTE ainsi que 2 salariés.</p>
+                    <p class="text-justify">L'équipe est constituée de 3 personnes : le gérant M. DELMOTTE ainsi que 2 salariés.</p>
                     <p class="text-justify">Depuis le magasin s'est aussi diversifié en proposant la vente de fromages.</p>
                 </div>
 

@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/826eec2b4c.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/jpg" href="images/icone-fraise.jpg">
+    
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Annie fruits</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,23 +48,23 @@
 
 
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
+                        <div class="navbar-nav pt-3">
 
                             <a class="navbar-brand" href="home#">
                                 <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}"
                                     alt="Logo">
                             </a>
 
-                            <a class="btn btn-ghost" aria-current="articles" href="{{ route('articles.index') }}">
+                            <a class="btn btn-ghost p-3 mb-5" aria-current="articles" href="{{ route('gammes.index') }}">
                                 Nos produits
                             </a>
 
-                            <a class="btn btn-ghost" href="#">
+                            <a class="btn btn-ghost p-3 mb-5" href="#">
                                 Nous contacter
                             </a>
 
                             <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
-                                <i class="fa-solid fa-cart-shopping mt-3" style="color: #f50d1b;"></i>
+                                <i class="cart fa-solid fa-cart-shopping mt-3"></i>
                             </a>
 
 
@@ -71,14 +75,14 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
-                                            <a class="btn btn-ghost nav-link"
+                                            <a class="btn btn-ghost px-3 nav-link"
                                                 href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="btn btn-ghost nav-link"
+                                            <a class="btn btn-ghost px-3 nav-link"
                                                 href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                         </li>
                                     @endif

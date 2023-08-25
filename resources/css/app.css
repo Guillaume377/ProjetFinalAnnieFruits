@@ -1,4 +1,3 @@
-
 /* DOCUMENT INFORMATION
     - Document: Projet final Annie fruits
     - Version: 1.0.0
@@ -46,53 +45,113 @@ limegreen
 
 */
 
-/* ==================================*/
- 
-h1{
+/* =============== GLOBAL ==================*/
+
+h1 {
     font-family: 'Paprika', cursive;
     font-size: 400%;
-    color:limegreen;
-    
+    color: limegreen;
 }
 
-h3{
+h3 {
     font-family: 'Paprika', cursive;
     color: #F50D1B;
 }
 
 
-p{
+p {
     font-family: 'Assistant', sans-serif;
 }
-.carousel-caption{
-    background:linear-gradient(rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7));
+
+main {
+    padding-top: 5%;
+}
+
+body{
+    background-color: beige;
+}
+
+
+/* ================== NAVBAR ================= */
+
+nav {
+    background-color: limegreen;
+}
+
+.logo_navbar {
+    width: 25%;
     border-radius: 50px;
-    margin-bottom: 25%;
 }
 
-.bandeau-accueil{
+.logo_navbar:hover {
+    box-shadow: 10px 5px 5px green;
+}
+
+.btn-ghost {
     background-color: #F50D1B;
+    color: white;
+    font-family: 'Paprika', cursive;
+    margin: 0% 1% 2% 1%;
+    white-space: nowrap;
+    border-radius: 25px;
+
 }
 
-/* .logo_bandeau{
-    margin:3% 0%
-} */
+.btn-ghost:hover {
+    background-color: white;
+    color: #F50D1B;
+    box-shadow: 10px 5px 5px #F50D1B;
+}
 
-.text_bandeau{
+.fa-solid {
+    font-size: 200%;
+}
+
+.dropdown-item {
+    font-family: 'Paprika', cursive;
+    color: limegreen;
+}
+
+.dropdown-item:hover {
+    color: #F50D1B;
+}
+
+.cart {
+    color: #F50D1B;
+}
+
+.cart:hover {
     color: white;
 }
 
 
+/* =============== ACCUEIL ==================*/
+
+.carousel-caption {
+    background: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7));
+    border-radius: 50px;
+    margin-bottom: 25%;
+}
+
+.bandeau-accueil {
+    background-color: #F50D1B;
+}
+
+
+.text_bandeau {
+    color: white;
+}
+
 .entree {
     border-radius: 20px;
-    border-style:solid;
+    border-style: solid;
     border-color: limegreen;
 }
 
 .histoire {
-    color:limegreen;
-    font-weight:bolder;
+    color: limegreen;
+    font-weight: bolder;
 }
 
 .text_histoire {
@@ -100,78 +159,73 @@ p{
 }
 
 
+/* ============= GAMMES ==========*/
 
-
-
-/* NAVBAR */
-
-nav {
-    background-color:limegreen;
-}
-
-.logo_navbar{
-    width:30%;
-    border-radius: 50px;
-}
-
-.btn-ghost{
-    background-color: #F50D1B;
+.title_h1 {
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(/public/images/bandeau3.png);
     color: white;
-    font-family: 'Paprika', cursive;
-    margin:0% 1% 2% 1%;
-    white-space: nowrap;
-    border-radius: 30px;
-
+    font-weight: bolder;
 }
 
-.btn-ghost:hover{
-    background-color: white;
-    color: #F50D1B;
+.nos_univers {
+    font-size: xx-large;
 }
 
-.fa-solid {
-    font-size: 200%;
-}
-
-.dropdown-item{
-    font-family: 'Paprika', cursive;
+span{
     color:limegreen;
+    font-family: 'Paprika', cursive;
 }
 
-.dropdown-item:hover{
-    color:#F50D1B;
-}
-
-
-
-
-/*EDIT.BLADE.php*/
-
-.card-header{
-    background-color: limegreen;
+.card-title{
+    background: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7));
+    border-radius: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: x-large;
+    font-weight:bolder;
     color:white;
+   
 }
 
 
 
+/* ============= EDIT.BLADE.php ==========*/
 
-
-
-
-
-
-
-
-/* FOOTER */
- footer {
+.card-header {
     background-color: limegreen;
     color: white;
- }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============== FOOTER ===============*/
+
+footer {
+    background-color: limegreen;
+    color: white;
+}
 
 .logo_footer {
     width: 50%;
     border-radius: 50px;
 }
+
+.logo_footer:hover {
+    box-shadow: 10px 5px 5px green;
+}
+
 .logo_facebook {
     width: 15%;
 }
