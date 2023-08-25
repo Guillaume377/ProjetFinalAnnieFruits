@@ -26,7 +26,8 @@ limegreen
 */
 
 /* FONTS
-    -Default       font-family: 'Paprika', cursive;
+    -Default        font-family: 'Assistant', sans-serif;
+    h1              font-family: 'Paprika', cursive;
 
 */
 
@@ -47,7 +48,56 @@ limegreen
 
 /* ==================================*/
  
+h1{
+    font-family: 'Paprika', cursive;
+    font-size: 400%;
+    color:limegreen;
+    
+}
 
+h3{
+    font-family: 'Paprika', cursive;
+    color: #F50D1B;
+}
+
+
+p{
+    font-family: 'Assistant', sans-serif;
+}
+.carousel-caption{
+    background:linear-gradient(rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7));
+    border-radius: 50px;
+    margin-bottom: 25%;
+}
+
+.bandeau-accueil{
+    background-color: #F50D1B;
+}
+
+/* .logo_bandeau{
+    margin:3% 0%
+} */
+
+.text_bandeau{
+    color: white;
+}
+
+
+.entree {
+    border-radius: 20px;
+    border-style:solid;
+    border-color: limegreen;
+}
+
+.histoire {
+    color:limegreen;
+    font-weight:bolder;
+}
+
+.text_histoire {
+    font-size: medium;
+}
 
 
 
@@ -61,7 +111,7 @@ nav {
 
 .logo_navbar{
     width:30%;
-    border-radius: 50%;
+    border-radius: 50px;
 }
 
 .btn-ghost{
@@ -69,6 +119,9 @@ nav {
     color: white;
     font-family: 'Paprika', cursive;
     margin:0% 1% 2% 1%;
+    white-space: nowrap;
+    border-radius: 30px;
+
 }
 
 .btn-ghost:hover{
@@ -112,12 +165,13 @@ nav {
 /* FOOTER */
  footer {
     background-color: limegreen;
+    color: white;
  }
 
 .logo_footer {
-    width: 70%;
-    border-radius: 50%;
+    width: 50%;
+    border-radius: 50px;
 }
 .logo_facebook {
-    width: 30%;
+    width: 15%;
 }

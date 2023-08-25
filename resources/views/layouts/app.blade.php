@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paprika&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap" rel="stylesheet">
     <!--************ Scripts ************-->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 
@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md fixed-top">
             <div class="container-fluid">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -51,17 +51,16 @@
                                     alt="Logo">
                             </a>
 
-                            <a class="btn btn-ghost" aria-current="articles"
-                                href="{{ route('articles.index') }}">
-                                <p>Nos produits</p>
+                            <a class="btn btn-ghost" aria-current="articles" href="{{ route('articles.index') }}">
+                                Nos produits
                             </a>
 
                             <a class="btn btn-ghost" href="#">
-                                <p>Nous contacter</p>
+                                Nous contacter
                             </a>
 
-                            <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}"><i
-                                    class="fa-solid fa-cart-shopping mt-3" style="color: #f50d1b;"></i>
+                            <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
+                                <i class="fa-solid fa-cart-shopping mt-3" style="color: #f50d1b;"></i>
                             </a>
 
 
@@ -72,13 +71,15 @@
                                 @guest
                                     @if (Route::has('login'))
                                         <li class="nav-item">
-                                            <a class="btn btn-ghost nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                            <a class="btn btn-ghost nav-link"
+                                                href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                         </li>
                                     @endif
 
                                     @if (Route::has('register'))
                                         <li class="nav-item">
-                                            <a class="btn btn-ghost nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                            <a class="btn btn-ghost nav-link"
+                                                href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                         </li>
                                     @endif
 
@@ -162,52 +163,43 @@
     </main>
 
     </div>
+
+
+    <footer class="pt-5 mx-auto">
+
+        <div class="row mx-auto text-center">
+
+            <div class="col-md-3">
+                <a class="navbar-brand" href="home#">
+                    <img class="logo_footer text-center" src="{{ asset('images/logo-annie-fruits.png') }}"
+                        alt="Logo">
+                </a>
+            </div>
+
+            <div class="col-md-3 pt-2">
+                <a class="navbar-brand" href="#">
+                    <p>Nos produits</p>
+                </a>
+            </div>
+
+            <div class="col-md-3 pt-2">
+                <a class="navbar-brand" href="#">
+                    <p>Nous contacter</p>
+                </a>
+            </div>
+
+            <div class="col-md-3">
+                <a class="navbar-brand"
+                    href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
+                    <img class="logo_facebook text-center" src="{{ asset('images/icone-facebook-rouge.png') }}"
+                        alt="Logo">
+                </a>
+            </div>
+
+        </div>
+
+        <h5 class="text-light mx-auto text-center">© - 2023 - <b>Annie fruits</h5>
+    </footer>
 </body>
-
-<footer class="p-3 mx-auto fixed-bottom">
-
-    <div class="row mx-auto text-center">
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="home#">
-                <img class="logo_footer text-center" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
-            </a>
-        </div>
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="#">
-                <p>Qui sommes-nous ?</p>
-            </a>
-        </div>
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="#">
-                <p>Nos produits</p>
-            </a>
-        </div>
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="#">
-                <p>Notre blog</p>
-            </a>
-        </div>
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="#">
-                <p>Nous contacter</p>
-            </a>
-        </div>
-
-        <div class="col-md-2">
-            <a class="navbar-brand" href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
-                <img class="logo_facebook text-center" src="{{ asset('images/icone-facebook-rouge.png') }}"
-                    alt="Logo">
-            </a>
-        </div>
-
-    </div>
-
-    <h5 class="pt-4 text-light mx-auto text-center">© - 2023 - <b>Annie fruits</h5>
-</footer>
 
 </html>
