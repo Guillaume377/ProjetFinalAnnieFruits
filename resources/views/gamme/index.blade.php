@@ -19,32 +19,36 @@
 
 
 
-<div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="card text-bg-danger col-md-3 mb-5" href="{{ route('articles.index') }}">
-            <img src="{{ asset('images/fruits.jpg') }}" class="card-img" alt="fruits" >
-            <div class="card-img-overlay">
-                <h5 class="card-title text-center">Nos fruits</h5>
-            </div>
-        </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
 
-        <div class="card text-bg-danger col-md-3 offset-1 mb-5">
-            <img src="{{ asset('images/legumes.jpg') }}" class="card-img" alt="légumes">
-            <div class="card-img-overlay">
-                <h5 class="card-title text-center">Nos légumes</h5>
+            <div class="col-md-4 p-2">
+                <div class="card text-bg-danger mb-5" href="{{ route('articles.index') }}">
+                    <img src="{{ asset('images/fruits.jpg') }}" class="card-img" alt="fruits">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-center d-flex align-center">Nos fruits</h5>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="card text-bg-danger col-md-3 offset-1 mb-5">
-            <img src="{{ asset('images/fromages.jpg') }}" class="card-img" alt="fromages">
-            <div class="card-img-overlay">
-                <h5 class="card-title text-center">Nos fromages</h5>
+            <div class="col-md-4 p-2">
+                <div class="card text-bg-danger mb-5">
+                    <img src="{{ asset('images/legumes.jpg') }}" class="card-img" alt="légumes">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-center align-center">Nos légumes</h5>
+                    </div>
+                </div>
             </div>
+
+            <div class="col-md-4 p-2">
+                <div class="card text-bg-danger mb-5">
+                    <img src="{{ asset('images/fromages.jpg') }}" class="card-img" alt="fromages">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title text-center align-center">Nos fromages</h5>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
-
-
-
-
 @endsection

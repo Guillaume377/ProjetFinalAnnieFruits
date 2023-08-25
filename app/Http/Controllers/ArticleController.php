@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
+use App\Models\Gamme;
 
 class ArticleController extends Controller
 {
@@ -11,7 +13,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        // on renvoie la vue articles/index (catalogue) 
+        // on y injecte la liste des articles, que l'on récupère simultanément
+        return view('articles/index', [
+            'articles' => Article::all(),
+        ]);
     }
 
     /**
