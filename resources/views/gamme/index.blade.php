@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <h1 class="title_h1 text-center mx-auto">Nos univers</h1>
 
     <div class="container text-center">
@@ -15,19 +16,19 @@
 
     </div>
 
-
-
-
+<!-- ========================== CARD GAMMES ========================== -->
 
     <div class="container">
         <div class="row d-flex justify-content-center">
 
             <div class="col-md-4 p-2">
-                <div class="card text-bg-danger mb-5" href="{{ route('articles.index') }}">
+                <div class="card text-bg-danger mb-5" >
+                    <a href="{{ route('articles.index') }}"> <!-- balise <a> à contrôler-->
                     <img src="{{ asset('images/fruits.jpg') }}" class="card-img" alt="fruits">
                     <div class="card-img-overlay">
                         <h5 class="card-title text-center d-flex align-center">Nos fruits</h5>
                     </div>
+                    </a>
                 </div>
             </div>
 

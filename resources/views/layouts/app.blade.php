@@ -181,13 +181,13 @@
             </div>
 
             <div class="col-md-3 pt-2">
-                <a class="navbar-brand" href="#">
+                <a class="footer-lien navbar-brand" href="#">
                     <p>Nos produits</p>
                 </a>
             </div>
 
             <div class="col-md-3 pt-2">
-                <a class="navbar-brand" href="#">
+                <a class="footer-lien navbar-brand" href="#">
                     <p>Nous contacter</p>
                 </a>
             </div>
@@ -195,14 +195,15 @@
             <div class="col-md-3">
                 <a class="navbar-brand"
                     href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
-                    <img class="logo_facebook text-center" src="{{ asset('images/icone-facebook-rouge.png') }}"
-                        alt="Logo">
+                    <i class="logo-facebook fa-brands fa-square-facebook"></i>
+                    {{-- <img class="logo_facebook text-center" src="{{ asset('images/icone-facebook-rouge.png') }}"
+                        alt="Logo"> --}}
                 </a>
             </div>
 
         </div>
 
-        <h5 class="text-light mx-auto text-center">© - 2023 - <b>Annie fruits</h5>
+        <h5 class="copyright mx-auto text-center">© - 2023 - <b>Annie fruits</h5>
     </footer>
 </body>
 

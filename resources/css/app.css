@@ -6,22 +6,15 @@
 
 /* COLORS
 
-limegreen
-#F50D1B
+Vert :  limegreen
+        green
+Rouge:  #F50D1B
+        darkred
+Bleu:   #1877F2
 
-
-    -default body text 
-    -h1                
-    -h4                    
-    -h5                 
-
-    -button             
-
-    -button:hover       
-
-    -icon               
-                    
-    -border             
+beige
+white
+           
 */
 
 /* FONTS
@@ -32,26 +25,31 @@ limegreen
 
 /* CSS DIRECTORY
     1. =GLOBAL
-    2. =HEADER
-    3. =INDEX
-    4. =PANIER et VALIDATION
-    5. =INSCRIPTION
-    6. =MON COMPTE
-    7. =MODIFINFOS et MODIFADRESSE
-    8. =MODIFMDP
+    2. =NAVBAR
+    3. =HOME.BLADE (ACCUEIL)
+    4. =INDEX.BLADE (GAMMES)
+    5. =
+    6. =
+    7. =
+    8. =
+
+
+
+
     9. =FOOTER
 
 
 
 */
 
-/* =============== GLOBAL ==================*/
+/* =============== 1. GLOBAL ==================*/
 
 h1 {
     font-family: 'Paprika', cursive;
     font-size: 400%;
     color: limegreen;
 }
+
 
 h3 {
     font-family: 'Paprika', cursive;
@@ -63,29 +61,42 @@ p {
     font-family: 'Assistant', sans-serif;
 }
 
+
 main {
     padding-top: 5%;
 }
 
-body{
+
+body {
     background-color: beige;
 }
 
 
-/* ================== NAVBAR ================= */
+.card-header {
+    background-color: limegreen;
+    color: white;
+}
+
+
+/* ================== 2. NAVBAR ================= */
 
 nav {
     background-color: limegreen;
+    box-shadow: 10px 5px 5px green;
+    border-top-left-radius: 20px;
 }
+
 
 .logo_navbar {
     width: 25%;
     border-radius: 50px;
 }
 
+
 .logo_navbar:hover {
     box-shadow: 10px 5px 5px green;
 }
+
 
 .btn-ghost {
     background-color: #F50D1B;
@@ -94,48 +105,61 @@ nav {
     margin: 0% 1% 2% 1%;
     white-space: nowrap;
     border-radius: 25px;
-
+    border-color: white;
 }
+
 
 .btn-ghost:hover {
     background-color: white;
     color: #F50D1B;
     box-shadow: 10px 5px 5px #F50D1B;
+    border-color: #F50D1B;
 }
 
-.fa-solid {
-    font-size: 200%;
-}
 
 .dropdown-item {
     font-family: 'Paprika', cursive;
     color: limegreen;
 }
 
+
 .dropdown-item:hover {
     color: #F50D1B;
 }
 
+
 .cart {
     color: #F50D1B;
+     font-size: 200%;
 }
+
 
 .cart:hover {
     color: white;
 }
 
 
-/* =============== ACCUEIL ==================*/
+/* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
 
 .carousel-caption {
     background: linear-gradient(rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7));
-    border-radius: 50px;
+    border-end-end-radius: 50px;
+    border-start-start-radius: 50px;
+    box-shadow: 10px 5px 5px green;
     margin-bottom: 25%;
 }
 
+
 .bandeau-accueil {
     background-color: #F50D1B;
+    box-shadow: 10px 5px 5px darkred;
+    border-end-start-radius: 20px;
+}
+
+
+.logo_bandeau {
+    font-size: 200%;
 }
 
 
@@ -143,23 +167,28 @@ nav {
     color: white;
 }
 
+
 .entree {
-    border-radius: 20px;
+    border-start-start-radius: 20px;
+    border-end-end-radius: 20px;
     border-style: solid;
     border-color: limegreen;
+    box-shadow: 10px 5px 5px green;
 }
+
 
 .histoire {
     color: limegreen;
     font-weight: bolder;
 }
 
+
 .text_histoire {
     font-size: medium;
 }
 
 
-/* ============= GAMMES ==========*/
+/* ============= 4. INDEX.BLADE (GAMMES) ========== */
 
 .title_h1 {
     padding-top: 7%;
@@ -170,35 +199,47 @@ nav {
     font-weight: bolder;
 }
 
+
 .nos_univers {
     font-size: xx-large;
 }
 
-span{
-    color:limegreen;
+
+span {
+    color: limegreen;
     font-family: 'Paprika', cursive;
 }
 
-.card-title{
+
+.card-title {
     background: linear-gradient(rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7));
     border-radius: 50px;
     margin-left: 20%;
     margin-right: 20%;
     font-size: x-large;
-    font-weight:bolder;
-    color:white;
-   
-}
-
-
-
-/* ============= EDIT.BLADE.php ==========*/
-
-.card-header {
-    background-color: limegreen;
+    font-weight: bolder;
     color: white;
 }
+
+
+
+/* ============= RESS/VIEWS/AUTH/LOGIN.BLADE (CONNEXION) ==========*/
+
+.card-login {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+/* ============= RESS/VIEWS/AUTH/REGISTER.BLADE (INSCRIPTION) ==========*/
+
+.card-register {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+
 
 
 
@@ -214,18 +255,43 @@ span{
 
 footer {
     background-color: limegreen;
-    color: white;
+    box-shadow: 10px 5px 5px green;
+    border-top-right-radius: 20px;
 }
+
 
 .logo_footer {
     width: 50%;
     border-radius: 50px;
 }
 
+
 .logo_footer:hover {
     box-shadow: 10px 5px 5px green;
 }
 
-.logo_facebook {
-    width: 15%;
+
+.footer-lien {
+    color: #F50D1B;
+}
+
+
+.footer-lien:hover {
+    color: white;
+}
+
+
+.logo-facebook {
+   font-size:400%;
+   color:#F50D1B;
+}
+
+
+.logo-facebook:hover {
+    color: #1877F2;
+}
+
+
+.copyright {
+    color:#F50D1B;
 }
