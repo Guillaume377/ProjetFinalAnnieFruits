@@ -5,14 +5,14 @@
 @endsection
 
 
-<h1 class="page_title_catalogue text-center mx-auto">Catalogue</h1>
+<h1 class="page_title_catalogue text-center mx-auto">{{$article->nom}}</h1>
 
 
 
 
 {{-- * * * Titre * * * --}}
 
-{{-- <div class="row w-75 mx-auto pt-5">
+<div class="row w-75 mx-auto pt-5">
     @foreach ($articles as $article)
         <div class="col-md-4">
             <div class="card_promo card p-3 mb-5 rounded-4">
@@ -30,35 +30,35 @@
                                 $campaign = getCampaign($article->id);
                             @endphp
 
-                            @if ($campaign) --}}
+                            @if ($campaign)
 
 
                                 {{-- //==true --}}
 
 
-                                {{-- <p class="text-decoration-line-through">{{ $article->prix }} €</p>
+                                <p class="text-decoration-line-through">{{ $article->prix }} €</p>
                                 @php
                                     $prixremise = $article->prix - ($article->prix * $promoActuelle->reduction) / 100;
-                                @endphp --}}
+                                @endphp
 
 
                                 {{-- //remise sur article promo --}}
 
 
-                                {{-- <p class="text-danger">{{ number_format($prixremise, 2, ',', ' ') }} €</p>
+                                <p class="text-danger">{{ number_format($prixremise, 2, ',', ' ') }} €</p>
                             @else
                                 <p>{{ $article->prix }} €</p>
                             @endif
                         </div>
 
                     </div>
-                </div> --}}
+                </div>
 
 
                 <!-- bouton ajout au panier -->
 
 
-                {{-- <div class="container text-center">
+                <div class="container text-center">
                     <div class="row text-center mt-1">
                         <div class="col-md-12">
                             <form method="POST" action="{{ route('panier.add', 1) }}"
@@ -71,19 +71,19 @@
                         </div>
 
                         <div class="col-md-12">
-                            @if (Auth::user()) --}}
+                            @if (Auth::user())
 
 
                                 <!-- si le produit est déjà dans les favoris-->
 
 
-                                {{-- @if (Auth::user()->isInFavorites($article)) --}}
+                                @if (Auth::user()->isInFavorites($article))
 
 
                                     <!-- si dans les favoris-->
 
 
-                                    {{-- <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
+                                    <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-outline-danger m-2">Retirer
@@ -91,13 +91,13 @@
                                             favoris</button>
 
                                     </form>
-                                @else --}}
+                                @else
 
 
                                     <!-- si le produit n'est pas dans les favoris-->
 
 
-                                    {{-- <form method="post" action="{{ route('favoris.store') }}">
+                                    <form method="post" action="{{ route('favoris.store') }}">
                                         @csrf
                                         <input type="hidden" value="{{ $article->id }}" name="articleId">
                                         <button type="submit" class="btn btn-outline-secondary m-2">Ajouter aux
@@ -131,4 +131,4 @@
             </div>
         </div>
     @endforeach
-</div> --}}
+</div>

@@ -39,9 +39,17 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+
+     /* Affichage du détail article */
+
+    public function show(Article $article)
     {
-        //
+       
+        // on charge les articles via un eager loading
+        $article->load('avis');
+
+
+        return view("articles/show", ['article' => $article]);
     }
 
     /**

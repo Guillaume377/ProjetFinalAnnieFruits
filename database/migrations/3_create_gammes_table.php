@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('gammes', function (Blueprint $table) {
             $table->id();
             $table->string('nom',50);
+            $table->string('image',50);
             $table->timestamps();
         });
     }

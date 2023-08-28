@@ -50,7 +50,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav pt-3">
 
-                            <a class="navbar-brand" href="home#">
+                            <a class="navbar-brand" href="{{ route('home') }}">
                                 <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}"
                                     alt="Logo">
                             </a>

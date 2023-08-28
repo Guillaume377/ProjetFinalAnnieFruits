@@ -56,6 +56,12 @@ h3 {
     color: #F50D1B;
 }
 
+h5 {
+    font-family: 'Paprika', cursive;
+    color: #F50D1B;
+
+}
+
 
 p {
     font-family: 'Assistant', sans-serif;
@@ -159,7 +165,7 @@ nav {
 
 
 .logo_bandeau {
-    font-size: 200%;
+    font-size: 400%;
 }
 
 
@@ -215,11 +221,41 @@ span {
     background: linear-gradient(rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7));
     border-radius: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
     font-size: x-large;
     font-weight: bolder;
     color: white;
+}
+
+/* ============= 4. SHOW.BLADE (articles) ========== */
+ 
+.img-article{
+    width:100%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px darkred;
+ }
+
+
+ .btn-ajout {
+    background-color: limegreen;
+    color: white;
+    font-family: 'Paprika', cursive;
+    margin: 0% 2% 0% 1%;
+    white-space: nowrap;
+    border-radius: 25px;
+    border-color: white;
+}
+
+
+.btn-ajout:hover {
+    background-color: white;
+    color: limegreen;
+    box-shadow: 10px 5px 5px limegreen;
+    border-color: limegreen;
+}
+
+.img-btn-ajout{
+    font-size: 200%;
 }
 
 

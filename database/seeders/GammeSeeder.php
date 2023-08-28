@@ -14,13 +14,16 @@ class GammeSeeder extends Seeder
     public function run(): void
     {
         Gamme::create([
-            'nom' => 'Nos fruits'
+            'nom' => 'Nos fruits',
+            'image' => 'fruits.jpg'
           ]);
           Gamme::create([
-            'nom' => 'Nos légumes'
+            'nom' => 'Nos légumes',
+            'image' => 'legumes.jpg'
           ]);
           Gamme::create([
-            'nom' => 'Nos fromages'
+            'nom' => 'Nos fromages',
+            'image' => 'fromages.jpg'
           ]);
     }
 }

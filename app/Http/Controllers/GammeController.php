@@ -35,13 +35,21 @@ class GammeController extends Controller
         //
     }
 
+    
+    
     /**
-     * Display the specified resource.
+     * Affichage de la page catalogue des articles
      */
-    public function show(string $id)
+    public function show(Gamme $gamme)
     {
-        //
+       
+        // on charge les articles de la gamme via un eager loading
+        $gamme->load('articles');
+
+
+        return view("gamme/show", ['gamme' => $gamme]);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
