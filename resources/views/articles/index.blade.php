@@ -24,31 +24,10 @@
                             <p class="card-text">{{ $article->description }}</p>
                         </div>
 
-                        <div class="style_prix col">
+                        <div class="col">
 
-                            @php
-                                $campaign = getCampaign($article->id);
-                            @endphp
-
-                            @if ($campaign)
-
-
-                                {{-- //==true --}}
-
-
-                                <p class="text-decoration-line-through">{{ $article->prix }} €</p>
-                                @php
-                                    $prixremise = $article->prix - ($article->prix * $promoActuelle->reduction) / 100;
-                                @endphp
-
-
-                                {{-- //remise sur article promo --}}
-
-
-                                <p class="text-danger">{{ number_format($prixremise, 2, ',', ' ') }} €</p>
-                            @else
                                 <p>{{ $article->prix }} €</p>
-                            @endif
+                          
                         </div>
 
                     </div>

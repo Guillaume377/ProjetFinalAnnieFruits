@@ -136,7 +136,7 @@ nav {
 
 .cart {
     color: #F50D1B;
-     font-size: 200%;
+    font-size: 200%;
 }
 
 
@@ -191,6 +191,7 @@ nav {
 
 .text_histoire {
     font-size: medium;
+    text-align: justify;
 }
 
 
@@ -227,16 +228,28 @@ span {
 }
 
 /* ============= 4. SHOW.BLADE (articles) ========== */
- 
-.img-article{
-    width:100%;
+
+.img-article {
+    width: 100%;
     background-color: white;
     border-radius: 20px;
     box-shadow: 5px 5px 5px darkred;
- }
+}
 
 
- .btn-ajout {
+.description-article {
+    text-align: justify;
+}
+
+
+.prix {
+    font-size: 200%;
+    font-weight:bolder;
+    color: limegreen;
+}
+
+
+.btn-ajout {
     background-color: limegreen;
     color: white;
     font-family: 'Paprika', cursive;
@@ -254,7 +267,7 @@ span {
     border-color: limegreen;
 }
 
-.img-btn-ajout{
+.img-btn-ajout {
     font-size: 200%;
 }
 
@@ -318,8 +331,8 @@ footer {
 
 
 .logo-facebook {
-   font-size:400%;
-   color:#F50D1B;
+    font-size: 400%;
+    color: #F50D1B;
 }
 
 
@@ -329,5 +342,5 @@ footer {
 
 
 .copyright {
-    color:#F50D1B;
+    color: #F50D1B;
 }

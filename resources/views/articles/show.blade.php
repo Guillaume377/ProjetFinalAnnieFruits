@@ -11,7 +11,7 @@
         <div class="row">
 
             <div class="col-xl-6 d-flex justify-content-center pe-5">
-                <img class="img-article" src="{{ asset("images/$article->image") }} " alt={{ $article->nom }}>
+                <img class="img-article" style="object-fit: cover" src="{{ asset("images/$article->image") }} " alt={{ $article->nom }}>
             </div>
             
 
@@ -20,16 +20,16 @@
             <div class="col-xl-6 d-flex justify-content-center ps-5 mt-2">
                 <div class="img-article">
 
-                    <div class="text-center m-2">
+                    <div class="text-center py-5">
                         <h5>{{ $article->titre }}</h5>
                     </div>
 
-                    <div class="text-justify m-2">
+                    <div class="description-article text-align-justify px-5">
                         <td> {{ $article->description }}</td>
                     </div>
 
-                    <div class="text-center m-5 fs-5">
-                        <td>{{ $article['prix'] }} €</td>
+                    <div class="prix text-center m-5">
+                        <td>{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
 
@@ -40,7 +40,7 @@
                         {{ csrf_field() }}
                         <div class="row w-25 ">
                             <input type="number" min="1" max="5" name="quantite" placeholder="Quantité ?"
-                                class="form-control m-2">
+                                class="form-control mb-3">
 
                             <button type="submit" class="btn btn-ajout"><i class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
                         </div>
@@ -57,8 +57,8 @@
                         <p class="text-center m-5">Pas d'avis pour cet article</p>
                     @else(isset($article->avis) && $article->avis !== null)
                         @foreach ($article->avis as $avis)
-                            <p class="mt-5 fw-bold">Note : {{ $avis->note }}/5</p>
-                            <p>{{ $avis->commentaire }}</p>
+                            <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
+                            <p class="px-5">{{ $avis->commentaire }}</p>
                         @endforeach
                     @endif
 
