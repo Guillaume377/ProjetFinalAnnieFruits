@@ -1,6 +1,6 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('content')
-<h1 class="h1_panier text-center m-5">Mon panier</h1>
+<h1 class="text-center py-5 m-5">Mon panier</h1>
     <div class="container">
 
         @if (session()->has('message'))
@@ -12,12 +12,12 @@
                 <table class="table table-bordered table-hover bg-white mb-0">
                     <thead class="thead-dark">
                         <tr>
-                            <th style="background-color: #3F3028;color: white">#</th>
-                            <th style="background-color: #3F3028;color: white">Produit</th>
-                            <th style="background-color: #3F3028;color: white">Prix</th>
-                            <th style="background-color: #3F3028;color: white">Quantité</th>
-                            <th style="background-color: #3F3028;color: white">Total</th>
-                            <th style="background-color: #3F3028;color: white">Opérations</th>
+                            <th style="background-color: limegreen;color: white">#</th>
+                            <th style="background-color: limegreen;color: white">Produit</th>
+                            <th style="background-color: limegreen;color: white">Prix</th>
+                            <th style="background-color: limegreen;color: white">Quantité</th>
+                            <th style="background-color: limegreen;color: white">Total</th>
+                            <th style="background-color: limegreen;color: white">Opérations</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,25 +28,12 @@
                         @foreach (session('panier') as $position => $article)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>
-                                    {{ $article['nom'] }}
-                                </td>
-
-                                <!--  PRIX = si la clé campagne existe pour cet article, j'affiche le nom de la promo + % réduction + prix barré + prix promo -->
-
-                                @if (isset($article['campagne']))
-                                    <td><span>{{ $article['campagne']->nom }} :
-                                            -{{ $article['campagne']->reduction }}%</span>
-                                        <del>{{ $article['prix'] }} €</del>
-                                        @php $prixremise = $article['prix']- ($article['prix'] * $article['campagne']->reduction / 100)@endphp
-                                        <span> {{ number_format($prixremise, 2, ',', ' ') }}€</span>
-                                    </td>
-                                @else
-                                    <td>{{ $article['prix'] }} €</td>
-                                @endif
-
-                                <td>
-                                    <!-- Le formulaire de mise à jour de la quantité -->
+                                <td>{{ $article['nom'] }}</td>
+                                <td>{{ $article['prix'] }} €</td>
+                               
+                               <!-- Le formulaire de mise à jour de la quantité -->
+                               
+                                <td> 
                                     <form method="POST" action="{{ route('panier.add', $position) }}"
                                         class="form-inline d-inline-block">
                                         {{ csrf_field() }}
@@ -57,28 +44,22 @@
                                     </form>
                                 </td>
 
+                                <!-- Le total du produit = prix * quantité -->
                                 <td>
-                                    <!-- Le total du produit = prix * quantité -->
-                                    @if (isset($article['campagne']))
-                                        {{ number_format($prixremise * $article['quantite'], 2, ',', ' ') }}€
-                                    @else
-                                        {{ number_format($article['prix'] * $article['quantite'], 2, ',', ' ') }}€
-                                    @endif
+                                    {{ number_format($article['prix'] * $article['quantite'], 2, ',', ' ') }}€
                                 </td>
 
+                                <!-- Le lien pour retirer un produit du panier -->
                                 <td>
-                                    <!-- Le lien pour retirer un produit du panier -->
                                     <a href="{{ route('panier.remove', $position) }}" class="btn btn-outline-danger"
                                         title="Retirer le produit du panier">Retirer</a>
                                 </td>
                             </tr>
 
                             <!-- On incrémente le total général par le total de chaque produit du panier -->
-                            @if (isset($article['campagne']))
-                                @php $total += $prixremise* $article['quantite'] @endphp
-                            @else
+                        
                                 @php $total += $article['prix'] * $article['quantite'] @endphp
-                            @endif
+                            
                         @endforeach
 
                         <tr colspan="2">
@@ -104,7 +85,7 @@
                 @endif
 
                 <!-- Lien pour vider le panier -->
-                <a class="btn btn-danger mx-3" href="{{ route('panier.empty') }}"
+                <a class="btn btn-danger my-5 mx-3" href="{{ route('panier.empty') }}"
                     title="Retirer tous les produits du panier">Vider
                     le panier</a>
             @else

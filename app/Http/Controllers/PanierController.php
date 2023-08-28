@@ -19,7 +19,6 @@ class PanierController extends Controller
 	}
 
 
-
 	// ======================== Ajout d'un produit au panier ================ //
 
 	public function add(Article $article, Request $request)
@@ -29,9 +28,6 @@ class PanierController extends Controller
 			"quantite" => "numeric|min:1"
 		]);
 
-		$campagneActuelle = getCampaign($article->id); //on récupère son éventuelle campagne en cours (sinon => null)
-		$panier = session()->get("panier"); // On récupère le panier en session
-
 		// Les informations du produit à ajouter
 		$article_details = [
 			'id' => $article->id,
@@ -39,12 +35,6 @@ class PanierController extends Controller
 			'prix' => $article->prix,
 			'quantite' => $request->quantite
 		];
-
-		// si l'article est concerné par une promo ET si celle-ci est en cours => on prend en compte sa réduction
-		if ($campagneActuelle !== null) {
-			$article_details['campagne'] = $campagneActuelle;
-			$article_details['reduction'] = $campagneActuelle->reduction;
-		}
 
 		$panier[$article->id] = $article_details; // On ajoute ou on met à jour le produit au panier
 		session()->put("panier", $panier); // On enregistre le panier
@@ -89,31 +79,7 @@ class PanierController extends Controller
 
 		$user = User::find(auth()->user()->id);
 
-		// si je viens de choisir une adresse de livraison 
-		if (($request->adresseLivraisonId)) {
-			$adresseLivraisonId = $request->adresseLivraisonId; // je stocke l'id de cette adresse choisie
-			$adresseLivraison = Adresse::findOrFail($adresseLivraisonId); // je récupère en bdd l'adresse correspondante
-			session(['adresseLivraison' => $adresseLivraison]); // je la stocke dans la session
-			// autre syntaxe : session()->put('adresseLivraison' => $adresseLivraison);
-		}
-
-		// si je viens de choisir une adresse de facturation => même principe 
-		if (($request->adresseFacturationId)) {
-			$adresseFacturationId = $request->input('adresseFacturationId');
-			$adresseFacturation = Adresse::findOrFail($adresseFacturationId);
-			session(['adresseFacturation' => $adresseFacturation]);
-		}
-
 		return view("panier/validation", ['user' => $user]);
-	}
-
-	// ============================== Validation des frais de port ============================ //
-
-	public function fraisdeport(Request $request)
-	{
-		$fraisdeport = $request->input('fraisdeport');
-		session()->put('fraisdeport', $fraisdeport);
-		return back()->withMessage("Frais de port validés");
 	}
 
 
