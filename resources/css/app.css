@@ -274,6 +274,29 @@ span {
 
 
 
+/* ============= . SHOW.BLADE (panier) ========== */
+
+.h1_panier{
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(/public/images/bandeau3.png);
+    color: white;
+    font-weight: bolder;
+}
+
+
+.h3_panier_vide{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+.fa-pen {
+    font-size: 100%;
+}
+
+
 /* ============= RESS/VIEWS/AUTH/LOGIN.BLADE (CONNEXION) ==========*/
 
 .card-login {
@@ -289,11 +312,34 @@ span {
     padding-bottom: 4%;
 }
 
+/* ============= RESS/VIEWS/USER/EDIT.BLADE (Mon compte) ==========*/
+
+.btn-modif {
+    background-color: limegreen;
+    color: white;
+}
 
 
+.btn-modif:hover {
+    background-color: white;
+    color: limegreen;
+    box-shadow: 10px 5px 5px limegreen;
+    border-color: limegreen;
+}
 
 
+.btn-suppr {
+    background-color: red;
+    color: white;
+}
 
+
+.btn-suppr:hover {
+    background-color: white;
+    color: red;
+    box-shadow: 10px 5px 5px red;
+    border-color: red;
+}
 
 
 

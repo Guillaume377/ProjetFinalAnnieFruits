@@ -28,11 +28,15 @@ class PanierController extends Controller
 			"quantite" => "numeric|min:1"
 		]);
 
+		$panier = session()->get("panier"); // On récupère le panier en session (garder les articles dans le panier)
+
+
 		// Les informations du produit à ajouter
 		$article_details = [
 			'id' => $article->id,
 			'nom' => $article->nom,
 			'prix' => $article->prix,
+			'type_prix' => $article->type_prix,
 			'quantite' => $request->quantite
 		];
 
@@ -40,7 +44,7 @@ class PanierController extends Controller
 		session()->put("panier", $panier); // On enregistre le panier
 
 		// Redirection vers le panier avec un message
-		return redirect()->route("panier.show")->withMessage("Produit ajouté au panier");
+		return back()->withMessage("Produit ajouté au panier");
 	}
 
 

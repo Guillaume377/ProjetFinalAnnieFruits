@@ -11,9 +11,10 @@
         <div class="row">
 
             <div class="col-xl-6 d-flex justify-content-center pe-5 pb-5">
-                <img class="img-article" style="object-fit: cover" src="{{ asset("images/$article->image") }} " alt={{ $article->nom }}>
+                <img class="img-article" style="object-fit: cover" src="{{ asset("images/$article->image") }} "
+                    alt={{ $article->nom }}>
             </div>
-            
+
 
 
             <!-- =============================================== card description article ============================================= -->
@@ -38,11 +39,16 @@
                     <form method="POST" action="{{ route('panier.add', $article->id) }}"
                         class="form-inline d-inline-block d-flex justify-content-center">
                         {{ csrf_field() }}
-                        <div class="row w-25 ">
-                            <input type="number" min="1" max="5" name="quantite" placeholder="Quantité ?"
-                                class="form-control mb-3">
-
-                            <button type="submit" class="btn btn-ajout"><i class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
+                        <div class="row w-50 ">
+                            @if ($article['type_prix'] == 'pièce')
+                                <input type="number" min="1" max="10" name="quantite" placeholder="Quantité ?"
+                                    class="form-control mb-3">
+                            @else
+                                <input type='number' min="100" max="5000" step="100" name="quantite"
+                                    placeholder="Indiquez le poids en grammes" class="form-control mb-3">
+                            @endif
+                            <button type="submit" class="btn btn-ajout"><i
+                                    class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
                         </div>
 
                     </form>

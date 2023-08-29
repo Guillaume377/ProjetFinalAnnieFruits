@@ -24,7 +24,7 @@
 
                         <!-- Card
                         ============================================================ -->
-                        <div class="card my-4">
+                        <div class="card my-4 my-5">
 
 
                             <!-- Card header "S'inscrire"
@@ -140,7 +140,7 @@
                                     <div class="row mb-0 mt-2">
                                         <div class="col-md-12">
                                             <button type="submit"
-                                                class="btn btn-primary col-12"><small>{{ __('Modifier mes informations') }}</small></button>
+                                                class="btn btn-modif col-12"><small>{{ __('Modifier mes informations') }}</small></button>
                                         </div>
                                     </div>
 
@@ -154,7 +154,7 @@
                                         <form action="{{ route('user.destroy', $user) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" class="btn btn-danger col-12"><small>Supprimer le
+                                            <button type="submit" class="btn btn-suppr col-12"><small>Supprimer le
                                                     compte</small></button>
                                         </form>
                                     </div>
@@ -279,7 +279,7 @@
                                     <div class="row mb-0 mt-2">
                                         <div class="col-md-12">
                                             <button type="submit"
-                                                class="btn btn-primary col-12"><small>{{ __('Modifier le mot de passe') }}</small></button>
+                                                class="btn btn-modif col-12"><small>{{ __('Modifier le mot de passe') }}</small></button>
                                         </div>
                                     </div>
 
