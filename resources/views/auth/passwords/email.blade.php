@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<h1 class="title_h1 text-center mx-auto">Mot de passe oublié</h1>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="card-mdp-oublie col-md-8">
+            <div class="table-responsive card">
                 <div class="card-header">{{ __('Réinitialiser votre mot de passe') }}</div>
 
                 <div class="card-body">

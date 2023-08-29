@@ -12,7 +12,7 @@ Rouge:  #F50D1B
         darkred
 Bleu:   #1877F2
 
-beige
+moccasin
 white
            
 */
@@ -74,7 +74,7 @@ main {
 
 
 body {
-    background-color: beige;
+    background-color:moccasin;
 }
 
 
@@ -194,8 +194,16 @@ nav {
     text-align: justify;
 }
 
+/* ============= 4. NOUS CONTACTER ========== */
 
-/* ============= 4. INDEX.BLADE (GAMMES) ========== */
+.map {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+/* ============= . INDEX.BLADE (GAMMES) ========== */
 
 .title_h1 {
     padding-top: 7%;
@@ -290,7 +298,7 @@ span {
 }
 
 
-th{
+th {
     text-align: center;
 }
 
@@ -327,13 +335,28 @@ th{
 }
 
 
-
 /* ============= RESS/VIEWS/AUTH/REGISTER.BLADE (INSCRIPTION) ==========*/
 
 .card-register {
     padding-top: 4%;
     padding-bottom: 4%;
 }
+
+
+/* ============= RESS/VIEWS/AUTH/VERIFY.BLADE (INSCRIPTION) ==========*/
+
+.card-verify {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+/* ============= RESS/VIEWS/PASSWORDS/EMAIL.BLADE (MDP OUBLIE) ==========*/
+
+.card-mdp-oublie {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 
 /* ============= RESS/VIEWS/USER/EDIT.BLADE (Mon compte) ==========*/
 

@@ -28,7 +28,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md fixed-top">
+        <nav class="navbar navbar-expand-md pb-0 fixed-top">
             <div class="container-fluid">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,7 +59,7 @@
                                 Nos produits
                             </a>
 
-                            <a class="btn btn-ghost p-3 mb-5" href="#">
+                            <a class="btn btn-ghost p-3 mb-5" href="/">
                                 Nous contacter
                             </a>
 
@@ -169,7 +169,7 @@
     </div>
 
 
-    <footer class="pt-5 mx-auto">
+    <footer class="pt-3 mx-auto">
 
         <div class="row mx-auto text-center">
 

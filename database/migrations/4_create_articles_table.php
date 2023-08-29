@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('image', 50);
             $table->float('prix');
-            $table->enum('type_prix',array('pièce','kilo'));
+            $table->enum('type_prix', array('pièce','kilo'));
             $table->integer('stock');
             $table->float('note');
             $table->timestamps();

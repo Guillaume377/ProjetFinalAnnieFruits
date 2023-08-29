@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+<h1 class="title_h1 text-center mx-auto">Connexion</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-login col-md-8">
-            <div class="card">
+            <div class="table-responsive card">
                 <div class="card-header">{{ __('Connexion') }}</div>
 
                 <div class="card-body">
