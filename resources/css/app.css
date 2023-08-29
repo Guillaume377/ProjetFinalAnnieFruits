@@ -297,6 +297,20 @@ span {
 }
 
 
+.table-responsive {
+    border-end-end-radius: 30px;
+    border-start-start-radius: 30px;
+    box-shadow: 10px 5px 5px green;
+}
+
+th{
+    text-align: center;
+}
+
+.fa-arrow-right{
+    margin-left: 3%;
+}
+
 /* ============= RESS/VIEWS/AUTH/LOGIN.BLADE (CONNEXION) ==========*/
 
 .card-login {

@@ -6,7 +6,7 @@
     <div class="container">
 
         @if (session()->has('panier'))
-            <div class="table-responsive shadow my-5">
+            <div class="table-responsive  my-5">
                 <table class="table table-bordered table-hover bg-white mb-0">
                     <thead class="thead-dark">
                         <tr>
@@ -91,7 +91,7 @@
                         @endforeach
 
                         <tr colspan="2">
-                            <td colspan="5">Total général</td>
+                            <th colspan="5" style="background-color: limegreen;color: white">Total général<i class="fa-solid fa-arrow-right"></i></th>
                             <td colspan="2">
                                 <!-- On affiche total général -->
                                 <strong>{{ number_format($total, 2, ',', ' ') }} €</strong>
