@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\User;
-use App\Models\Adresse;
-use Illuminate\Support\Facades\Gate;
 
 class PanierController extends Controller
 {
@@ -28,7 +26,7 @@ class PanierController extends Controller
 			"quantite" => "numeric|min:1"
 		]);
 
-		$panier = session()->get("panier"); // On récupère le panier en session (garder les articles dans le panier)
+		$panier = session()->get("panier"); // On récupère(get) le panier en session (garder les articles dans le panier)
 
 
 		// Les informations du produit à ajouter
@@ -41,7 +39,7 @@ class PanierController extends Controller
 		];
 
 		$panier[$article->id] = $article_details; // On ajoute ou on met à jour le produit au panier
-		session()->put("panier", $panier); // On enregistre le panier
+		session()->put("panier", $panier); // On enregistre(stock = put) le panier
 
 		// Redirection vers le panier avec un message
 		return back()->withMessage("Produit ajouté au panier");
@@ -74,13 +72,8 @@ class PanierController extends Controller
 
 	// ================================ Validation d'une commande ============================= //
 
-	public function validation(Request $request)
+	public function validation()
 	{
-
-		if (Gate::denies("access_order_validation")){
-			abort(403, 'Vous n\'êtes pas connecté');
-		}
-
 		$user = User::find(auth()->user()->id);
 
 		return view("panier/validation", ['user' => $user]);

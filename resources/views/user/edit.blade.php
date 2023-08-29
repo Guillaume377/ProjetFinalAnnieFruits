@@ -7,8 +7,8 @@
 @section('content')
 
 
-    <div class="pb-5 pt-5" id="edit_blade_user">
-        <h2 class="text-center fs-1">Informations personnelles</h2>
+    
+        <h1 class="title_h1 text-center mx-auto">Informations personnelles</h1> 
 
         <!-- FORMULAIRE MODIF INFO + MODIF PASSWORD
         ============================================================ -->
@@ -138,9 +138,9 @@
                                     <!-- Bouton validation modification
                                     ============================================================ -->
                                     <div class="row mb-0 mt-2">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 d-flex justify-content-center">
                                             <button type="submit"
-                                                class="btn btn-modif col-12"><small>{{ __('Modifier mes informations') }}</small></button>
+                                                class="btn btn-ajout"><small>{{ __('Modifier mes informations') }}</small></button>
                                         </div>
                                     </div>
 
@@ -150,11 +150,11 @@
                                 <!-- Bouton supression compte
                                 ============================================================ -->
                                 <div class="row mb-0 mt-2">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 d-flex justify-content-center">
                                         <form action="{{ route('user.destroy', $user) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button type="submit" class="btn btn-suppr col-12"><small>Supprimer le
+                                            <button type="submit" class="btn btn-suppr"><small>Supprimer le
                                                     compte</small></button>
                                         </form>
                                     </div>
@@ -277,9 +277,9 @@
                                     <!-- Bouton validation modification
                                         ============================================================ -->
                                     <div class="row mb-0 mt-2">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 d-flex justify-content-center">
                                             <button type="submit"
-                                                class="btn btn-modif col-12"><small>{{ __('Modifier le mot de passe') }}</small></button>
+                                                class="btn btn-ajout"><small>{{ __('Modifier le mot de passe') }}</small></button>
                                         </div>
                                     </div>
 
@@ -295,5 +295,5 @@
             </div>
 
         </div>
-    </div>
+    
 @endsection

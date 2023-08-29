@@ -76,6 +76,8 @@ Route::resource('/user', App\Http\Controllers\UserController::class)->except('in
 Route::get('/emptyAfterOrder', [App\Http\Controllers\PanierController::class, 'emptyAfterOrder'])->name('emptyAfterOrder');
 // pour vider le panier après validation de la commande
 
+Route::post('validation/retirerCommande', [App\Http\Controllers\PanierController::class, 'retirerCommande'])->name('fraisdeport');
+// 'retirerCommande' pour afficher le formulaire Click and Collect
 
 
 // ******************* Les routes de la page Commandes **************** //

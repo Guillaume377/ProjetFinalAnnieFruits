@@ -2,11 +2,11 @@
 @section('content')
 
 
-    <h1 class="h1_panier text-center text center mx-auto">Mon panier</h1>
+    <h1 class="title_h1 text-center mx-auto">Mon panier</h1>
     <div class="container">
 
         @if (session()->has('panier'))
-            <div class="table-responsive  my-5">
+            <div class="table-responsive my-5">
                 <table class="table table-bordered table-hover bg-white mb-0">
                     <thead class="thead-dark">
                         <tr>
@@ -94,6 +94,7 @@
                             <th colspan="5" style="background-color: limegreen;color: white">Total général<i class="fa-solid fa-arrow-right"></i></th>
                             <td colspan="2">
                                 <!-- On affiche total général -->
+                                @php session()->put("totalCommande", $total); @endphp <!-- je stocke le total dans la session -->
                                 <strong>{{ number_format($total, 2, ',', ' ') }} €</strong>
                             </td>
                         </tr>
@@ -109,7 +110,7 @@
 
                 <!-- Lien pour valider le panier -->
                 @if (Auth::user())
-                    <a class="btn btn-modif my-5 mx-3" href="{{ route('validation') }}"
+                    <a class="btn btn-ajout my-5 mx-3" href="{{ route('validation') }}"
                         title="Valider le panier">Valider</a>
                 @endif
 

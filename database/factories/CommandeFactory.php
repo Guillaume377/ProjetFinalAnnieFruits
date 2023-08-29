@@ -21,6 +21,8 @@ class CommandeFactory extends Factory
             
                 'numero' => $this->faker->randomNumber(7, true),
                 'prix' => $this->faker->randomFloat(2, 10, 80),
+                'date_retrait' => $this->faker->dateTimeBetween('-1 week', '+1 week'),
+                'heure_retrait'=> $this->faker->time('H:i'),
                 'user_id' =>rand(1, User::count()),
             ];
     }

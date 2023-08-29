@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('numero', 7);
             $table->float('prix');
+            $table->date('date_retrait');
+            $table->time('heure_retrait', 4);
             $table->timestamps();
 
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
