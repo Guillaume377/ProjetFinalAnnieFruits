@@ -59,7 +59,7 @@
                                 Nos produits
                             </a>
 
-                            <a class="btn btn-ghost p-3 mb-5" href="/">
+                            <a class="btn btn-ghost p-3 mb-5" href="{{ route('contact') }}">
                                 Nous contacter
                             </a>
 

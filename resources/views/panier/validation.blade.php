@@ -148,7 +148,7 @@
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
-                    <form method="post" action="/reservation">
+                    <form action="{{ route('reservation') }}" method="post">
                         @csrf
                         <div class="row d-flex justify-content-center">
                             <label for="date_time">Jour</label>
@@ -182,7 +182,7 @@
 
         <td>
             <!-- On affiche le total à payer avec un arrondi de 2 chiffres après la virgule -->
-            <div class="totalapayer text-center my-5"><span>Total à payer :</span>
+            <div class="totalapayer text-center my-5"><span>Total à payer en magasin :</span>
                 <strong>{{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€</strong>
             </div>
         </td>
@@ -222,30 +222,14 @@
                         <p>Le montant total est de
                             <strong>{{ number_format(session()->get('totalCommande'), 2, ',', ' ') }} €</strong>
                         </p>
-                        <p>Vous pouvez récupérer votre commande à partir de <?php
+                        <p>Vous pouvez récupérer votre commande à partir du <?php
                         
                         // ===================  obtenir et afficher la date du jour formatée ===============
                         
-                        // $dateJour = date('d-m-Y');
-                        // echo $dateJour;
+                        $dateJour = date('d-m-Y');
+                        echo $dateJour;
                         ?> </p>
-                        <p>La commande sera prête à partir de
-                            <?php
-                            
-                            // ========================== calcul : date du jour + 2 jours ==================
-                            
-                            // je récupère la date du jour en format DateTime (exigé par la fonction date_add)
-                            $date = new DateTime('now');
-                            
-                            // on utilise date_add pour ajouter 2 jours
-                            // date_interval... => permet d'obtenir l'intervalle de temps souhaité pour l'ajouter
-                            date_add($date, date_interval_create_from_date_string('2 days'));
-                            
-                            // à ce stade, $date est directement modifiée
-                            // je l'affiche en la formatant : jour mois année => 09-06-2023
-                            echo date_format($date, 'd-m-Y');
-                            ?>
-                        </p>
+                           
                         <p>Merci de votre confiance.</p>
                     </div>
 

@@ -196,11 +196,22 @@ nav {
 
 /* ============= 4. NOUS CONTACTER ========== */
 
-.map {
+.table-horaire-coordos{
+    border-style: solid;
+    border-color:#F50D1B;
+    box-shadow: 10px 5px 5px darkred;
+}
+
+
+iframe {
     position: relative;
-    padding-bottom: 75%;
-    height: 0;
     overflow: hidden;
+    width:70%;
+    height:100%;
+    border-start-start-radius: 20px;
+    border-end-end-radius: 20px;
+    box-shadow: 10px 5px 5px darkred;  
+    
 }
 
 /* ============= . INDEX.BLADE (GAMMES) ========== */

@@ -103,7 +103,7 @@
                         activité est la vente de
                         fruits et légumes.
                     </p>
-                    <p class="text-justify">Il se situe au 50 avenue du 11 novembre 1918 17300 ROCHEFORT (entre les magasins
+                    <p class="text-justify">Il se situe au 56 avenue du 11 novembre 1918 17300 ROCHEFORT (entre les magasins
                         BUT et BRICORAMA).
                     </p>
                     <p class="text-justify">Il a été repris par M. Claude DELMOTTE au 01 octobre 2015.</p>

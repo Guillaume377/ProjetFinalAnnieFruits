@@ -70,6 +70,26 @@ class PanierController extends Controller
 	}
 
 
+
+	// ============================== Validation du créneau de retrait ============================ //
+
+	public function reservation(Request $request)
+	{
+		$reservation = $request->input('date_retrait');
+		session()->put('reservation', $reservation);
+		return back()->withMessage("Créneau de retrait de la commande validé");
+
+		$reservation = $request->input('heure_retrait');
+		session()->put('reservation', $reservation);
+		return back()->withMessage("Créneau de retrait de la commande validé");
+	}
+
+
+
+
+
+
+
 	// ================================ Validation d'une commande ============================= //
 
 	public function validation()
@@ -89,6 +109,4 @@ class PanierController extends Controller
 		// Redirection vers la page "home"
 		return redirect()->route('home')->withMessage('success', 'Votre commande a été validée.');
 	}
-
-
 }

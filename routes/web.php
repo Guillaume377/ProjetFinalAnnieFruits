@@ -46,7 +46,7 @@ Route::resource('/favoris', \App\Http\Controllers\FavoriController::class)->exce
 
 //***************** Route d'affichage de la page Nous contacter *****************************/
 
-// Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 
 // **************** Les routes de gestion du panier **************** //
@@ -76,8 +76,8 @@ Route::resource('/user', App\Http\Controllers\UserController::class)->except('in
 Route::get('/emptyAfterOrder', [App\Http\Controllers\PanierController::class, 'emptyAfterOrder'])->name('emptyAfterOrder');
 // pour vider le panier après validation de la commande
 
-Route::post('validation/retirerCommande', [App\Http\Controllers\PanierController::class, 'retirerCommande'])->name('fraisdeport');
-// 'retirerCommande' pour afficher le formulaire Click and Collect
+Route::post('validation/reservation', [App\Http\Controllers\PanierController::class, 'reservation'])->name('reservation');
+// 'reservation' pour enregistrer l'heure et le jour de retrait de la commande
 
 
 // ******************* Les routes de la page Commandes **************** //
