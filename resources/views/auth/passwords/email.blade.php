@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-mdp-oublie col-md-8">
-            <div class="table-responsive card">
+            <div class="tableau table-responsive card">
                 <div class="card-header">{{ __('Réinitialiser votre mot de passe') }}</div>
 
                 <div class="card-body">

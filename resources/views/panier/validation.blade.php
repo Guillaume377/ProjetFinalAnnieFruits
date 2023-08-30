@@ -12,16 +12,12 @@
                 <div class="col-md-10">
 
                     <!-- Card -->
-
-                    <div class="table-responsive card my-4">
+                    <div class="tableau table-responsive card my-4">
 
                         <!-- Card header "S'inscrire" -->
-
                         <div class="card-header"><small>{{ __('Informations personnelles') }}</small></div>
 
-
                         <!-- Card body -->
-
                         <div class="card-body">
 
                             <!-- Formulaire modif infos -->
@@ -74,13 +70,11 @@
                                 </div>
 
 
-
                                 <!-- Section email + telephone -->
 
                                 <div class="d-flex justify-content-center gap-2">
 
                                     <!-- Email -->
-
                                     <div class="col mb-3">
                                         <label for="email"
                                             class="col-form-label ms-1"><small>{{ __('E-mail') }}</small></label>
@@ -98,8 +92,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- Téléphone -->
 
+                                    <!-- Téléphone -->
                                     <div class="col mb-3">
                                         <label for="telephone"
                                             class="col-form-label ms-1"><small>{{ __('Téléphone') }}</small></label>
@@ -137,24 +131,31 @@
         </div>
 
 
-        <!-- Réserver un créneau -->
+        <!-- ============== Réserver un créneau ==================== -->
 
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6">
                     <h3 class="text-center">Réserver un créneau</h3>
 
+                    <!-- ==== Message succès ==== -->
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
+                    <!-- ==== Réserver un créneau de retrait ==== -->
                     <form action="{{ route('reservation') }}" method="post">
                         @csrf
+
+                        
                         <div class="row d-flex justify-content-center">
+
+                            <!-- Jour de retrait -->
                             <label for="date_time">Jour</label>
                             <input type='date' min="{{ date('Y-m-d', strtotime('+1 days')) }}" name="date_retrait"
                                 class="jour-heure form-control mb-3" required>
 
+                            <!-- Heure de retrait -->
                             <label for="start_time">Heure</label>
                             <input type="time" min="09:00" max="19:00" name="heure_retrait"
                                 class="jour-heure form-control mb-3" required>
@@ -162,9 +163,12 @@
                             <p class="text-center">Heure de retrait possible pendant les horaires d'ouvertures du magasin
                             </p>
 
+
+                            <!-- ==== Tableau horaires d'ouverture du magasin ==== -->
+
                             <div class="col-md-6">
                                 <div class="my-5">
-                                    <table class="table-horaire-coordos table table-success table-striped mx-auto">
+                                    <table class="horaire-coordos table table-success table-striped mx-auto">
                                         <thead class="thead-dark">
 
                                             <tr>
@@ -225,20 +229,18 @@
                                 </div>
                             </div>
 
-                            <!-- Bouton validation le créneau -->
+                            <!-- ==== Bouton validation le créneau ==== -->
 
                             <div class="row mb-0 mt-2">
-                                <div class="col-md-12 d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
                                     <button type="submit" class="btn btn-ajout"><small>Valider le
                                             créneau</small></button>
                                 </div>
                             </div>
 
-
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
 
@@ -249,8 +251,10 @@
 
         <td>
             <!-- On affiche le total à payer avec un arrondi de 2 chiffres après la virgule -->
-            <div class="totalapayer text-center my-5"><span>Total à payer en magasin :</span>
-                <strong>{{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€</strong>
+            <div class="prix_total text-center my-5">Total à payer en magasin :
+                <div class="pt-3">
+                {{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€
+            </div>
             </div>
         </td>
 
@@ -262,7 +266,6 @@
             <!-- Button trigger modal -->
 
             @if (session()->get('date_retrait') && session()->get('heure_retrait'))
-                {{-- @if (session('dateRetrait') !== null && session('heureRetrait') !== null) --}}
                 <button type="submit" name="clearCart" class="btn btn-ajout fs-5 mb-5" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     Valider la commande

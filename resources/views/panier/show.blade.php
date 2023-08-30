@@ -6,7 +6,7 @@
     <div class="container">
 
         @if (session()->has('panier'))
-            <div class="table-responsive my-5">
+            <div class="tableau table-responsive my-5">
                 <table class="table table-bordered table-hover bg-white mb-0">
                     <thead class="thead-dark">
                         <tr>

@@ -21,16 +21,16 @@
             $totalsansfrais = 0;
         @endphp
         @foreach ($commande->articles as $article)
-            <div class="table-responsive shadow mb-3">
+            <div class="tableau table-responsive shadow mb-3">
 
                 <table class=" table table-bordered  p-5 fs-5">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">Article</th>
-                            <th scope="col">Prix unitaire</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Quantité</th>
-                            <th scope="col">Prix</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Article</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Prix unitaire</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Description</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Quantité</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Prix</th>
                         </tr>
                     </thead>
 

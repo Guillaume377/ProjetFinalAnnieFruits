@@ -9,14 +9,14 @@
     <!--BOUCLE SUR LES COMMANDES DU USER CONNECTE DANS UN TABLEAU-->
     <div class="container-fluid p-5">
         @foreach ($user->commandes as $commande)
-            <div class="row table-responsive shadow mb-3"">
-                <table class=" table table-bordered p-5">
+            <div class="row tableau table-responsive mb-3">
+                <table class="table table-bordered p-5">
                     <thead class="text-center">
                         <tr>
-                            <th scope="col">Numéro</th>
-                            <th scope="col">Prix</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Détails</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Numéro</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Prix</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Date</th>
+                            <th scope="col" style="background-color: limegreen;color: white">Détails</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">

@@ -30,8 +30,8 @@
                     </div>
 
 
-                    <div class="prix text-center my-5">
-                        <td>{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
+                    <div class="prix_article text-center  my-5">
+                        <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
 

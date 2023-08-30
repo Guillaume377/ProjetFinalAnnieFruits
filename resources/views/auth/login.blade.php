@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-login col-md-8">
-            <div class="table-responsive card">
+            <div class="tableau table-responsive card">
                 <div class="card-header">{{ __('Connexion') }}</div>
 
                 <div class="card-body">
