@@ -29,7 +29,7 @@
 <body>
     <div id="app">
 
-        <nav class="navbar navbar-expand-md pb-0 fixed-top">
+        <nav class="navbar navbar-expand-md pb-2 fixed-top">
             <div class="container-fluid">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

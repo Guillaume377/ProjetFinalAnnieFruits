@@ -94,8 +94,9 @@ nav {
 
 
 .logo_navbar {
-    width: 25%;
-    border-radius: 50px;
+    width: 20%;
+    border-end-end-radius: 50px;
+    border-start-start-radius: 50px;
 }
 
 
@@ -304,11 +305,11 @@ span {
 
 .h3_panier_vide{
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
 }
 
 
-.table-responsive {
+.tableau {
     border-end-end-radius: 30px;
     border-start-start-radius: 30px;
     box-shadow: 10px 5px 5px green;
@@ -438,7 +439,8 @@ footer {
 
 .logo_footer {
     width: 50%;
-    border-radius: 50px;
+    border-end-end-radius: 50px;
+    border-start-start-radius: 50px;
 }
 
 
