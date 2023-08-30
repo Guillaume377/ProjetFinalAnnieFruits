@@ -37,7 +37,9 @@ class CommandeController extends Controller
 
         $commande = new Commande();
         $commande->numero = rand(1000000,9999999);
-        $commande->prix = session('totalapayer');
+        $commande->prix = session('totalCommande');
+        $commande->date_retrait= session('date_retrait');
+        $commande->heure_retrait= session('heure_retrait');
         $commande->user_id = Auth::user()->id;
         $commande->save();
 

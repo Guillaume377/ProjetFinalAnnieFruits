@@ -29,7 +29,8 @@
                         <td> {{ $article->description }}</td>
                     </div>
 
-                    <div class="prix text-center m-5">
+
+                    <div class="prix text-center my-5">
                         <td>{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 

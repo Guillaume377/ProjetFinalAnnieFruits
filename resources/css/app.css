@@ -207,7 +207,7 @@ iframe {
     position: relative;
     overflow: hidden;
     width:70%;
-    height:100%;
+    
     border-start-start-radius: 20px;
     border-end-end-radius: 20px;
     box-shadow: 10px 5px 5px darkred;  
@@ -262,7 +262,13 @@ span {
 }
 
 
+
 .prix {
+    /* background-image: url(/public/images/ardoise.jpg);
+    background-repeat: no-repeat;
+    width: 80%;
+    padding-top: 30%;
+    padding-bottom: 30%; */
     font-size: 200%;
     font-weight: bolder;
     color: limegreen;
@@ -327,15 +333,16 @@ th {
 /* ============= . VALIDATION.BLADE (validation panier) ========== */
 
 .totalapayer {  
-    font-size: 300%;
-    margin-top: 10% !important;
+    font-size: 300%;   
 }
 
 .jour-heure {
     box-shadow: 10px 5px 5px #F50D1B;
 }
 
-
+.modal-title {
+    margin-left: 35%;
+}
 
 
 /* ============= RESS/VIEWS/AUTH/LOGIN.BLADE (CONNEXION) ==========*/

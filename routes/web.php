@@ -80,6 +80,7 @@ Route::post('validation/reservation', [App\Http\Controllers\PanierController::cl
 // 'reservation' pour enregistrer l'heure et le jour de retrait de la commande
 
 
+
 // ******************* Les routes de la page Commandes **************** //
 
 Route::resource('/commandes', App\Http\Controllers\CommandeController::class)->except('create', 'store', 'edit', 'update', 'destroy');

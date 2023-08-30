@@ -152,18 +152,85 @@
                         @csrf
                         <div class="row d-flex justify-content-center">
                             <label for="date_time">Jour</label>
-                            <input type='date' min="{{date('Y-m-d', strtotime('+1 days'))}}" name="date_retrait" class="jour-heure form-control mb-3" required>
+                            <input type='date' min="{{ date('Y-m-d', strtotime('+1 days')) }}" name="date_retrait"
+                                class="jour-heure form-control mb-3" required>
 
                             <label for="start_time">Heure</label>
-                            <input type="time" min="09:00" max="19:00" name="heure_retrait" class="jour-heure form-control mb-3" required>
+                            <input type="time" min="09:00" max="19:00" name="heure_retrait"
+                                class="jour-heure form-control mb-3" required>
 
-                            <p class="text-center">Heure de retrait possible : 9h00 - 12h45 et 15h00 - 18h45</p>
+                            <p class="text-center">Heure de retrait possible pendant les horaires d'ouvertures du magasin
+                            </p>
+
+                            <div class="col-md-6">
+                                <div class="my-5">
+                                    <table class="table-horaire-coordos table table-success table-striped mx-auto">
+                                        <thead class="thead-dark">
+
+                                            <tr>
+                                                <th style="background-color: limegreen;color: white" scope="col">Jour
+                                                </th>
+                                                <th style="background-color: limegreen;color: white" scope="col">Matin
+                                                </th>
+                                                <th style="background-color: limegreen;color: white" scope="col">
+                                                    Après-midi</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr class="text-center">
+                                                <td>Lundi</td>
+                                                <td class="fw-bolder text-danger">Fermé</td>
+                                                <td>15:00 - 19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Mardi</td>
+                                                <td>09:00–13:00</td>
+                                                <td>15:00–19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Mercredi</td>
+                                                <td>09:00–13:00</td>
+                                                <td>15:00–19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Jeudi</td>
+                                                <td>09:00–13:00</td>
+                                                <td>15:00–19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Vendredi</td>
+                                                <td>09:00–13:00</td>
+                                                <td>15:00–19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Samedi</td>
+                                                <td>09:00–13:00</td>
+                                                <td>15:00–19:00</td>
+                                            </tr>
+
+                                            <tr class="text-center">
+                                                <td>Dimanche</td>
+                                                <td class="fw-bolder text-danger">Fermé</td>
+                                                <td class="fw-bolder text-danger">Fermé</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
                             <!-- Bouton validation le créneau -->
 
                             <div class="row mb-0 mt-2">
                                 <div class="col-md-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-ajout"><small>Valider le créneau</small></button>
+                                    <button type="submit" class="btn btn-ajout"><small>Valider le
+                                            créneau</small></button>
                                 </div>
                             </div>
 
@@ -194,19 +261,21 @@
 
             <!-- Button trigger modal -->
 
-            {{-- @if (session('reservation') !== null) --}}
+            @if (session()->get('date_retrait') && session()->get('heure_retrait'))
+                {{-- @if (session('dateRetrait') !== null && session('heureRetrait') !== null) --}}
                 <button type="submit" name="clearCart" class="btn btn-ajout fs-5 mb-5" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     Valider la commande
                 </button>
-            {{-- @endif --}}
+            @endif
 
         </div>
 
 
         <!-- =========================================================== MODAL =========================================================== -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content text-center">
                     <div class="modal-header">
@@ -214,6 +283,7 @@
                         <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
+                    
                     <div class="modal-body">
                         <p>Votre commande a été validée.</p>
 
@@ -222,14 +292,19 @@
                         <p>Le montant total est de
                             <strong>{{ number_format(session()->get('totalCommande'), 2, ',', ' ') }} €</strong>
                         </p>
-                        <p>Vous pouvez récupérer votre commande à partir du <?php
-                        
-                        // ===================  obtenir et afficher la date du jour formatée ===============
-                        
-                        $dateJour = date('d-m-Y');
-                        echo $dateJour;
-                        ?> </p>
-                           
+
+
+                        <p>Vous pouvez récupérer votre commande le
+
+                            <!-- fonction pour changer le format de la date (Jour-Mois-Année)-->
+                            <?php
+                            $date = new DateTimeImmutable(session()->get('date_retrait'));
+                            echo $date->format('d-m-Y');
+                            ?>
+
+                            à {{ session()->get('heure_retrait') }}.
+                        </p>
+
                         <p>Merci de votre confiance.</p>
                     </div>
 
@@ -238,7 +313,7 @@
 
                     <div class="modal-footer d-flex justify-content-center">
                         <a href="{{ route('commandes.store') }}">
-                            <button class="btn validerCommande m-3">
+                            <button class="btn btn-suppr m-3">
                                 Retour à l'accueil
                             </button>
                         </a>

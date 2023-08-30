@@ -8,7 +8,7 @@
     <!-- icon -->
     <script src="https://kit.fontawesome.com/826eec2b4c.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/jpg" href="images/icone-fraise.jpg">
-    
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -28,6 +28,7 @@
 
 <body>
     <div id="app">
+
         <nav class="navbar navbar-expand-md pb-0 fixed-top">
             <div class="container-fluid">
 
@@ -38,109 +39,96 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                    <div class="navbar-nav pt-3">
 
-                    </ul>
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
+                        </a>
 
-                    <!-- Right Side Of Navbar -->
+                        <a class="btn btn-ghost p-3 mb-5" aria-current="articles" href="{{ route('gammes.index') }}">
+                            Nos produits
+                        </a>
 
+                        <a class="btn btn-ghost p-3 mb-5" href="{{ route('contact') }}">
+                            Nous contacter
+                        </a>
 
-
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav pt-3">
-
-                            <a class="navbar-brand" href="{{ route('home') }}">
-                                <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}"
-                                    alt="Logo">
-                            </a>
-
-                            <a class="btn btn-ghost p-3 mb-5" aria-current="articles" href="{{ route('gammes.index') }}">
-                                Nos produits
-                            </a>
-
-                            <a class="btn btn-ghost p-3 mb-5" href="{{ route('contact') }}">
-                                Nous contacter
-                            </a>
-
-                            <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
-                                <i class="cart fa-solid fa-cart-shopping mt-3"></i>
-                            </a>
+                        <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
+                            <i class="cart fa-solid fa-cart-shopping mt-3"></i>
+                        </a>
 
 
-                            <ul class="navbar-nav ms-auto">
-                                <!-- Authentication Links -->
+                        <ul class="navbar-nav ms-auto">
+                            <!-- Authentication Links -->
 
-                                {{-- <!-------------------------------- liens accessibles aux invités uniquement ---------------------------------> --}}
-                                @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="btn btn-ghost px-3 nav-link"
-                                                href="{{ route('login') }}">{{ __('Connexion') }}</a>
-                                        </li>
-                                    @endif
+                            {{-- <!-------------------------------- liens accessibles aux invités uniquement ---------------------------------> --}}
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="btn btn-ghost px-3 nav-link"
+                                            href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                    </li>
+                                @endif
 
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="btn btn-ghost px-3 nav-link"
-                                                href="{{ route('register') }}">{{ __('Inscription') }}</a>
-                                        </li>
-                                    @endif
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="btn btn-ghost px-3 nav-link"
+                                            href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                    </li>
+                                @endif
 
-                                    <!-------------------------------- liens accessibles aux connectés uniquement --------------------------------->
-                                @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                            role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }}
+                                <!-------------------------------- liens accessibles aux connectés uniquement --------------------------------->
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
+                                        <!-- Lien vers "MON COMPTE" -->
+                                        <a class="dropdown-item" href="{{ route('user.edit', $user = Auth::user()) }}">Mon
+                                            compte</a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+
+                                        @if (Auth::user()->role_id == 2)
+                                            <a class="dropdown-item" href="{{ route('admin') }}">
+                                                Back-office
+                                            </a>
+                                        @endif
+
+                                        <!-------------------------------- favoris : uniquement si connecté --------------------------------->
+
+                                        <a class="dropdown-item" aria-current="panier"
+                                            href="{{ route('favoris.index') }}">Favoris</a>
+                                        <a class="dropdown-item" aria-current="commande"
+                                            href="{{ route('commandes.index') }}">Commandes</a>
+
+                                        <!-- Lien vers "DECONNEXION" -->
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Déconnexion') }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    </div>
+                                </li>
+                            @endguest
+
+                        </ul>
 
 
-                                            <!-- Lien vers "MON COMPTE" -->
-                                            <a class="dropdown-item"
-                                                href="{{ route('user.edit', $user = Auth::user()) }}">Mon
-                                                compte</a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-
-                                            @if (Auth::user()->role_id == 2)
-                                                <a class="dropdown-item" href="{{ route('admin') }}">
-                                                    Back-office
-                                                </a>
-                                            @endif
-
-                                            <!-------------------------------- favoris : uniquement si connecté --------------------------------->
-
-                                            <a class="dropdown-item" aria-current="panier"
-                                                href="{{ route('favoris.index') }}">Favoris</a>
-                                            <a class="dropdown-item" aria-current="commande"
-                                                href="{{ route('commandes.index') }}">Commandes</a>
-
-                                            <!-- Lien vers "DECONNEXION" -->
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                                {{ __('Déconnexion') }}
-                                            </a>
-
-                                        </div>
-                                    </li>
-                                @endguest
-
-                            </ul>
-
-
-                        </div>
                     </div>
                 </div>
             </div>
-        </nav>
+    </div>
+    </nav>
     </div>
 
 
@@ -180,7 +168,7 @@
                 </a>
             </div>
 
-            <div class="col-md-3 pt-2">
+            <div class="lien col-md-3 pt-2">
                 <a class="footer-lien navbar-brand" href="#">
                     <p>Nos produits</p>
                 </a>
