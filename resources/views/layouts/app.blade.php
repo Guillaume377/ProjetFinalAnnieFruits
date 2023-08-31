@@ -40,48 +40,43 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-nav pt-3">
+                    <div class="navbar-nav py-4">
 
                         <a class="navbar-brand" href="{{ route('home') }}">
                             <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
                         </a>
 
-                        <a class="btn btn-ghost p-3 mb-5" aria-current="articles" href="{{ route('gammes.index') }}">
+                        <a class="btn btn-ghost pt-3 mx-3" aria-current="articles" href="{{ route('gammes.index') }}">
                             Nos produits
                         </a>
 
-                        <a class="btn btn-ghost p-3 mb-5" href="{{ route('contact') }}">
+                        <a class="btn btn-ghost pt-3 mx-3" href="{{ route('contact') }}">
                             Nous contacter
                         </a>
 
-                        {{-- <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
-                            <i class="cart fa-solid fa-cart-shopping mt-3"></i>
-                        </a> --}}
-
-
-                        <ul class="navbar-nav ms-auto mt-2">
+                        <ul class="navbar-nav ms-auto">
                             <!-- Authentication Links -->
 
                             {{-- <!-------------------------------- liens accessibles aux invités uniquement ---------------------------------> --}}
                             @guest
                                 @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="btn btn-ghost py-2 px-3 nav-link"
+                                    
+                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
                                             href="{{ route('login') }}">{{ __('Connexion') }}</a>
-                                    </li>
+                                    
                                 @endif
 
                                 @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="btn btn-ghost px-3 nav-link"
+                                    
+                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
                                             href="{{ route('register') }}">{{ __('Inscription') }}</a>
-                                    </li>
+                                    
                                 @endif
 
                                 <!-------------------------------- liens accessibles aux connectés uniquement --------------------------------->
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->prenom }}<i class="person fa-solid fa-person mx-3"></i>
                                     </a>
@@ -123,7 +118,7 @@
                             @endguest
 
                             <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
-                                <i class="cart fa-solid fa-cart-shopping mx-4"></i>
+                                <i class="cart fa-solid fa-cart-shopping pt-2 mx-4"></i>
                             </a>
 
                         </ul>

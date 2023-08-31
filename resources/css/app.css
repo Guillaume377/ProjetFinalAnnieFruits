@@ -105,9 +105,9 @@ nav {
 
 
 .logo_navbar {
-    width: 20%;
-    border-end-end-radius: 50px;
-    border-start-start-radius: 50px;
+    width: 25%;
+    border-end-end-radius: 30px;
+    border-start-start-radius: 30px;
 }
 
 
@@ -117,21 +117,33 @@ nav {
 
 
 .btn-ghost {
-    background-color: #F50D1B;
+    background-image: 
+        url(/public/images/ardoise4.jpg);
+    /* background-color: #F50D1B; */
     color: white;
-    font-family: 'Paprika', cursive;
-    margin: 0% 1% 2% 1%;
+    font-family: 'Paprika', cursive;   
     white-space: nowrap;
-    border-radius: 25px;
-    border-color: white;
+    /* border-radius: 25px; */
 }
 
 
 .btn-ghost:hover {
-    background-color: white;
-    color: #F50D1B;
-    box-shadow: 10px 5px 5px #F50D1B;
-    border-color: #F50D1B;
+    /* background-color: white; */
+    color:white;
+    /* color: #F50D1B; */
+    box-shadow: 5px 5px 5px white;
+    /* box-shadow: 10px 5px 5px #F50D1B; */
+}
+
+
+.prenom {
+    color:white;
+    font-weight: bolder;
+}
+
+
+.prenom:hover {
+    color:#F50D1B
 }
 
 
@@ -146,26 +158,34 @@ nav {
 }
 
 
-.cart {
+.person {
+    color: white;
+    /* color: #F50D1B; */
+    font-size: 280%;
+}
+
+
+.person:hover {
     color: #F50D1B;
+    /* color: white; */
+}
+
+
+
+.cart {
+    color:white;
+    /* color: #F50D1B; */
     font-size: 200%;
 }
 
 
 .cart:hover {
-    color: white;
+    color:#F50D1B;
+    /* color: white; */
 }
 
 
-.person {
-    color: #F50D1B;
-    font-size: 300%;
-}
 
-
-.person:hover {
-    color: white;
-}
 
 /* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
 
@@ -487,9 +507,9 @@ footer {
 
 
 .logo_footer {
-    width: 50%;
-    border-end-end-radius: 50px;
-    border-start-start-radius: 50px;
+    width: 40%;
+    border-end-end-radius: 25px;
+    border-start-start-radius: 25px;
 }
 
 
