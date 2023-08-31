@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <h1 class="title_h1 text-center mx-auto">Nos produits</h1>
 
     <div class="container text-center">

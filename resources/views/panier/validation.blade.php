@@ -151,16 +151,18 @@
                         <div class="row d-flex justify-content-center">
 
                             <!-- Jour de retrait -->
-                            <label for="date_time">Jour</label>
+                            <label for="date_time">Jour*</label>
                             <input type='date' min="{{ date('Y-m-d', strtotime('+1 days')) }}" name="date_retrait"
                                 class="jour-heure form-control mb-3" required>
 
                             <!-- Heure de retrait -->
-                            <label for="start_time">Heure</label>
+                            <label for="start_time">Heure*</label>
                             <input type="time" min="09:00" max="19:00" name="heure_retrait"
                                 class="jour-heure form-control mb-3" required>
 
-                            <p class="text-center">Heure de retrait possible pendant les horaires d'ouvertures du magasin
+                            <div id="emailHelp" class="form-text ms-1">* = champs obligatoires pour pouvoir valider la commande</div>
+
+                            <p class="text-center pt-5">Heure de retrait possible pendant les horaires d'ouvertures du magasin
                             </p>
 
 

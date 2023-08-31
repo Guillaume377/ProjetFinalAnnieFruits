@@ -59,7 +59,6 @@ h3 {
 h5 {
     font-family: 'Paprika', cursive;
     color: #F50D1B;
-
 }
 
 
@@ -84,8 +83,17 @@ body {
 }
 
 
+th {
+    background-color: limegreen !important;
+    color: white !important; 
+}
 
 
+/* page commande et détail commande */
+.red-text { 
+    color: red !important;
+    font-weight: bolder;
+}
 
 /* ================== 2. NAVBAR ================= */
 
@@ -149,6 +157,16 @@ nav {
 }
 
 
+.person {
+    color: #F50D1B;
+    font-size: 300%;
+}
+
+
+.person:hover {
+    color: white;
+}
+
 /* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
 
 .carousel-caption {
@@ -200,12 +218,26 @@ nav {
 
 /* ============= 4. NOUS CONTACTER ========== */
 
-.horaire-coordos {
-    border-style: solid;
-    border-color: #F50D1B;
-    box-shadow: 10px 5px 5px darkred;
+.h3_contact {
+    border-start-start-radius: 50px;
+    border-end-end-radius: 50px;
 }
 
+
+.horaire-coordos {
+    border-style: solid;
+    border-color: limegreen;
+    /* box-shadow: 10px 5px 5px darkred; */
+}
+
+
+.photo_contact {
+    border-start-start-radius: 20px;
+    border-end-end-radius: 20px;
+    border-style: solid;
+    border-color: limegreen;
+    /* box-shadow: 10px 5px 5px green; */
+}
 
 iframe {
     position: relative;
@@ -213,7 +245,7 @@ iframe {
     width: 70%;
     border-start-start-radius: 20px;
     border-end-end-radius: 20px;
-    box-shadow: 10px 5px 5px darkred;
+    /* box-shadow: 10px 5px 5px green; */
 
 }
 
@@ -251,6 +283,8 @@ span {
 }
 
 /* ============= 4. SHOW.BLADE (articles) ========== */
+
+
 .prix_article {
     padding-top: 7%;
     padding-bottom: 7%;
@@ -268,10 +302,6 @@ span {
 }
 
 
-
-
-
-
 .img-article {
     width: 100%;
     background-color: white;
@@ -285,13 +315,7 @@ span {
 }
 
 
-
 .prix {
-    /* background-image: url(/public/images/ardoise.jpg);
-    background-repeat: no-repeat;
-    width: 80%;
-    padding-top: 30%;
-    padding-bottom: 30%; */
     font-size: 200%;
     font-weight: bolder;
     color: limegreen;
@@ -432,20 +456,6 @@ th {
 }
 
 
-/* .btn-suppr {
-    background-color: red;
-    color: white;
-}
-
-
-.btn-suppr:hover {
-    background-color: white;
-    color: red;
-    box-shadow: 10px 5px 5px red;
-    border-color: red;
-} */
-
-
 .btn-suppr {
     background-color: red;
     color: white;
@@ -489,12 +499,12 @@ footer {
 
 
 .footer-lien {
-    color: #F50D1B;
+    color: white;
 }
 
 
 .footer-lien:hover {
-    color: white;
+    color: red;
 }
 
 
@@ -510,5 +520,18 @@ footer {
 
 
 .copyright {
-    color: #F50D1B;
+    color: white;
+    font-size: small;
 }
+
+
+/* ============== BACK OFFICE ===============*/
+
+/* .title_backoffice {
+    padding-top: 12%;
+    padding-bottom: 7%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(/public/images/bandeau3.png);
+    color: white;
+    font-weight: bolder;
+} */

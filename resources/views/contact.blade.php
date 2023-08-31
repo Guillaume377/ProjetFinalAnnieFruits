@@ -8,7 +8,9 @@
     <div class="container p-5">
         <div class="row">
 
-            <h3 class="text-center my-5">Horaires d'ouverture du magasin</h3>
+            <div class="h3_contact bg-white">
+                <h3 class=" text-center my-5">Horaires d'ouverture du magasin</h3>
+            </div>
 
             <div class="col-lg-6">
                 <div class="my-5">
@@ -71,7 +73,7 @@
             </div>
 
             <div class="col-lg-6 mt-5">
-                <img src="{{ asset('images/entree.jpg') }}" class="entree d-block w-100" alt="entrée du magasin">
+                <img src="{{ asset('images/entree.jpg') }}" class="photo_contact d-block w-100" alt="entrée du magasin">
             </div>
 
         </div>
@@ -82,10 +84,12 @@
     <div class="container p-5">
         <div class="row">
 
-            <h3 class="text-center my-5">Nos coordonnées</h3>
+            <div class="h3_contact bg-white">
+                <h3 class="text-center my-5">Nos coordonnées</h3>
+            </div>
 
             <div class="col-lg-6 mt-5">
-                <img src="{{ asset('images/rayon.jpg') }}" class="entree d-block w-100" alt="rayondu magasin">
+                <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayondu magasin">
             </div>
 
 
@@ -120,18 +124,18 @@
             </div>
         </div>
 
-<!-- =================== CARTE ====================== -->
+        <!-- =================== CARTE ====================== -->
+<div class="container-md-fluid pt-5">
 
-    <h3 class="text-center mt-5">Carte</h3>
+        <div class="h3_contact bg-white py-2">
+            <h3 class="text-center my-5">Carte Google Map</h3>
+        </div>
 
-        <div class="container-md-fluid pt-5">
-
-            <div class="map text-center pb-5">
+            <div class="map text-center py-5">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.4219088783976!2d-0.9597313708109125!3d45.926543991041264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480140436376830f%3A0x4d915c440a2820f8!2sAnnie%20Fruits!5e0!3m2!1sfr!2sfr!4v1693380681876!5m2!1sfr!2sfr"
                     height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-
 
         </div>
     @endsection

@@ -25,7 +25,7 @@
                         <h5>{{ $article->titre }}</h5>
                     </div>
 
-                    <div class="description-article text-align-justify px-5">
+                    <div class="description-article px-5">
                         <td> {{ $article->description }}</td>
                     </div>
 

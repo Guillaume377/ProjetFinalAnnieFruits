@@ -21,7 +21,7 @@
 
                     <!-- Card
                             ============================================================ -->
-                    <div class="table-responsive card my-4 my-5">
+                    <div class="tableau table-responsive card my-4 my-5">
 
 
                         <!-- Card header "S'inscrire"
@@ -176,7 +176,7 @@
 
                     <!-- Card
                                 ============================================================ -->
-                    <div class="table-responsive card mt-4">
+                    <div class="tableau table-responsive card mt-4">
 
 
                         <!-- Card header "S'inscrire"

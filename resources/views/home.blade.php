@@ -65,7 +65,7 @@
 
     <!-- ========================== BANDEAU ========================== -->
 
-    <div class="container-fluid bandeau-accueil ">
+    <div class="container-fluid bandeau-accueil">
         <div class="row mx-auto d-flex align-content-around align-item-center">
 
             <div class="col-md-4 mt-4 py-3 text-center">

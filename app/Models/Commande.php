@@ -12,6 +12,8 @@ class Commande extends Model
     protected $fillable = [
         'numero',
         'prix',
+        'date_retrait',
+        'heure_retrait',
     ];
 
     //nom au singulier car une commande peut être associée qu'à un user

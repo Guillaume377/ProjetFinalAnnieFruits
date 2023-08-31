@@ -19,10 +19,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paprika&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap" rel="stylesheet">
-    <!--************ Scripts ************-->
+
+    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 
-    <!--************ Icone ************-->
+    <!-- Icone -->
     <script src="https://kit.fontawesome.com/1dd6859436.js" crossorigin="anonymous"></script>
 </head>
 
@@ -53,19 +54,19 @@
                             Nous contacter
                         </a>
 
-                        <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
+                        {{-- <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
                             <i class="cart fa-solid fa-cart-shopping mt-3"></i>
-                        </a>
+                        </a> --}}
 
 
-                        <ul class="navbar-nav ms-auto">
+                        <ul class="navbar-nav ms-auto mt-2">
                             <!-- Authentication Links -->
 
                             {{-- <!-------------------------------- liens accessibles aux invités uniquement ---------------------------------> --}}
                             @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="btn btn-ghost px-3 nav-link"
+                                        <a class="btn btn-ghost py-2 px-3 nav-link"
                                             href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
@@ -82,7 +83,7 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
+                                        {{ Auth::user()->prenom }}<i class="person fa-solid fa-person mx-3"></i>
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -121,15 +122,17 @@
                                 </li>
                             @endguest
 
-                        </ul>
+                            <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
+                                <i class="cart fa-solid fa-cart-shopping mx-4"></i>
+                            </a>
 
+                        </ul>
 
                     </div>
                 </div>
             </div>
-    </div>
     </nav>
-    </div>
+</div>
 
 
 
@@ -154,10 +157,11 @@
         @yield('content')
     </main>
 
-    </div>
+    
 
+<!-- =================================== FOOTER ========================================== -->
 
-    <footer class="pt-3 mx-auto">
+    <footer class="py-3 mx-auto">
 
         <div class="row mx-auto text-center">
 
@@ -168,14 +172,14 @@
                 </a>
             </div>
 
-            <div class="lien col-md-3 pt-2">
-                <a class="footer-lien navbar-brand" href="#">
+            <div class="lien col-md-3 fs-5 pt-2">
+                <a class="footer-lien navbar-brand" href="{{ route('gammes.index') }}">
                     <p>Nos produits</p>
                 </a>
             </div>
 
-            <div class="col-md-3 pt-2">
-                <a class="footer-lien navbar-brand" href="#">
+            <div class="col-md-3 fs-5 pt-2">
+                <a class="footer-lien navbar-brand" href="{{ route('contact') }}">
                     <p>Nous contacter</p>
                 </a>
             </div>
@@ -184,14 +188,12 @@
                 <a class="navbar-brand"
                     href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
                     <i class="logo-facebook fa-brands fa-square-facebook"></i>
-                    {{-- <img class="logo_facebook text-center" src="{{ asset('images/icone-facebook-rouge.png') }}"
-                        alt="Logo"> --}}
                 </a>
             </div>
 
         </div>
 
-        <h5 class="copyright mx-auto text-center">© - 2023 - <b>Annie fruits</h5>
+        <h5 class="copyright mx-auto mt-3 text-center">© Copyright - 2023</h5>
     </footer>
 </body>
 
