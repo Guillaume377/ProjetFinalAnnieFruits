@@ -15,8 +15,8 @@
             <div class="col-lg-6">
                 <div class="my-5">
                     <table class="horaire-coordos table table-success table-striped mx-auto">
+                        
                         <thead class="thead-dark">
-
                             <tr>
                                 <th style="background-color: limegreen;color: white" scope="col">Jour</th>
                                 <th style="background-color: limegreen;color: white" scope="col">Matin</th>

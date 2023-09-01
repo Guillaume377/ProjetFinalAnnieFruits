@@ -85,12 +85,12 @@ body {
 
 th {
     background-color: limegreen !important;
-    color: white !important; 
+    color: white !important;
 }
 
 
 /* page commande et détail commande */
-.red-text { 
+.red-text {
     color: red !important;
     font-weight: bolder;
 }
@@ -105,7 +105,7 @@ nav {
 
 
 .logo_navbar {
-    width: 25%;
+    width: 20%;
     border-end-end-radius: 30px;
     border-start-start-radius: 30px;
 }
@@ -117,11 +117,11 @@ nav {
 
 
 .btn-ghost {
-    background-image: 
+    background-image:
         url(/public/images/ardoise4.jpg);
     /* background-color: #F50D1B; */
     color: white;
-    font-family: 'Paprika', cursive;   
+    font-family: 'Paprika', cursive;
     white-space: nowrap;
     /* border-radius: 25px; */
 }
@@ -129,7 +129,7 @@ nav {
 
 .btn-ghost:hover {
     /* background-color: white; */
-    color:white;
+    color: white;
     /* color: #F50D1B; */
     box-shadow: 5px 5px 5px white;
     /* box-shadow: 10px 5px 5px #F50D1B; */
@@ -137,13 +137,13 @@ nav {
 
 
 .prenom {
-    color:white;
+    color: white;
     font-weight: bolder;
 }
 
 
 .prenom:hover {
-    color:#F50D1B
+    color: #F50D1B
 }
 
 
@@ -171,16 +171,15 @@ nav {
 }
 
 
-
 .cart {
-    color:white;
+    color: white;
     /* color: #F50D1B; */
     font-size: 200%;
 }
 
 
 .cart:hover {
-    color:#F50D1B;
+    color: #F50D1B;
     /* color: white; */
 }
 
@@ -308,7 +307,7 @@ span {
 .prix_article {
     padding-top: 7%;
     padding-bottom: 7%;
-    background-image: 
+    background-image:
         url(/public/images/ardoise4.jpg);
     box-shadow: 10px 5px darkred;
     border-radius: 10px;
@@ -318,7 +317,7 @@ span {
     font-family: 'Paprika', cursive;
     margin-left: 35%;
     margin-right: 35%;
-   
+
 }
 
 
@@ -349,7 +348,6 @@ span {
     margin: 0% 2% 0% 1%;
     white-space: nowrap;
     border-radius: 25px;
-    border-color: white;
 }
 
 
@@ -406,7 +404,7 @@ th {
 .prix_total {
     padding-top: 3%;
     padding-bottom: 3%;
-    background-image: 
+    background-image:
         url(/public/images/ardoise4.jpg);
     box-shadow: 10px 5px darkred;
     border-radius: 10px;
@@ -417,7 +415,7 @@ th {
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 5%;
-   
+
 }
 
 .jour-heure {
@@ -483,7 +481,6 @@ th {
     margin: 0% 2% 0% 1%;
     white-space: nowrap;
     border-radius: 25px;
-    border-color: white;
 }
 
 
@@ -546,6 +543,11 @@ footer {
 
 
 /* ============== BACK OFFICE ===============*/
+
+
+
+
+
 
 /* .title_backoffice {
     padding-top: 12%;
