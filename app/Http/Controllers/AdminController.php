@@ -12,8 +12,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        $gammes = Gamme::All();
+        $articles = Article::with('gamme')->get();
+
+        $gammes = Gamme::all();
 
 
         return view('backoffice.index', [

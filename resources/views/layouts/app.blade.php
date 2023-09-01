@@ -94,7 +94,7 @@
                                         </form>
 
                                         @if (Auth::user()->role_id == 2)
-                                            <a class="dropdown-item" href="{{ route('admin') }}">
+                                            <a class="dropdown-item" href="{{ route('backoffice') }}">
                                                 Back-office
                                             </a>
                                         @endif

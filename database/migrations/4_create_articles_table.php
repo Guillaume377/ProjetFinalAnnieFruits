@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('image', 50);
             $table->float('prix');
             $table->enum('type_prix', array('pièce','kilo'));
-            $table->integer('stock');
-            $table->float('note');
+            $table->float('stock');
+            $table->float('note')->nullable();
             $table->timestamps();
 
             $table->foreignId('gamme_id')->nullable()->constrained()->onDelete('set null');

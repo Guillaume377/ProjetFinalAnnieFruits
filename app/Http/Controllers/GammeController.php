@@ -30,9 +30,21 @@ class GammeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) // $request c'est des données qui viennent du formulaire
+    {                                      //$request['content'] = "Salut les gars"
+        //1) On valide les champs en précisant les critères attendus
+        $request->validate([
+            //'name de l'input-> [critères]
+            'nom' => 'required|min:5|max:50'
+        ]);
+
+        //2) Sauvegarde du message => Va lancer un insert into en SQL
+        Gamme::create([                                  // 3 syntaxe possibles pour accéder au contenu de $request
+            'nom' => $request->nom
+        ]);
+
+        //3) On redirige vers backoffice avec un message de succès
+        return redirect()->route('backoffice')->with('message', 'Gamme créée avec succès');
     }
 
     
@@ -62,16 +74,25 @@ class GammeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Gamme $gamme) 
     {
-        //
+            $request->validate([
+                'nom' => 'required|min:5|max:50'
+            ]);
+    
+            //2) Sauvegarde du message => Va lancer un insert into en SQL
+            $gamme->update($request->all());
+    
+            //3) On redirige vers l'accueil avec un message de succès
+            return redirect()->route('backoffice')->with('message', 'Gamme modifiée avec succès'); //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Gamme $gamme)
     {
-        //
+        $gamme->delete();
+        return redirect()->route('backoffice')->with('message', 'Gamme supprimée avec succès');
     }
 }

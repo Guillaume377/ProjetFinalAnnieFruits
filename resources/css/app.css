@@ -544,8 +544,13 @@ footer {
 
 /* ============== BACK OFFICE ===============*/
 
+.text-description {
+    text-align: justify;
+}
 
-
+.new_gamme {
+    margin-left: 36%;
+}
 
 
 

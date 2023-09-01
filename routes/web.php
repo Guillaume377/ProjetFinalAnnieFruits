@@ -104,4 +104,4 @@ Route::resource('/gammes', GammeController::class);
 
 // ******************* Route pour la gestion du back-office ************************************/
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/backoffice', [AdminController::class, 'index'])->name('backoffice');

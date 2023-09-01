@@ -18,6 +18,7 @@ class Article extends Model
         'type_prix',
         'stock',
         'note',
+        'gamme_id'
     ];
 
     //nom au pluriel car plusieurs articles peuvent être associés à une commande
