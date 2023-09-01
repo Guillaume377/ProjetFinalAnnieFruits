@@ -174,11 +174,11 @@
                                         <thead class="thead-dark">
 
                                             <tr>
-                                                <th style="background-color: limegreen;color: white" scope="col">Jour
+                                                <th style="background-color: #4BAD3B;color: white" scope="col">Jour
                                                 </th>
-                                                <th style="background-color: limegreen;color: white" scope="col">Matin
+                                                <th style="background-color: #4BAD3B;color: white" scope="col">Matin
                                                 </th>
-                                                <th style="background-color: limegreen;color: white" scope="col">
+                                                <th style="background-color: #4BAD3B;color: white" scope="col">
                                                     Après-midi</th>
                                             </tr>
                                         </thead>

@@ -6,9 +6,9 @@
 
 /* COLORS
 
-Vert :  limegreen
+Vert :  #4BAD3B
         green
-Rouge:  #F50D1B
+Rouge:  #E2403E
         darkred
 Bleu:   #1877F2
 
@@ -47,18 +47,18 @@ white
 h1 {
     font-family: 'Paprika', cursive;
     font-size: 400%;
-    color: limegreen;
+    color: #4BAD3B;
 }
 
 
 h3 {
     font-family: 'Paprika', cursive;
-    color: #F50D1B;
+    color: #E2403E;
 }
 
 h5 {
     font-family: 'Paprika', cursive;
-    color: #F50D1B;
+    color: #E2403E;
 }
 
 
@@ -78,13 +78,13 @@ body {
 
 
 .card-header {
-    background-color: limegreen;
+    background-color: #4BAD3B;
     color: white;
 }
 
 
 th {
-    background-color: limegreen !important;
+    background-color: #4BAD3B !important;
     color: white !important;
 }
 
@@ -98,9 +98,8 @@ th {
 /* ================== 2. NAVBAR ================= */
 
 nav {
-    background-color: limegreen;
+    background-color: #4BAD3B;
     box-shadow: 10px 5px 5px green;
-    border-top-left-radius: 20px;
 }
 
 
@@ -119,20 +118,15 @@ nav {
 .btn-ghost {
     background-image:
         url(/public/images/ardoise4.jpg);
-    /* background-color: #F50D1B; */
     color: white;
     font-family: 'Paprika', cursive;
     white-space: nowrap;
-    /* border-radius: 25px; */
 }
 
 
 .btn-ghost:hover {
-    /* background-color: white; */
     color: white;
-    /* color: #F50D1B; */
     box-shadow: 5px 5px 5px white;
-    /* box-shadow: 10px 5px 5px #F50D1B; */
 }
 
 
@@ -143,44 +137,42 @@ nav {
 
 
 .prenom:hover {
-    color: #F50D1B
+    color: #E2403E
 }
 
 
 .dropdown-item {
     font-family: 'Paprika', cursive;
-    color: limegreen;
+    color: #4BAD3B;
 }
 
 
 .dropdown-item:hover {
-    color: #F50D1B;
+    color: #E2403E;
 }
 
 
 .person {
     color: white;
-    /* color: #F50D1B; */
     font-size: 280%;
 }
 
 
 .person:hover {
-    color: #F50D1B;
+    color: #E2403E;
     /* color: white; */
 }
 
 
 .cart {
     color: white;
-    /* color: #F50D1B; */
     font-size: 200%;
 }
 
 
 .cart:hover {
-    color: #F50D1B;
-    /* color: white; */
+    color: #E2403E;
+    
 }
 
 
@@ -189,19 +181,17 @@ nav {
 /* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
 
 .carousel-caption {
-    background: linear-gradient(rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7));
+    background: linear-gradient(rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8));
     border-end-end-radius: 50px;
     border-start-start-radius: 50px;
-    box-shadow: 10px 5px 5px green;
     margin-bottom: 25%;
 }
 
 
 .bandeau-accueil {
-    background-color: #F50D1B;
+    background-color: #E2403E;
     box-shadow: 10px 5px 5px darkred;
-    border-end-start-radius: 20px;
 }
 
 
@@ -219,13 +209,12 @@ nav {
     border-start-start-radius: 20px;
     border-end-end-radius: 20px;
     border-style: solid;
-    border-color: limegreen;
-    box-shadow: 10px 5px 5px green;
+    border-color: #4BAD3B;
 }
 
 
 .histoire {
-    color: limegreen;
+    color: #4BAD3B;
     font-weight: bolder;
 }
 
@@ -237,16 +226,13 @@ nav {
 
 /* ============= 4. NOUS CONTACTER ========== */
 
-.h3_contact {
-    border-start-start-radius: 50px;
-    border-end-end-radius: 50px;
+
+.coordonnees {
+    padding-top:15%
 }
-
-
 .horaire-coordos {
     border-style: solid;
-    border-color: limegreen;
-    /* box-shadow: 10px 5px 5px darkred; */
+    border-color: #4BAD3B;
 }
 
 
@@ -254,17 +240,16 @@ nav {
     border-start-start-radius: 20px;
     border-end-end-radius: 20px;
     border-style: solid;
-    border-color: limegreen;
-    /* box-shadow: 10px 5px 5px green; */
+    border-color: #4BAD3B;
 }
 
 iframe {
     position: relative;
     overflow: hidden;
     width: 70%;
-    border-start-start-radius: 20px;
-    border-end-end-radius: 20px;
-    /* box-shadow: 10px 5px 5px green; */
+    border-start-start-radius: 50px;
+    border-end-end-radius: 50px;
+    box-shadow: 10px 5px 5px green;
 
 }
 
@@ -286,7 +271,7 @@ iframe {
 
 
 span {
-    color: limegreen;
+    color: #4BAD3B;
     font-family: 'Paprika', cursive;
 }
 
@@ -309,7 +294,7 @@ span {
     padding-bottom: 7%;
     background-image:
         url(/public/images/ardoise4.jpg);
-    box-shadow: 10px 5px darkred;
+    /* box-shadow: 10px 5px 5px darkred; */
     border-radius: 10px;
     color: white;
     font-weight: bolder;
@@ -325,7 +310,7 @@ span {
     width: 100%;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px darkred;
+    box-shadow: 10px 5px 5px green
 }
 
 
@@ -337,12 +322,12 @@ span {
 .prix {
     font-size: 200%;
     font-weight: bolder;
-    color: limegreen;
+    color: #4BAD3B;
 }
 
 
 .btn-ajout {
-    background-color: limegreen;
+    background-color: #E2403E;
     color: white;
     font-family: 'Paprika', cursive;
     margin: 0% 2% 0% 1%;
@@ -353,10 +338,11 @@ span {
 
 .btn-ajout:hover {
     background-color: white;
-    color: limegreen;
-    box-shadow: 10px 5px 5px limegreen;
-    border-color: limegreen;
+    color: #E2403E;
+    box-shadow: 10px 5px 5px #E2403E;
+    border-color: #E2403E;
 }
+
 
 .img-btn-ajout {
     font-size: 200%;
@@ -406,7 +392,7 @@ th {
     padding-bottom: 3%;
     background-image:
         url(/public/images/ardoise4.jpg);
-    box-shadow: 10px 5px darkred;
+    /* box-shadow: 10px 5px 5px darkred; */
     border-radius: 10px;
     color: white !important;
     font-weight: bolder;
@@ -419,7 +405,7 @@ th {
 }
 
 .jour-heure {
-    box-shadow: 10px 5px 5px #F50D1B;
+    box-shadow: 10px 5px 5px darkred;
 }
 
 .modal-title {
@@ -461,34 +447,36 @@ th {
 /* ============= RESS/VIEWS/USER/EDIT.BLADE (Mon compte) ==========*/
 
 .btn-modif {
-    background-color: limegreen;
+    background-color: #4BAD3B;
     color: white;
 }
 
 
 .btn-modif:hover {
     background-color: white;
-    color: limegreen;
-    box-shadow: 10px 5px 5px limegreen;
-    border-color: limegreen;
+    color: #4BAD3B;
+    box-shadow: 10px 5px 5px #4BAD3B;
+    border-color: #4BAD3B;
 }
 
 
 .btn-suppr {
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: #E2403E;
     font-family: 'Paprika', cursive;
     margin: 0% 2% 0% 1%;
     white-space: nowrap;
+    border-color: #E2403E;
     border-radius: 25px;
 }
 
 
 .btn-suppr:hover {
     background-color: white;
-    color: red;
-    box-shadow: 10px 5px 5px red;
-    border-color: red;
+    color: #E2403E;
+    border-color: #E2403E;
+    box-shadow: 10px 5px 5px #E2403E;
+    
 }
 
 
@@ -497,9 +485,7 @@ th {
 /* ============== FOOTER ===============*/
 
 footer {
-    background-color: limegreen;
-    box-shadow: 10px 5px 5px green;
-    border-top-right-radius: 20px;
+    background-color: #4BAD3B;
 }
 
 
@@ -517,17 +503,18 @@ footer {
 
 .footer-lien {
     color: white;
+    font-weight: bolder;
 }
 
 
 .footer-lien:hover {
-    color: red;
+    color: #E2403E;
 }
 
 
 .logo-facebook {
     font-size: 400%;
-    color: #F50D1B;
+    color:#E2403E;
 }
 
 

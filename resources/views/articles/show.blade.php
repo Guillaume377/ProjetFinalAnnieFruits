@@ -48,8 +48,10 @@
                                 <input type='number' min="100" max="5000" step="100" name="quantite"
                                     placeholder="Indiquez le poids en grammes" class="form-control mb-3">
                             @endif
-                            <button type="submit" class="btn btn-ajout"><i
-                                    class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
+                            <div class="text-center mx-auto">
+                                <button type="submit" class="btn btn-ajout px-4"><i
+                                        class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
+                            </div>
                         </div>
 
                     </form>

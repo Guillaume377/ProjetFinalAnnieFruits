@@ -8,19 +8,17 @@
     <div class="container p-5">
         <div class="row">
 
-            <div class="h3_contact bg-white">
-                <h3 class=" text-center my-5">Horaires d'ouverture du magasin</h3>
-            </div>
+            <h3 class=" text-center my-5">Horaires d'ouverture du magasin</h3>
 
             <div class="col-lg-6">
-                <div class="my-5">
-                    <table class="horaire-coordos table table-success table-striped mx-auto">
-                        
+                <div class="pt-2 my-5">
+                    <table class="horaire-coordos table table-striped mx-auto">
+
                         <thead class="thead-dark">
                             <tr>
-                                <th style="background-color: limegreen;color: white" scope="col">Jour</th>
-                                <th style="background-color: limegreen;color: white" scope="col">Matin</th>
-                                <th style="background-color: limegreen;color: white" scope="col">Après-midi</th>
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Jour</th>
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Matin</th>
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Après-midi</th>
                             </tr>
                         </thead>
 
@@ -84,9 +82,7 @@
     <div class="container p-5">
         <div class="row">
 
-            <div class="h3_contact bg-white">
-                <h3 class="text-center my-5">Nos coordonnées</h3>
-            </div>
+            <h3 class="text-center my-5">Nos coordonnées</h3>
 
             <div class="col-lg-6 mt-5">
                 <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayondu magasin">
@@ -95,15 +91,15 @@
 
             {{-- <div class="col-lg-6 mt-5 mt-lg-0 table-responsive"> --}}
             <div class="col-lg-6">
-                <div class="my-5">
-                    <table class="horaire-coordos table table-success table-striped mx-auto">
+                <div class="coordonnees my-5">
+                    <table class="horaire-coordos table table-striped mx-auto">
 
                         <thead class="thead-dark">
                             <tr>
-                                <th style="background-color: limegreen;color: white" scope="col">Adresse</th>
-                                <th style="background-color: limegreen;color: white" scope="col">Téléphone / email</th>
-                                {{-- <th style="background-color: limegreen;color: white" scope="col">email</th> --}}
-                                <th style="background-color: limegreen;color: white" scope="col">Réseau social</th>
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Adresse</th>
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Téléphone / email</th>
+                                {{-- <th style="background-color: #4BAD3B;color: white" scope="col">email</th> --}}
+                                <th style="background-color: #4BAD3B;color: white" scope="col">Réseau social</th>
                             </tr>
                         </thead>
 
@@ -125,11 +121,9 @@
         </div>
 
         <!-- =================== CARTE ====================== -->
-<div class="container-md-fluid pt-5">
+        <div class="container-md-fluid pt-5">
 
-        <div class="h3_contact bg-white py-2">
             <h3 class="text-center my-5">Carte Google Map</h3>
-        </div>
 
             <div class="map text-center py-5">
                 <iframe
