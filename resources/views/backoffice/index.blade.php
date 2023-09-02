@@ -11,54 +11,50 @@
 
 
 
-    <!-- SECTION CREATION ARTICLE
-                        ============================================================ -->
+    <!-- ====== SECTION CREATION ARTICLE ====== -->
+
     <div id="section_cration_article">
         <div class="container-fluid">
 
-            <!-- Titre section -->
+            <!-- ===== TITRE ===== -->
 
             <h3 class="text-center my-5">Enregistrer un article</h3>
 
+             <!-- ===== CARD ===== -->
             <div class="row justify-content-center">
                 <div class="col-md-5">
-
-
-                    <!-- CARD
-                                        ============================================================ -->
                     <div class="tableau table-responsive card mb-5">
 
 
-                        <!-- CARD HEADER
-                                            ============================================================ -->
+                        <!-- ===== CARD HEADER ===== -->
+                                           
                         <div class="card-header border-bottom border-secondary" id="header_card_index">
                             <small>{{ __('Enregistrer un article') }}</small>
                         </div>
 
 
-                        <!-- CARD BODY
-                                            ============================================================ -->
+                        <!-- ===== CARD BODY ===== -->
+                                            
                         <div class="card-body" id="body_card_index">
 
 
-                            <!-- FORMULAIRE CREATION ARTICLE
-                                                ============================================================ -->
+                            <!-- ===== FORMULAIRE CREATION ARTICLE ===== -->
+                                                
                             <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
 
-                                <!-- SECTION NOM + IMAGE
-                                                    ============================================================ -->
+                                <!-- ===== SECTION NOM + IMAGE ===== -->
+                                                    
                                 <div class="d-flex justify-content-center gap-2">
 
 
-                                    <!-- NOM
-                                                        ============================================================ -->
+                                    <!-- ===== NOM ===== -->
+                                                        
                                     <div class="col mb-3">
                                         <label for="nom"
                                             class="col-form-label ms-1"><small>{{ __('Nom') }}</small></label>
 
-                                        <div class="col-md-12">
                                             <input id="nom" type="text" placeholder="ex : Tomate"
                                                 class="form-control @error('name') is-invalid @enderror" name="nom"
                                                 value="{{ old('nom') }}" required>
@@ -68,17 +64,15 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                        </div>
                                     </div>
 
 
-                                    <!-- IMAGE
-                                                        ============================================================ -->
+                                    <!-- ===== IMAGE ===== -->
+                                                       
                                     <div class="col mb-3">
                                         <label for="image"
                                             class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
 
-                                        <div class="col-md-12">
                                             <input type="file"
                                                 class="form-control @error('image') is-invalid @enderror" name="image"
                                                 placeholder="ex : image.jpg" value="{{ old('image') }}" autocomplete="image"
@@ -89,19 +83,17 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                        </div>
                                     </div>
 
                                 </div>
 
-                                    <!-- TITRE
-                                                        ============================================================ -->
 
+                                    <!-- ===== TITRE ===== -->
+                                                        
                                 <div class="col mb-3">
                                     <label for="titre"
                                         class="col-form-label ms-1"><small>{{ __('Titre') }}</small></label>
 
-                                    <div class="col-md-12">
                                         <input id="titre" type="text" placeholder="ex : Conseils de préparation..."
                                             class="form-control @error('titre') is-invalid @enderror"
                                             name="titre" value="{{ old('titre') }}" required>
@@ -111,40 +103,39 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
-                                    </div>
                                 </div>
 
 
-
-
-
-                                <!-- DESCRIPTION
-                                                    ============================================================ -->
+                                <!-- ===== DESCRIPTION ===== -->
+                                                   
                                 <div class="col mb-3">
                                     <label for="description"
                                         class="col-form-label ms-1"><small>{{ __('Description') }}</small></label>
 
-                                    <div class="col-md-12">
-                                        <input id="description" type="text" placeholder="ex : La tomate peut être..."
-                                            class="form-control @error('description') is-invalid @enderror"
-                                            name="description" value="{{ old('description') }}" required>
+                                        {{-- <input id="description" type="text" placeholder="ex : La tomate peut être..."
+                                            class="form-control" @error('description') is-invalid @enderror
+                                            name="description" value="{{ old('description') }}" required> --}}
+                                        
+                                        <textarea id="description" name="description" type="text" rows="3"  placeholder="ex : La tomate peut être..."
+                                           class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required>
+                                        </textarea>
+                                        <div id="descriptionHelp" class="form-text ms-1">ex : La tomate peut être conservée ...</div>
 
                                         @error('descritpion')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror
-                                    </div>
+                                        @enderror  
                                 </div>
 
 
-                                <!-- SECTION PRIX + STOCK
-                                                    ============================================================ -->
+                                <!-- ===== SECTION PRIX + STOCK ===== -->
+                                                    
                                 <div class="d-flex justify-content-center gap-2">
 
 
-                                    <!-- PRIX
-                                                        ============================================================ -->
+                                    <!-- ===== PRIX ===== -->
+                                                        
                                     <div class="col mb-3">
                                         <label for="prix"
                                             class="col-form-label ms-1"><small>{{ __('Prix') }}</small></label>
@@ -163,8 +154,8 @@
                                     </div>
 
 
-                                    <!-- STOCK
-                                                        ============================================================ -->
+                                    <!-- ===== STOCK ===== -->
+                                                        
                                     <div class="col mb-3">
                                         <label for="stock"
                                             class="col-form-label ms-1"><small>{{ __('Stock') }}</small></label>
@@ -182,17 +173,11 @@
                                         </div>
                                     </div>
 
-
                                 </div>
 
 
-                                <!-- SECTION NOTE + GAMME
-                                                    ============================================================ -->
-                                <div class="d-flex justify-content-center gap-2">
-
-
-                                    <!-- GAMME
-                                                        ============================================================ -->
+                                    <!-- ===== GAMME ===== -->
+                                                        
                                     <div class="col my-4">
                                         <label class="pb-2" for="gamme_id"></label>
 
@@ -200,41 +185,38 @@
                                             <select class="p-1" name="gamme_id">
                                                 <option>Choisissez une gamme</option>
                                                 @foreach ($gammes as $gamme)
-                                                    <option 
-
-                                                        value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
+                                                    <option value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
+
                                     </div>
 
 
-                                </div>
-
-
-                                <!-- BOUTON VALIDATION ENREGISTREMENT
-                                                    ============================================================ -->
+                                <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
+                                                    
                                 <div class="row mt-4">
-                                    <div class="col-md-12">
+                                    <div class="text-center mx-auto">
                                         <button type="submit" class="btn btn-ajout">                                        
                                             <small>{{ __('Enregistrer') }}</small></button>
                                     </div>
                                 </div>
 
                             </form>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
+
         </div>
+    </div>
 
 
-
-        <!-- SECTION GESTION ARTICLES
-                            ============================================================ -->
-        <!-- Titre section -->
+        <!-- ===== SECTION GESTION ARTICLES ===== -->
+                         
+        <!-- ===== TITRE ===== -->
         <h3 class="text-center my-5">Gestion des articles</h3>
 
         <div class="container-fluid col-lg-11 p-1 mt-2 justify-content-center">
@@ -318,7 +300,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
     <!-- SECTION CREATION GAMMES -->

@@ -318,7 +318,7 @@
 
                     <div class="modal-footer d-flex justify-content-center">
                         <a href="{{ route('commandes.store') }}">
-                            <button class="btn btn-suppr m-3">
+                            <button class="btn btn-ajout m-3">
                                 Retour à l'accueil
                             </button>
                         </a>
