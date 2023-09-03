@@ -12,7 +12,9 @@
     <div class="container-fluid p-5">
         @foreach ($user->commandes as $commande)
 
+        
         <!-- ====== TABLEAU ===== -->
+
             <div class="row tableau table-responsive mb-5">
                 <table class="table table-bordered bg-white mb-0">
                     <thead class="text-center">

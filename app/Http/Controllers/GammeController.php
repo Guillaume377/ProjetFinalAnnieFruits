@@ -86,14 +86,15 @@ class GammeController extends Controller
     public function update(Request $request, Gamme $gamme) 
     {
             $request->validate([
-                'nom' => 'required|min:5|max:50'
+                'nom' => 'required|min:5|max:50',
+                'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
     
             //2) Sauvegarde du message => Va lancer un insert into en SQL
             $gamme->update($request->all());
     
             //3) On redirige vers l'accueil avec un message de succès
-            return redirect()->route('backoffice')->with('message', 'Gamme modifiée avec succès'); //
+            return redirect()->route('backoffice')->with('message', 'Gamme modifiée avec succès'); 
     }
 
     /**

@@ -42,6 +42,7 @@ class ArticleController extends Controller
             'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix' => 'required',
             'stock' => 'required',
+            'type_prix' => 'required',
             'gamme_id' => 'required'
         ]);
 
@@ -95,6 +96,7 @@ class ArticleController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix' => 'required',
             'stock' => 'required',
+            'type_prix' => 'required',
             'gamme_id' => 'required'
         ]);
 

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <!-- ========================== CAROUSEL ========================== -->
 
     <div id="carouselExampleCaptions" class="carousel slide">

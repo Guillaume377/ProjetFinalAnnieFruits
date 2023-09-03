@@ -26,6 +26,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 //*********************** Routes d'affichage "user" **********************************/
 
 Route::resource('/users' , \App\Http\Controllers\UserController::class)->except('index', 'create', 'store');
@@ -44,9 +46,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/favoris', \App\Http\Controllers\FavoriController::class)->except('create', 'show', 'update', 'edit');
 
 
+
 //***************** Route d'affichage de la page Nous contacter *****************************/
 
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+
 
 
 // **************** Les routes de gestion du panier **************** //
