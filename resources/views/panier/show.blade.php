@@ -130,14 +130,14 @@
 
             <div class="d-flex justify-content-center pb-5">
 
-                <!-- Lien pour valider le panier -->
+                <!-- ===== Lien pour valider le panier ===== -->
 
                 @if (Auth::user())
                     <a class="btn btn-ajout my-5 mx-3" href="{{ route('validation') }}"
                         title="Valider le panier">Valider</a>
                 @endif
 
-                <!-- Lien pour vider le panier -->
+                <!-- ====== Lien pour vider le panier ===== -->
                 
                 <a class="btn btn-suppr my-5 mx-3" href="{{ route('panier.empty') }}"
                     title="Retirer tous les produits du panier">Vider le panier</a>

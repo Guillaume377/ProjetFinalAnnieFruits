@@ -14,13 +14,15 @@ class CommandeArticleSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        for ($i = 1; $i < 61; $i++) {
-            DB::table('commandes_articles')->insert([
-                'article_id' => rand(1, Article::count()),
-                'commande_id' => $i,
-                'quantite' => rand(1, 3),
-            ]);
-        }
+{
+    for ($i = 1; $i < 61; $i++) {
+        // Pour chaque commande de 1 à 60
+        DB::table('commandes_articles')->insert([
+            'article_id' => rand(1, Article::count()), // Sélectionne aléatoirement un article existant
+            'commande_id' => $i, // Utilise l'ID de commande actuel dans la boucle
+            'quantite' => rand(1, 3), // Attribue une quantité aléatoire (entre 1 et 3)
+        ]);
     }
+}
+
 }

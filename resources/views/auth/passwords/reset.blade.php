@@ -5,7 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+
+                
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Réinitialiser le mot de passe') }}</div>
+
+
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

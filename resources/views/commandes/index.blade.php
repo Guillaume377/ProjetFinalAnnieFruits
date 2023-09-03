@@ -11,6 +11,8 @@
     
     <div class="container-fluid p-5">
         @foreach ($user->commandes as $commande)
+
+        <!-- ====== TABLEAU ===== -->
             <div class="row tableau table-responsive mb-5">
                 <table class="table table-bordered bg-white mb-0">
                     <thead class="text-center">
@@ -38,6 +40,7 @@
 
                                 {{ date('i', strtotime($commande->heure_retrait)) }}
                             </td>
+                            
                             <td>
                                 <!-- ====== BOUTON DU DETAIL DE LA COMMANDE ===== -->
 

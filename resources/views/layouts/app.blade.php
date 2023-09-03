@@ -5,33 +5,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- icon -->
+    <!-- ===== icon ===== -->
+
     <script src="https://kit.fontawesome.com/826eec2b4c.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/jpg" href="images/icone-fraise.jpg">
 
-    <!-- CSRF Token -->
+
+    <!-- ===== CSRF Token ===== -->
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+    <!-- ===== Title ===== -->
 
     <title>Annie fruits</title>
 
-    <!-- Fonts -->
+
+    <!-- ===== Fonts ===== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paprika&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@500&display=swap" rel="stylesheet">
 
-    <!-- Scripts -->
+
+    <!-- ===== Scripts ===== -->
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 
-    <!-- Icone -->
+
+    <!-- ===== Icone ===== -->
+
     <script src="https://kit.fontawesome.com/1dd6859436.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="app">
 
+        <!-- ===== NAVBAR ===== -->
+
         <nav class="navbar navbar-expand-md pb-2 fixed-top">
             <div class="container-fluid">
+
+
+                <!-- ===== NAVBAR TOGGLER ===== -->
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -39,32 +56,54 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
+                <!-- ===== LIENS/BOUTONS NAVBAR ===== -->
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="navbar-nav py-4">
+
+
+                        <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
 
                         <a class="navbar-brand" href="{{ route('home') }}">
                             <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
                         </a>
 
+
+                        <!-- ===== BOUTON NOS PRODUITS / LIEN PAGE NOS PRODUITS ===== -->
+
                         <a class="btn btn-ghost pt-3 mx-3" aria-current="articles" href="{{ route('gammes.index') }}">
                             Nos produits
                         </a>
+
+
+                        <!-- ===== BOUTON NOUS CONTACTER / LIEN PAGE NOUS CONTACTER ===== -->
 
                         <a class="btn btn-ghost pt-3 mx-3" href="{{ route('contact') }}">
                             Nous contacter
                         </a>
 
-                        <ul class="navbar-nav ms-auto">
-                            <!-- Authentication Links -->
 
-                            {{-- <!-------------------------------- liens accessibles aux invités uniquement ---------------------------------> --}}
+                         <!-- Authentication Links -->
+
+                        <ul class="navbar-nav ms-auto">
+                           
+
+
+                            <!-- ========================= LIENS ACCESSIBLES AUX INVITES UNIQUEMENT ====================== -->
+
                             @guest
+
+                                <!-- ===== BOUTON CONNEXION / LIEN PAGE CONNEXION ===== -->
+
                                 @if (Route::has('login'))
                                     
                                         <a class="btn btn-ghost pt-3 mx-3 nav-link"
                                             href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     
                                 @endif
+
+                                <!-- ===== BOUTON INSCRIPTION / LIEN PAGE INSCRIPTION ===== -->
 
                                 @if (Route::has('register'))
                                     
@@ -73,8 +112,13 @@
                                     
                                 @endif
 
-                                <!-------------------------------- liens accessibles aux connectés uniquement --------------------------------->
-                            @else
+                               
+                               <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
+
+                               @else
+                               
+                               <!-- ===== BOUTON MON COMPTE ===== -->
+
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -84,7 +128,8 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
 
-                                        <!-- Lien vers "MON COMPTE" -->
+                                        <!-- ===== LIEN VERS "MON COMPTE" ===== -->
+
                                         <a class="dropdown-item" href="{{ route('user.edit', $user = Auth::user()) }}">Mon
                                             compte</a>
 
@@ -103,10 +148,16 @@
 
                                         <a class="dropdown-item" aria-current="panier"
                                             href="{{ route('favoris.index') }}">Favoris</a>
+
+
+                                        <!-- ===== LIEN VERS "COMMANDES" ===== -->
+
                                         <a class="dropdown-item" aria-current="commande"
                                             href="{{ route('commandes.index') }}">Commandes</a>
 
-                                        <!-- Lien vers "DECONNEXION" -->
+
+                                        <!-- ===== LIEN VERS "DECONNEXION" ===== -->
+
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
@@ -117,6 +168,9 @@
                                 </li>
                             @endguest
 
+
+                            <!-- ===== BOUTON PANIER / LIEN VERS "PANIER" ===== -->
+
                             <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
                                 <i class="cart fa-solid fa-cart-shopping pt-2 mx-4"></i>
                             </a>
@@ -126,11 +180,12 @@
                     </div>
                 </div>
             </div>
-    </nav>
-</div>
+        </nav>
+    </div>
 
 
 
+<!-- ===== MESSAGEs SUCCES / ERROR ===== -->
 
     <main>
         <div class="container-fluid text-center mt-5">
@@ -160,6 +215,9 @@
 
         <div class="row mx-auto text-center">
 
+
+            <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
+
             <div class="col-md-3">
                 <a class="navbar-brand" href="home#">
                     <img class="logo_footer text-center" src="{{ asset('images/logo-annie-fruits.png') }}"
@@ -167,17 +225,26 @@
                 </a>
             </div>
 
+
+            <!-- ===== LIEN PAGE NOS PRODUITS ===== -->
+
             <div class="lien col-md-3 fs-5 pt-2">
                 <a class="footer-lien navbar-brand" href="{{ route('gammes.index') }}">
                     <p>Nos produits</p>
                 </a>
             </div>
 
+
+            <!-- ===== LIEN PAGE NOUS CONTACTER ===== -->
+
             <div class="col-md-3 fs-5 pt-2">
                 <a class="footer-lien navbar-brand" href="{{ route('contact') }}">
                     <p>Nous contacter</p>
                 </a>
             </div>
+
+
+            <!-- ===== LIEN COMPTE FACEBOOK ANNIE FRUITS ===== -->
 
             <div class="col-md-3">
                 <a class="navbar-brand"
@@ -187,6 +254,9 @@
             </div>
 
         </div>
+
+
+        <!-- ===== COPYRIGHT ===== -->
 
         <h5 class="copyright mx-auto mt-3 text-center">© Copyright - 2023</h5>
     </footer>

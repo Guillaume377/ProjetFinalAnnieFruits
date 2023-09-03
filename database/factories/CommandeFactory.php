@@ -19,11 +19,11 @@ class CommandeFactory extends Factory
     {
         return [
             
-                'numero' => $this->faker->randomNumber(7, true),
-                'prix' => $this->faker->randomFloat(2, 10, 80),
-                'date_retrait' => $this->faker->dateTimeBetween('-1 week', '+1 week'),
-                'heure_retrait'=> $this->faker->time('H:i'),
-                'user_id' =>rand(1, User::count()),
+                'numero' => $this->faker->randomNumber(7, true), // génère un numéro aléatoire de 7 chiffres ou moins
+                'prix' => $this->faker->randomFloat(2, 10, 80), // génère un prix aléatoire avec deux décimales, compris entre 10 et 80
+                'date_retrait' => $this->faker->dateTimeBetween('-1 week', '+1 week'), // génère une date et une heure aléatoires situées dans la plage d'une semaine (7 jours) avant ou après la date actuelle
+                'heure_retrait'=> $this->faker->time('H:i'), // génère une heure aléatoire au format 'HH:MM'
+                'user_id' =>rand(1, User::count()), // génère un ID d'utilisateur aléatoire entre 1 et le nombre total d'utilisateurs dans le modèle User
             ];
     }
 }

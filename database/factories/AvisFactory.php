@@ -20,9 +20,9 @@ class AvisFactory extends Factory
     {
         return [
             'commentaire' =>$this->faker->paragraph(),
-            'note' =>$this->faker->numberBetween(3, 5),
-            'user_id' =>rand(1, User::count()),
-            'article_id' =>rand(1, Article::count()),
+            'note' =>$this->faker->numberBetween(3, 5), // notes comprises entre 3 et 5
+            'user_id' =>rand(1, User::count()), // génère un ID d'utilisateur aléatoire entre 1 et le nombre total d'utilisateurs dans le modèle User
+            'article_id' =>rand(1, Article::count()), // génère un ID d'article aléatoire entre 1 et le nombre total d'articles dans le modèle Article
         ];
     }
 }

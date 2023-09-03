@@ -75,10 +75,11 @@ class PanierController extends Controller
 
 	public function reservation(Request $request)
 	{
+		// Date de retrait
 		$dateRetrait = $request->input('date_retrait');
 		session()->put('date_retrait', $dateRetrait);
 		
-
+		// Heure de retrait
 		$heureRetrait = $request->input('heure_retrait');
 		session()->put('heure_retrait', $heureRetrait);
 		return back()->withMessage("Créneau de retrait de la commande validé");

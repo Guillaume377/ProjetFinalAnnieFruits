@@ -9,15 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
         Schema::create('gammes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom',50);
-            $table->string('image',50);
-            $table->timestamps();
+            $table->id(); // Champ ID auto-incrémenté
+            $table->string('nom', 50); // Champ pour le nom de la gamme, une chaîne de caractères de maximum 50 caractères
+            $table->string('image', 50); // Champ pour le nom de l'image associée à la gamme, une chaîne de caractères de maximum 50 caractères
+            $table->timestamps(); // Champs de date de création et de mise à jour automatiques
         });
     }
+
 
     /**
      * Reverse the migrations.

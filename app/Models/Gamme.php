@@ -11,6 +11,7 @@ class Gamme extends Model
 
     protected $fillable = [
         'nom',
+        'image',
     ];
 
     //nom au pluriel car une gamme peut regrouper plusieurs articles

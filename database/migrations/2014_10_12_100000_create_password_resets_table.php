@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->string('email')->index(); // Champ pour l'adresse e-mail, avec un index pour des recherches plus rapides
+            $table->string('token'); // Champ pour le jeton de réinitialisation de mot de passe
+            $table->timestamp('created_at')->nullable(); // Champ pour la date et l'heure de création du jeton (pouvant être nul)
         });
     }
+
 
     /**
      * Reverse the migrations.

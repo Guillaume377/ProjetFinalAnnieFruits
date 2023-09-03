@@ -6,12 +6,26 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-register col-md-8">
+
+
+            <!-- ===== TABLEAU ===== -->
+
             <div class="tableau table-responsive card">
+
+
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Inscription') }}</div>
+
+
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+
+
+                        <!-- ===== NOM ===== -->
 
                         <div class="row mb-3">
                             <label for="nom" class="col-md-4 col-form-label text-md-end">{{ __('Nom*') }}</label>
@@ -27,6 +41,9 @@
                             </div>
                         </div>
 
+
+                        <!-- ===== PRENOM ===== -->
+
                         <div class="row mb-3">
                             <label for="prenom" class="col-md-4 col-form-label text-md-end">{{ __('Prénom*') }}</label>
 
@@ -40,6 +57,9 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <!-- ===== TELEPHONE ===== -->
 
                         <div class="row mb-3">
                             <label for="telephone" class="col-md-4 col-form-label text-md-end">{{ __('Téléphone*') }}</label>
@@ -55,6 +75,9 @@
                             </div>
                         </div>
 
+
+                        <!-- ===== EMAIL ===== -->
+
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('e-mail*') }}</label>
 
@@ -68,6 +91,9 @@
                                 @enderror
                             </div>
                         </div>
+
+
+                        <!-- ===== MOT DE PASSE ===== -->
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe*') }}</label>
@@ -85,6 +111,9 @@
                             </div>
                         </div>
 
+
+                        <!-- ===== CONFIRMER MOT DE PASSE ===== -->
+
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmez le mot de passe*') }}</label>
 
@@ -101,7 +130,9 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
+                    
                 </div>
             </div>
         </div>

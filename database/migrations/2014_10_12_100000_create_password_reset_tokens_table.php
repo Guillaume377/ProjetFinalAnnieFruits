@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->string('email')->primary(); // Champ pour l'adresse e-mail, utilisé comme clé primaire
+            $table->string('token'); // Champ pour le jeton de réinitialisation de mot de passe
+            $table->timestamp('created_at')->nullable(); // Champ pour la date et l'heure de création du jeton (pouvant être nul)
         });
     }
+
 
     /**
      * Reverse the migrations.

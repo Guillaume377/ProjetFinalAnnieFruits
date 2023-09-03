@@ -9,14 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->string('role', 20);
-            $table->timestamps();
+            $table->id(); // Champ ID auto-incrémenté
+            $table->string('role', 20); // Champ pour le rôle, une chaîne de caractères de maximum 20 caractères
+            $table->timestamps(); // Champs de date de création et de mise à jour automatiques
         });
     }
+
 
     /**
      * Reverse the migrations.

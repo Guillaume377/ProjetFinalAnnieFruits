@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <!-- ========== TITRE DE PAGE : NUMERO DE LA COMMANDE ========== -->
 
     <h1 class="title_h1 text-center mx-auto">Détail de la commande</h1>
@@ -36,6 +38,7 @@
             <div class="tableau table-responsive  my-5">
                 <table class=" table table-bordered table-success table-striped bg-white mb-0 fs-5">
                     <thead class="text-center">
+
 
                         <!-- ========== EN-TETE TABLEAU ========== -->
 
@@ -84,8 +87,6 @@
 
                 </table>
             </div>
-
-        
 
     </div>
 @endsection

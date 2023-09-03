@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+
+    <!-- ===== TITRE ===== -->
+
     <h1 class="fw-bold text-center py-5"> {{ $article->nom }}</h1>
 
     <div class="container mb-3">
@@ -17,7 +20,8 @@
 
 
 
-            <!-- =============================================== card description article ============================================= -->
+            <!-- ===== card description article ===== -->
+            
             <div class="col-xl-6 d-flex justify-content-center ps-5 pb-5">
                 <div class="img-article">
 
@@ -35,7 +39,7 @@
                     </div>
 
 
-                    <!-- =================================== Champ quantité + bouton Ajouter au panier =================================== -->
+                    <!-- ===== Champ quantité + bouton Ajouter au panier ===== -->
 
                     <form method="POST" action="{{ route('panier.add', $article->id) }}"
                         class="form-inline d-inline-block d-flex justify-content-center">
@@ -58,7 +62,7 @@
 
 
 
-                    <!-- ==================================== Je fais apparaitre les avis pour cet article ============================== -->
+                    <!-- ===== Je fais apparaitre les avis pour cet article ===== -->
 
                     <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
 

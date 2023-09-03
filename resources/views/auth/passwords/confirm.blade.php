@@ -5,7 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Confirmez votre mot de passe') }}</div>
+
+                
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     {{ __('Merci de confirmer votre mot de passe pour continuer') }}

@@ -6,12 +6,26 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-login col-md-8">
+
+
+            <!-- ===== TABLEAU ===== -->
+
             <div class="tableau table-responsive card">
+
+
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Connexion') }}</div>
+
+
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+
+                        
+                        <!-- ===== EMAIL ===== -->
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('e-mail') }}</label>
@@ -27,6 +41,9 @@
                             </div>
                         </div>
 
+
+                        <!-- ===== MOT DE PASSE ===== -->
+
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
 
@@ -41,6 +58,9 @@
                             </div>
                         </div>
 
+
+                         <!-- ===== CHECKBOX ===== -->
+
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -53,11 +73,18 @@
                             </div>
                         </div>
 
+
                         <div class="row mb-0">
+
+                        <!-- ===== BOUTON SE CONNECTER ===== -->
+
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-ajout">
                                     {{ __('Se connecter') }}
                                 </button>
+
+
+                                 <!-- ===== MOT DE PASSE OUBLIE ===== -->
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -65,7 +92,9 @@
                                     </a>
                                 @endif
                             </div>
+
                         </div>
+
                     </form>
                 </div>
             </div>

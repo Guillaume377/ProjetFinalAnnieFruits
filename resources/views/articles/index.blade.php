@@ -5,7 +5,7 @@
 @endsection
 
 
-<h1 class="page_title_catalogue text-center mx-auto">{{$article->nom}}</h1>
+<h1 class="text-center mx-auto">{{$article->nom}}</h1>
 
 
 

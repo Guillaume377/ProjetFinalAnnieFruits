@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->id(); // Champ ID auto-incrémenté
+            $table->string('uuid')->unique(); // Champ pour l'identifiant unique de la tâche échouée
+            $table->text('connection'); // Champ pour la connexion associée à la tâche
+            $table->text('queue'); // Champ pour la file d'attente associée à la tâche
+            $table->longText('payload'); // Champ pour les données de la tâche (payload)
+            $table->longText('exception'); // Champ pour les informations sur l'exception qui a provoqué l'échec
+            $table->timestamp('failed_at')->useCurrent(); // Champ pour la date et l'heure de l'échec, avec utilisation de la date et de l'heure actuelles
         });
     }
+
 
     /**
      * Reverse the migrations.

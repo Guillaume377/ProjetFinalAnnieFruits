@@ -6,8 +6,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-mdp-oublie col-md-8">
+
+
+            <!-- ===== TABLEAU===== -->
+
             <div class="tableau table-responsive card">
+
+                
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Réinitialiser votre mot de passe') }}</div>
+
+
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     @if (session('status'))

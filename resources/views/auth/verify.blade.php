@@ -4,8 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="card-verify col-md-8">
+
+
+            <!-- ===== TABLEAU ===== -->
+
             <div class="tableau table-responsive card">
+
+
+                <!-- ===== CARD HEADER ===== -->
+
                 <div class="card-header">{{ __('Vérifiez votre e-mail') }}</div>
+
+
+                <!-- ===== CARD BODY ===== -->
 
                 <div class="card-body">
                     @if (session('resent'))
@@ -21,6 +32,7 @@
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Cliquez ici pour demander un autre e-mail') }}</button>.
                     </form>
                 </div>
+                
             </div>
         </div>
     </div>

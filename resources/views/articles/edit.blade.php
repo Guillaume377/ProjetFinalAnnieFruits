@@ -5,25 +5,27 @@
 @endsection
 
 @section('content')
-    <!-- SECTION MODIF ARTICLE
-            ============================================================ -->
+
+
+    <!-- ===== SECTION MODIF ARTICLE ===== -->
+            
     <h1 class="title_h1 text-center mx-auto">Modifier l'article " {{ $article->nom }} "</h1>
     <div class="container-fluid pt-5" id="section_modif_article">
 
-        <!-- Titre section -->
+        <!-- ===== Titre section ===== -->
 
 
         <div class="row justify-content-center">
             <div class="col-md-5">
 
 
-                <!-- CARD
-                        ============================================================ -->
+                <!-- ===== CARD ===== -->
+                        
                 <div class="tableau table-responsive card my-5">
 
 
-                    <!-- CARD HEADER
-                            ============================================================ -->
+                    <!-- ===== CARD HEADER ===== -->
+                            
                     <div class="card-header border-bottom border-secondary d-flex justify-content-between"
                         id="header_card_edit">
 
@@ -36,26 +38,26 @@
                     </div>
 
 
-                    <!-- CARD BODY
-                            ============================================================ -->
+                    <!-- ===== CARD BODY ===== -->
+                            
                     <div class="card-body" id="body_card_edit">
 
 
-                        <!-- FORMULAIRE MODIFICATION ARTICLE
-                                ============================================================ -->
+                        <!-- ===== FORMULAIRE MODIFICATION ARTICLE ===== -->
+                             
                         <form action="{{ route('articles.update', $article) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
 
-                            <!-- SECTION NOM + IMAGE
-                                    ============================================================ -->
+                            <!-- ===== SECTION NOM + IMAGE ===== -->
+                                   
                             <div class="d-flex justify-content-center gap-2">
 
 
-                                <!-- NOM
-                                        ============================================================ -->
+                                <!-- ===== NOM ===== -->
+                                        
                                 <div class="col mb-3">
                                     <label for="nom"
                                         class="col-form-label ms-1"><small>{{ __('Nouveau nom') }}</small></label>
@@ -74,8 +76,8 @@
                                 </div>
 
 
-                                <!-- IMAGE
-                                        ============================================================ -->
+                                <!-- ===== IMAGE ===== -->
+                                        
                                 <div class="col mb-3">
                                     <label for="image"
                                         class="col-form-label ms-1"><small>{{ __('Nouvelle image') }}</small></label>
@@ -96,8 +98,8 @@
                             </div>
 
 
-                            <!-- TITRE
-                                    ============================================================ -->
+                            <!-- ===== TITRE ===== -->
+                                    
                             <div class="col mb-3">
                                 <label for="titre"
                                     class="col-form-label ms-1"><small>{{ __('Nouveau titre') }}</small></label>
@@ -116,8 +118,8 @@
                             </div>
 
 
-                            <!-- DESCRIPTION
-                                    ============================================================ -->
+                            <!-- ===== DESCRIPTION ===== -->
+                                    
                             <div class="col mb-3">
                                 <label for="description"
                                     class="col-form-label ms-1"><small>{{ __('Nouvelle description') }}</small></label>
@@ -136,13 +138,13 @@
                             </div>
 
 
-                            <!-- SECTION PRIX + STOCK
-                                    ============================================================ -->
+                            <!-- ===== SECTION PRIX + STOCK ===== -->
+                                    
                             <div class="d-flex justify-content-center gap-2">
 
 
-                                <!-- PRIX
-                                        ============================================================ -->
+                                <!-- ===== PRIX ===== -->
+                                        
                                 <div class="col mb-3">
                                     <label for="prix"
                                         class="col-form-label ms-1"><small>{{ __('Nouveau prix') }}</small></label>
@@ -161,8 +163,8 @@
                                 </div>
 
 
-                                <!-- STOCK
-                                        ============================================================ -->
+                                <!-- ===== STOCK ===== -->
+                                        
                                 <div class="col mb-3">
                                     <label for="stock"
                                         class="col-form-label ms-1"><small>{{ __('Nouveau stock') }}</small></label>
@@ -183,16 +185,10 @@
                             </div>
 
 
-
-                            <!-- GAMME
-                                                            ============================================================ -->
+                            <!-- ===== GAMME ===== -->
+                                                            
                             <div class="d-flex justify-content-center gap-2">
 
-
-
-
-                                <!-- GAMME
-                                                                                    ============================================================ -->
                                 <div class="col mb-3 ">
                                     <label for="gamme_id" 
                                         class=" new_gamme col-form-label"><small>{{ __('Nouvelle gamme') }}</small></label>
@@ -208,11 +204,11 @@
                                     </div>
                                 </div>
 
-
                             </div>
 
-                            <!-- BOUTON VALIDATION ENREGISTREMENT
-                                    ============================================================ -->
+
+                            <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
+                                   
                             <div class="row mt-4">
                                 <div class="col-md-12">
                                     <button type="submit"
