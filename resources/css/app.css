@@ -172,7 +172,7 @@ nav {
 
 .cart:hover {
     color: #E2403E;
-    
+
 }
 
 
@@ -228,7 +228,7 @@ nav {
 
 
 .coordonnees {
-    padding-top:15%
+    padding-top: 15%
 }
 
 
@@ -373,6 +373,12 @@ th {
 }
 
 
+.totalGeneral {
+    background-color: #4BAD3B;
+    color: white;
+}
+
+
 .fa-arrow-right {
     margin-left: 3%;
 }
@@ -473,7 +479,7 @@ th {
     color: #E2403E;
     border-color: #E2403E;
     box-shadow: 10px 5px 5px #E2403E;
-    
+
 }
 
 
@@ -511,7 +517,7 @@ footer {
 
 .logo-facebook {
     font-size: 400%;
-    color:#E2403E;
+    color: #E2403E;
 }
 
 

@@ -5,31 +5,40 @@
     <div class="container">
 
 
-        <!-- Section MODIF/VALID INFOS -->
+        <!-- ===== Section MODIF/VALID INFOS ===== -->
 
         <div class="container-fluid my-5">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-10">
 
-                    <!-- Card -->
+
+                    <!-- ===== Card ===== -->
+
                     <div class="tableau table-responsive card my-4">
 
-                        <!-- Card header "S'inscrire" -->
+
+                        <!-- ===== Card header "S'inscrire" ===== -->
+
                         <div class="card-header"><small>{{ __('Informations personnelles') }}</small></div>
 
-                        <!-- Card body -->
+
+                        <!-- ===== Card body ===== -->
+
                         <div class="card-body">
 
-                            <!-- Formulaire modif infos -->
+
+                            <!-- ===== Formulaire modif infos ===== -->
+
                             <form method="POST" action="{{ route('user.update', $user) }}">
                                 @csrf
                                 @method('PUT')
 
 
-                                <!-- Section nom + prenom -->
+                                <!-- ===== Section nom + prenom ===== -->
+
                                 <div class="d-flex justify-content-center gap-2">
 
-                                    <!-- Nom -->
+                                    <!-- ===== Nom ===== -->
 
                                     <div class="col mb-3">
                                         <label for="nom"
@@ -49,7 +58,7 @@
                                     </div>
 
 
-                                    <!-- Prenom -->
+                                    <!-- ===== Prenom ===== -->
 
                                     <div class="col mb-3">
                                         <label for="prenom"
@@ -70,11 +79,13 @@
                                 </div>
 
 
-                                <!-- Section email + telephone -->
+                                <!-- ===== Section email + telephone ===== -->
 
                                 <div class="d-flex justify-content-center gap-2">
 
-                                    <!-- Email -->
+
+                                    <!-- ===== Email ===== -->
+
                                     <div class="col mb-3">
                                         <label for="email"
                                             class="col-form-label ms-1"><small>{{ __('E-mail') }}</small></label>
@@ -93,7 +104,8 @@
                                     </div>
 
 
-                                    <!-- Téléphone -->
+                                    <!-- ===== Téléphone ===== -->
+
                                     <div class="col mb-3">
                                         <label for="telephone"
                                             class="col-form-label ms-1"><small>{{ __('Téléphone') }}</small></label>
@@ -114,7 +126,7 @@
                                 </div>
 
 
-                                <!-- Bouton validation modification -->
+                                <!-- ===== Bouton validation modification ===== -->
 
                                 <div class="row mb-0 mt-2">
                                     <div class="col-md-12 d-flex justify-content-center">
@@ -124,49 +136,61 @@
                                 </div>
 
                             </form>
+
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
 
 
-        <!-- ============== Réserver un créneau ==================== -->
+        <!-- =================== Réserver un créneau ==================== -->
 
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6">
+
+                    <!-- ===== titre ===== -->
+
                     <h3 class="text-center">Réserver un créneau</h3>
 
+
                     <!-- ==== Message succès ==== -->
+
                     @if (session('success'))
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
+
                     <!-- ==== Réserver un créneau de retrait ==== -->
+
                     <form action="{{ route('reservation') }}" method="post">
                         @csrf
 
-                        
                         <div class="row d-flex justify-content-center">
 
-                            <!-- Jour de retrait -->
+                            <!-- ===== Jour de retrait ===== -->
+
                             <label for="date_time">Jour*</label>
                             <input type='date' min="{{ date('Y-m-d', strtotime('+1 days')) }}" name="date_retrait"
                                 class="jour-heure form-control mb-3" required>
 
-                            <!-- Heure de retrait -->
+
+                            <!-- ===== Heure de retrait ===== -->
+
                             <label for="start_time">Heure*</label>
                             <input type="time" min="09:00" max="19:00" name="heure_retrait"
                                 class="jour-heure form-control mb-3" required>
 
-                            <div id="emailHelp" class="form-text ms-1">* = champs obligatoires pour pouvoir valider la commande</div>
+                            <div id="creneauHelp" class="form-text ms-1">* = champs obligatoires pour pouvoir valider la commande</div>
 
                             <p class="text-center pt-5">Heure de retrait possible pendant les horaires d'ouvertures du magasin
                             </p>
 
 
-                            <!-- ==== Tableau horaires d'ouverture du magasin ==== -->
+                            <!-- ===== Tableau horaires d'ouverture du magasin ===== -->
 
                             <div class="col-lg-6">
                                 <div class="tableau table-responsive my-5">
@@ -228,7 +252,7 @@
                                 </div>
                             </div>
 
-                            <!-- ==== Bouton validation le créneau ==== -->
+                            <!-- ==== Bouton validation du créneau ==== -->
 
                             <div class="row mb-0 mt-2">
                                 <div class="d-flex justify-content-center">
@@ -249,7 +273,8 @@
         <!-- ============================================================== TOTAL A PAYER ============================================================ -->
 
         <td>
-            <!-- On affiche le total à payer avec un arrondi de 2 chiffres après la virgule -->
+            <!-- ===== On affiche le total à payer avec un arrondi de 2 chiffres après la virgule ===== -->
+
             <div class="prix_total text-center my-5">Total à payer en magasin :
                 <div class="pt-3">
                 {{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€
@@ -261,8 +286,6 @@
         <!-- ===================================================== BOUTON VALIDER LA COMMANDE ===================================================== -->
 
         <div class="d-flex justify-content-center">
-
-            <!-- Button trigger modal -->
 
             @if (session()->get('date_retrait') && session()->get('heure_retrait'))
                 <button type="submit" name="clearCart" class="btn btn-ajout fs-5 mb-5" data-bs-toggle="modal"
@@ -281,15 +304,22 @@
             <div class="modal-dialog">
                 <div class="modal-content text-center">
                     <div class="modal-header">
+
+                        <!-- ===== TITRE ===== -->
+
                         <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Félicitations !</h1>
+
+                        <!-- ===== BOUTON ===== -->
+
                         <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
                             aria-label="Close"></button>
+
                     </div>
                     
                     <div class="modal-body">
                         <p>Votre commande a été validée.</p>
 
-                        <!-- ================= Afficher le montant total du panier ===================== -->
+                        <!-- ======================= Afficher le montant total du panier ===================== -->
 
                         <p>Le montant total est de
                             <strong>{{ number_format(session()->get('totalCommande'), 2, ',', ' ') }} €</strong>
@@ -298,7 +328,8 @@
 
                         <p>Vous pouvez récupérer votre commande le
 
-                            <!-- fonction pour changer le format de la date (Jour-Mois-Année)-->
+                            <!-- ===== fonction pour changer le format de la date (Jour-Mois-Année) ===== -->
+
                             <?php
                             $date = new DateTimeImmutable(session()->get('date_retrait'));
                             echo $date->format('d-m-Y');
@@ -314,11 +345,13 @@
                     <!-- ========================================== BOUTON RETOUR A L'ACCUEIL =============================================== -->
 
                     <div class="modal-footer d-flex justify-content-center">
+                        
                         <a href="{{ route('commandes.store') }}">
                             <button class="btn btn-ajout m-3">
                                 Retour à l'accueil
                             </button>
                         </a>
+
                     </div>
 
                 </div>
