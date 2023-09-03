@@ -49,7 +49,7 @@
 
                                 @error('telephone')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ trans($message) }}</strong>
                                     </span>
                                 @enderror
                             </div>

@@ -10,13 +10,13 @@
                 <table class="table table-bordered table-hover bg-white mb-0">
                     <thead class="thead-dark">
                         <tr>
-                            <th style="background-color: #4BAD3B;color: white">#</th>
-                            <th style="background-color: #4BAD3B;color: white">Produit</th>
-                            <th style="background-color: #4BAD3B;color: white">Prix</th>
-                            <th style="background-color: #4BAD3B;color: white">Quantité</th>
-                            <th style="background-color: #4BAD3B;color: white">Unité</th>
-                            <th style="background-color: #4BAD3B;color: white">Total</th>
-                            <th style="background-color: #4BAD3B;color: white">Opérations</th>
+                            <th>#</th>
+                            <th>Produit</th>
+                            <th>Prix</th>
+                            <th>Quantité</th>
+                            <th>Unité</th>
+                            <th>Total</th>
+                            <th>Opérations</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -13,7 +13,7 @@
 
     <!-- ====== SECTION CREATION ARTICLE ====== -->
 
-    <div id="section_cration_article">
+    <div id="section_creation_article">
         <div class="container-fluid">
 
             <!-- ===== TITRE ===== -->
@@ -21,6 +21,7 @@
             <h3 class="text-center my-5">Enregistrer un article</h3>
 
              <!-- ===== CARD ===== -->
+
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="tableau table-responsive card mb-5">
@@ -217,6 +218,7 @@
         <!-- ===== SECTION GESTION ARTICLES ===== -->
                          
         <!-- ===== TITRE ===== -->
+
         <h3 class="text-center my-5">Gestion des articles</h3>
 
         <div class="container-fluid col-lg-11 p-1 mt-2 justify-content-center">
@@ -224,14 +226,13 @@
             <div class="row justify-content-center">
                 <div class="col">
 
-
-                    <!-- TABLE
-                                        ============================================================ -->
+                    <!-- ===== TABLE ===== -->
+                                   
                     <div class="tableau table-responsive">
                         <table class="table table-striped mb-0">
 
-                            <!-- TITRE DES COLONNES
-                                                ============================================================ -->
+                            <!-- ===== TITRE DES COLONNES ===== -->
+                                                
                             <thead>
                                 
                                     <!-- Nom -->
@@ -251,29 +252,35 @@
             
                             </thead>
 
-                            <!-- BOUCLE AFFICHAGE INFOS ARTICLES
-                                                ============================================================ -->
+                            <!-- ===== BOUCLE AFFICHAGE INFOS ARTICLES ===== -->
+                                                
                             @foreach ($articles as $article)
-                                <!-- ARTICLES
-                                                    ============================================================ -->
+
+                                <!-- ===== ARTICLES ===== -->
+                                                    
                                 <tbody>
                                     <tr class="border-secondary">
+
                                         <!-- Nom -->
                                         <td class="border-end fs-5">{{ $article->nom }}</td>
+
                                         <!-- Description -->
                                         <td class="text-description border-end">{{ $article->description }}</td>
+                                        
                                         <!-- Image -->
                                         <td class="border-end text-center"><img
                                                 src="{{ asset('images/' . $article->image) }}" class="rounded-top"
                                                 alt="{{ $article->nom }}" style="width: 7rem"></td>
+
                                         <!-- Gamme -->
                                         <td class="border-end fs-5 text-center">{{ $article->gamme->nom }}</td>
+
                                         <!-- Prix -->
                                         <td class="border-end fs-5 text-center">{{ $article->prix }} €</td>
+
                                         <!-- Stock -->
                                         <td class="border-end fs-5 text-center">{{ $article->stock }}</td>
                                         
-
 
                                         <!-- Bouton modifier -->
                                         <td>
@@ -305,18 +312,131 @@
 
     <!-- SECTION CREATION GAMMES -->
 
-@section('content')
 
-    <div class="text-center mx-auto">
+
+    {{-- <div class="text-center mx-auto">
         <h3 class="my-5">Créer une gamme</h3>
         <form class="p-3" action="{{ route('gammes.store') }}" method="POST">
             @csrf
-            <!-- Champs du formulaire -->
+
+            <!-- ====== GAMME ===== -->
+
             <input type="text" name="nom" placeholder="Nom de la gamme">
 
+            
             <!-- Bouton de soumission -->
             <button type="submit" class="btn btn-ajout">Ajouter</button>
-        </form>
+        </form> --}}
+
+
+
+ <!-- ====== SECTION CREATION GAMME ====== -->
+
+ <div id="section_creation_article">
+    <div class="container-fluid">
+
+        <!-- ===== TITRE ===== -->
+
+        <h3 class="text-center pt-5 my-5">Créer une gamme</h3>
+
+         <!-- ===== CARD ===== -->
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5">
+                <div class="tableau table-responsive card mb-5">
+
+
+                    <!-- ===== CARD HEADER ===== -->
+                                       
+                    <div class="card-header border-bottom border-secondary" id="header_card_index">
+                        <small>{{ __('Enregistrer une gamme') }}</small>
+                    </div>
+
+
+                    <!-- ===== CARD BODY ===== -->
+                                        
+                    <div class="card-body" id="body_card_index">
+
+
+                        <!-- ===== FORMULAIRE CREATION ARTICLE ===== -->
+                                            
+                        <form action="{{ route('gammes.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+
+                            <!-- ===== SECTION NOM + IMAGE ===== -->
+                                                
+                            <div class="d-flex justify-content-center gap-2">
+
+
+                                <!-- ===== NOM ===== -->
+                                                    
+                                <div class="col mb-3">
+                                    <label for="nom"
+                                        class="col-form-label ms-1"><small>{{ __('Nom') }}</small></label>
+
+                                        <input id="nom" type="text" placeholder="ex : Nos fruits"
+                                            class="form-control @error('name') is-invalid @enderror" name="nom"
+                                            value="{{ old('nom') }}" required>
+
+                                        @error('nom')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+
+
+                                <!-- ===== IMAGE ===== -->
+                                                   
+                                <div class="col mb-3">
+                                    <label for="image"
+                                        class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
+
+                                        <input type="file"
+                                            class="form-control @error('image') is-invalid @enderror" name="image"
+                                            placeholder="ex : image.jpg" value="{{ old('image') }}" autocomplete="image"
+                                            required>
+
+                                        @error('image')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+
+                            </div>
+
+
+                            <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
+                                                
+                            <div class="row mt-4">
+                                <div class="text-center mx-auto">
+                                    <button type="submit" class="btn btn-ajout">                                        
+                                        <small>{{ __('Enregistrer') }}</small></button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+ <!-- ===== SECTION GESTION GAMMES ===== -->
+                         
+        <!-- ===== TITRE ===== -->
+
         <div class="mx-auto text-center">
 
             <h3 class="my-5">Liste des gammes</h3>

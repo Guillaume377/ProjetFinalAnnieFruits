@@ -35,13 +35,22 @@ class GammeController extends Controller
         //1) On valide les champs en précisant les critères attendus
         $request->validate([
             //'name de l'input-> [critères]
-            'nom' => 'required|min:5|max:50'
+            'nom' => 'required|min:5|max:50',
+            'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         //2) Sauvegarde du message => Va lancer un insert into en SQL
-        Gamme::create([                                  // 3 syntaxe possibles pour accéder au contenu de $request
-            'nom' => $request->nom
-        ]);
+                // 3 syntaxe possibles pour accéder au contenu de $request
+        $gamme= Gamme::create($request->all());
+        
+        // ([                                  
+        //     'nom' => $request->nom
+        // ]);
+
+        // on fait appel au Helper pour charger l'image
+        $gamme->image = isset($request['image']) ? uploadImage($request['image']) : "default_user.jpg";
+        
+        $gamme->save();
 
         //3) On redirige vers backoffice avec un message de succès
         return redirect()->route('backoffice')->with('message', 'Gamme créée avec succès');

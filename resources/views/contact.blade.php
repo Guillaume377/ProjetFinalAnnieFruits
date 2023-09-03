@@ -3,133 +3,154 @@
 @section('content')
     <h1 class="title_h1 text-center mx-auto">Nous contacter</h1>
 
-    <!-- =================== Bloc HORAIRES D'OUVERTURE ====================== -->
+    <!-- =================== BLOC HORAIRES D'OUVERTURE ====================== -->
 
-    <div class="container p-5">
+    <!-- ===== TITRE ===== -->
+
+    <h3 class="text-center pt-5 my-5">Horaires d'ouverture du magasin</h3>
+
+    
+    <div class="container pt-3">
         <div class="row">
 
-            <h3 class=" text-center my-5">Horaires d'ouverture du magasin</h3>
+            <!-- ===== TABLEAU ===== -->
 
             <div class="col-lg-6">
-                <div class="pt-2 my-5">
-                    <table class="horaire-coordos table table-striped mx-auto">
+                <div class="pt-3">
+                    <div class="tableau table-responsive my-5">
+                        <table class="table table-striped mb-0 mx-auto">
 
-                        <thead class="thead-dark">
-                            <tr>
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Jour</th>
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Matin</th>
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Après-midi</th>
-                            </tr>
-                        </thead>
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Jour</th>
+                                    <th>Matin</th>
+                                    <th>Après-midi</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            <tr class="text-center">
-                                <td>Lundi</td>
-                                <td class="fw-bolder text-danger">Fermé</td>
-                                <td>15:00 - 19:00</td>
-                            </tr>
+                            <tbody>
+                                <tr class="text-center">
+                                    <td>Lundi</td>
+                                    <td class="fw-bolder text-danger">Fermé</td>
+                                    <td>15:00 - 19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Mardi</td>
-                                <td>09:00–13:00</td>
-                                <td>15:00–19:00</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Mardi</td>
+                                    <td>09:00–13:00</td>
+                                    <td>15:00–19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Mercredi</td>
-                                <td>09:00–13:00</td>
-                                <td>15:00–19:00</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Mercredi</td>
+                                    <td>09:00–13:00</td>
+                                    <td>15:00–19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Jeudi</td>
-                                <td>09:00–13:00</td>
-                                <td>15:00–19:00</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Jeudi</td>
+                                    <td>09:00–13:00</td>
+                                    <td>15:00–19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Vendredi</td>
-                                <td>09:00–13:00</td>
-                                <td>15:00–19:00</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Vendredi</td>
+                                    <td>09:00–13:00</td>
+                                    <td>15:00–19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Samedi</td>
-                                <td>09:00–13:00</td>
-                                <td>15:00–19:00</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Samedi</td>
+                                    <td>09:00–13:00</td>
+                                    <td>15:00–19:00</td>
+                                </tr>
 
-                            <tr class="text-center">
-                                <td>Dimanche</td>
-                                <td class="fw-bolder text-danger">Fermé</td>
-                                <td class="fw-bolder text-danger">Fermé</td>
-                            </tr>
+                                <tr class="text-center">
+                                    <td>Dimanche</td>
+                                    <td class="fw-bolder text-danger">Fermé</td>
+                                    <td class="fw-bolder text-danger">Fermé</td>
+                                </tr>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+
+
+            <!-- ===== IMAGE ===== -->
 
             <div class="col-lg-6 mt-5">
                 <img src="{{ asset('images/entree.jpg') }}" class="photo_contact d-block w-100" alt="entrée du magasin">
             </div>
 
         </div>
-    </div>
 
-    <!-- =================== Bloc COORDONNEES ====================== -->
+        <!-- =================== BLOC COORDONNEES ====================== -->
 
-    <div class="container p-5">
-        <div class="row">
+       <!-- ===== TITRE ===== -->
 
-            <h3 class="text-center my-5">Nos coordonnées</h3>
+       <h3 class="text-center pt-5 my-5">Nos coordonnées</h3>
+       
+       
+        <div class="container pt-5">
+            <div class="row">
 
-            <div class="col-lg-6 mt-5">
-                <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayondu magasin">
-            </div>
+                
+                <!-- ===== IMAGE ===== -->
+
+                <div class="col-lg-6 mt-5">
+                    <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayondu magasin">
+                </div>
 
 
-            {{-- <div class="col-lg-6 mt-5 mt-lg-0 table-responsive"> --}}
-            <div class="col-lg-6">
-                <div class="coordonnees my-5">
-                    <table class="horaire-coordos table table-striped mx-auto">
+                <!-- ===== TABLEAU ===== -->
+                
+                <div class="col-lg-6">
+                    <div class="coordonnees">
+                        <div class="tableau table-responsive my-5">
+                            <table class="table table-striped mb-0 mx-auto">
 
-                        <thead class="thead-dark">
-                            <tr>
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Adresse</th>
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Téléphone / email</th>
-                                {{-- <th style="background-color: #4BAD3B;color: white" scope="col">email</th> --}}
-                                <th style="background-color: #4BAD3B;color: white" scope="col">Réseau social</th>
-                            </tr>
-                        </thead>
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Adresse</th>
+                                        <th>Téléphone / email</th>           
+                                        <th>Réseau social</th>
+                                    </tr>
+                                </thead>
 
-                        <tbody>
-                            <tr class="text-center">
-                                <td>56 Av. du 11 Novembre 1918, 17300 Rochefort</td>
-                                <td>05.46.87.09.76 / anniefruits17@gmail.com</td>
-                                {{-- <td>anniefruits@gmail.com</td> --}}
-                                <td>
-                                    <a href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
-                                        <i class="logo-facebook fa-brands fa-square-facebook"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td>56 Av. du 11 Novembre 1918, 17300 Rochefort</td>
+                                        <td>05.46.87.09.76 / anniefruits17@gmail.com</td>
+                                        <td>
+                                            <a
+                                                href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
+                                                <i class="logo-facebook fa-brands fa-square-facebook"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
 
-                    </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+               
+
+                <!-- =================== CARTE GOOGLE MAP ====================== -->
+
+                <div class="container-md-fluid pt-5">
+
+                    <h3 class="text-center my-5">Carte Google Map</h3>
+
+                    <div class="map text-center py-5">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.4219088783976!2d-0.9597313708109125!3d45.926543991041264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480140436376830f%3A0x4d915c440a2820f8!2sAnnie%20Fruits!5e0!3m2!1sfr!2sfr!4v1693380681876!5m2!1sfr!2sfr"
+                            height="600" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        <!-- =================== CARTE ====================== -->
-        <div class="container-md-fluid pt-5">
-
-            <h3 class="text-center my-5">Carte Google Map</h3>
-
-            <div class="map text-center py-5">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d583.4219088783976!2d-0.9597313708109125!3d45.926543991041264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480140436376830f%3A0x4d915c440a2820f8!2sAnnie%20Fruits!5e0!3m2!1sfr!2sfr!4v1693380681876!5m2!1sfr!2sfr"
-                    height="600" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-        </div>
-    @endsection
+            @endsection

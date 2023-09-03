@@ -168,18 +168,15 @@
 
                             <!-- ==== Tableau horaires d'ouverture du magasin ==== -->
 
-                            <div class="col-md-6">
-                                <div class="my-5">
-                                    <table class="horaire-coordos table table-success table-striped mx-auto">
+                            <div class="col-lg-6">
+                                <div class="tableau table-responsive my-5">
+                                    <table class="table table-striped mb-0 mx-auto">
+                                        
                                         <thead class="thead-dark">
-
                                             <tr>
-                                                <th style="background-color: #4BAD3B;color: white" scope="col">Jour
-                                                </th>
-                                                <th style="background-color: #4BAD3B;color: white" scope="col">Matin
-                                                </th>
-                                                <th style="background-color: #4BAD3B;color: white" scope="col">
-                                                    Après-midi</th>
+                                                <th>Jour</th>
+                                                <th>Matin</th>                                               
+                                                <th>Après-midi</th>    
                                             </tr>
                                         </thead>
 
@@ -225,8 +222,8 @@
                                                 <td class="fw-bolder text-danger">Fermé</td>
                                                 <td class="fw-bolder text-danger">Fermé</td>
                                             </tr>
-
                                         </tbody>
+
                                     </table>
                                 </div>
                             </div>
