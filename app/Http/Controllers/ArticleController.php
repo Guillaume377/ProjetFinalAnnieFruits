@@ -42,7 +42,7 @@ class ArticleController extends Controller
             'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix' => 'required',
             'stock' => 'required',
-            'type_prix' => 'required',
+            'type_prix' => 'required|in:piece,kilo',
             'gamme_id' => 'required'
         ]);
 

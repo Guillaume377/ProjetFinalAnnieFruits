@@ -82,8 +82,7 @@
 
                                     <div class="col-md-12">
                                         <input id="image" type="file"
-                                            class="form-control @error('image') is-invalid @enderror" name="image"
-                                            placeholder="image.jpg" value="{{ $article->image }}" autocomplete="image">
+                                            class="form-control @error('image') is-invalid @enderror" name="image">
 
                                         @error('image')
                                             <span class="invalid-feedback" role="alert">
@@ -126,127 +125,138 @@
                                         class="form-control @error('description') is-invalid @enderror" name="description"
                                         value="{{ $article->description }}"> --}}
 
-                                <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..."
-                                    class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required>
-                                        </textarea>
-                                <div id="descriptionHelp" class="form-text ms-1">ex : La tomate peut être conservée ...
+                                <textarea id="description" type="text" rows="3" placeholder="Description" 
+                                class="form-control @error('description') is-invalid @enderror" name="description">{{ $article->description }}"</textarea>
+                              
+                                       
+                                        
+
+
+
+
+                                @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+
+
+                            <!-- ===== SECTION PRIX + STOCK ===== -->
+
+                            <div class="mx-auto d-flex justify-content-center gap-2">
+
+
+                                <!-- ===== PRIX ===== -->
+
+                                <div class="col mb-3">
+                                    <label for="prix"
+                                        class="col-form-label"><small>{{ __('Nouveau prix') }}</small></label>
+
+                                    <div class="col-md-12">
+                                        <input id="prix" type="number" step="0.01" placeholder="Prix"
+                                            class="form-control @error('prix') is-invalid @enderror" name="prix"
+                                            value="{{ $article->prix }}">
+
+                                        @error('prix')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
 
-                                @error('descritpion')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
+                                <!-- ===== STOCK ===== -->
+
+                                <div class="col mb-3">
+                                    <label for="stock"
+                                        class="col-form-label ms-1"><small>{{ __('Nouveau stock') }}</small></label>
+
+                                    <div class="col-md-12">
+                                        <input id="stock" type="number" step="0.01" placeholder="Stock"
+                                            class="form-control @error('stock') is-invalid @enderror" name="stock"
+                                            value="{{ $article->stock }}">
+
+                                        @error('stock')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                             </div>
+
+
+                            <!-- ===== SECTION TYPE PRIX + GAMME ===== -->
+
+                            <div class="my-auto d-flex justify-content-center gap-2">
+
+
+                                <!-- ===== TYPE PRIX ===== -->
+
+                                <div class="col-lg  text-center">
+                                    <label for="type_prix_id"
+                                        class="col-form-label new_type_prix"><small>{{ __('Nouveau type prix') }}</small></label>
+
+                                    <div class="col-form-label">
+                                        <select class="p-1" name="article_id">
+
+                                            <!-- faire un selected -->
+
+                                            <option @if ($article->id == $article->article_id) selected @endif
+                                                value="{{ $article->id }}">
+                                                {{ $article->type_prix }}</option>
+
+                                            @if ($article->type_prix == 'pièce')
+                                                <option value=kilo>kilo</option>
+                                            @else
+                                                <option value=pièce>pièce</option>
+                                            @endif
+
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ===== GAMME ===== -->
+
+                                <div class="col-lg text-center">
+                                    <label for="gamme_id"
+                                        class="col-form-label"><small>{{ __('Nouvelle gamme') }}</small></label>
+
+                                    <div class="col-form-label">
+                                        <select class="p-1" name="gamme_id">
+
+                                            @foreach ($gammes as $gamme)
+                                                <option @if ($gamme->id == $article->gamme_id) selected @endif
+                                                    value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
+
+                            <div class="row mt-4">
+                                <div class="text-center mx-auto">
+                                    <button type="submit"
+                                        class="btn btn-ajout"><small>{{ __('Valider la modification') }}</small></button>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
 
-
-                    <!-- ===== SECTION PRIX + STOCK ===== -->
-
-                    <div class="mx-auto d-flex justify-content-center gap-2">
-
-
-                        <!-- ===== PRIX ===== -->
-
-                        <div class="col mb-3">
-                            <label for="prix"
-                                class="col-form-label"><small>{{ __('Nouveau prix') }}</small></label>
-
-                            <div class="col-md-12">
-                                <input id="prix" type="number" step="0.01" placeholder="Prix"
-                                    class="form-control @error('prix') is-invalid @enderror" name="prix"
-                                    value="{{ $article->prix }}">
-
-                                @error('prix')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <!-- ===== STOCK ===== -->
-
-                        <div class="col mb-3">
-                            <label for="stock"
-                                class="col-form-label ms-1"><small>{{ __('Nouveau stock') }}</small></label>
-
-                            <div class="col-md-12">
-                                <input id="stock" type="number" step="0.01" placeholder="Stock"
-                                    class="form-control @error('stock') is-invalid @enderror" name="stock"
-                                    value="{{ $article->stock }}">
-
-                                @error('stock')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <!-- ===== SECTION TYPE PRIX + GAMME ===== -->
-
-                    <div class="mx-5 d-flex justify-content-center gap-2">
-
-
-                        <!-- ===== TYPE PRIX ===== -->
-
-                        <div class="col my-4 text-center">
-                            <label for="type_prix_id"
-                                class= "new_type_prix"><small>{{ __('Nouveau type prix') }}</small></label>
-
-                            <div class="col-form-label">
-                                <select class="p-1" name="article_id">
-                                    <option>Pièce ou kilo</option>
-                                    {{-- @foreach ($articles as $article)
-                                                <option @if ($article->id == $article->article_id) selected @endif 
-                                                    value="{{ $article->id }}">{{ $article->type_prix }}</option>
-                                            @endforeach --}}
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                        <!-- ===== GAMME ===== -->
-
-                        <div class="col my-4 text-center">
-                            <label for="gamme_id"
-                                class="new_gamme col-form-label text-center"><small>{{ __('Nouvelle gamme') }}</small></label>
-
-                            <div class="col-form-label">
-                                <select class="p-1" name="gamme_id">
-
-                                    @foreach ($gammes as $gamme)
-                                        <option @if ($gamme->id == $article->gamme_id) selected @endif
-                                            value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
-
-                    <div class="row mt-4">
-                        <div class="text-center mx-auto">
-                            <button type="submit"
-                                class="btn btn-ajout"><small>{{ __('Valider la modification') }}</small></button>
-                        </div>
-                    </div>
-
-                    </form>
                 </div>
 
             </div>
-
         </div>
-    </div>
-    </div>
-@endsection
+    @endsection

@@ -98,7 +98,7 @@
                                         class="form-control @error('titre') is-invalid @enderror" name="titre"
                                         value="{{ old('titre') }}" required>
 
-                                    @error('descritpion')
+                                    @error('titre')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -116,11 +116,12 @@
                                             class="form-control" @error('description') is-invalid @enderror
                                             name="description" value="{{ old('description') }}" required> --}}
 
-                                    <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..." class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required></textarea>
-                                    <div id="descriptionHelp">
-                                    </div>
+                                    <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..."
+                                        class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required></textarea>
+                                    <div id="descriptionHelp"></div>
 
-                                    @error('descritpion')
+
+                                    @error('description')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -175,37 +176,37 @@
                                 </div>
 
 
-                            <!-- ===== SECTION TYPE PRIX + GAMME ===== -->
+                                <!-- ===== SECTION TYPE PRIX + GAMME ===== -->
 
                                 <div class="d-flex justify-content-center gap-2">
 
 
                                     <!-- ===== TYPE PRIX ===== -->
 
-                                    <div class="col my-4">
+                                    <div class="col-lg my-4 text-center">
                                         <label class="pb-2" for="article_id">Pièce ou kilo</label>
 
-                                        <div class="col-form-label text-center">
+                                        <div class="col-form-label">
                                             <select class="p-1" name="article_id">
 
-                                                <!-- faire un selected en dur -->
-                                                    <option value=pièce>Pièce</option>
-                                                    <option value=kilo>Kilo</option>
-                                              
+                                                <option value="pièce">pièce</option>
+                                                <option value="kilo">kilo</option>
+                                                    
                                             </select>
                                         </div>
 
                                     </div>
 
 
+
                                     <!-- ===== GAMME ===== -->
 
-                                    <div class="col my-4">
+                                    <div class="col-lg my-4 text-center">
                                         <label class="pb-2" for="gamme_id">Choisissez une gamme</label>
 
-                                        <div class="col-form-label text-center">
+                                        <div class="col-form-label">
                                             <select class="p-1" name="gamme_id">
-                                                
+
                                                 @foreach ($gammes as $gamme)
                                                     <option value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
                                                 @endforeach
@@ -278,8 +279,6 @@
                         <!-- ===== BOUCLE AFFICHAGE INFOS ARTICLES ===== -->
 
                         @foreach ($articles as $article)
-
-
                             <!-- ===== ARTICLES ===== -->
 
                             <tbody>
@@ -384,7 +383,7 @@
                         <div class="card-body" id="body_card_index">
 
 
-                            <!-- ===== FORMULAIRE CREATION ARTICLE ===== -->
+                            <!-- ===== FORMULAIRE CREATION GAMME ===== -->
 
                             <form action="{{ route('gammes.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -491,10 +490,10 @@
                                 <tr>
                                     <td class="bo-gamme text-center fw-bolder">{{ $gamme->id }}</td>
                                     <td class="bo-gamme text-center fw-bolder">{{ $gamme->nom }}</td>
-                                    <td class="bo-gamme"><img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
-                                        alt="{{ $gamme->nom }}" style="width: 7rem">
+                                    <td class="bo-gamme"><img src="{{ asset('images/' . $gamme->image) }}"
+                                            class="rounded-top" alt="{{ $gamme->nom }}" style="width: 7rem">
                                     </td>
-                                    
+
                                     <td class="text-center">
                                         <a href="{{ route('gammes.edit', $gamme) }}">
                                             <button class="btn btn-ajout">Modifier</button>

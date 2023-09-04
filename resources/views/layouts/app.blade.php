@@ -122,7 +122,8 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->prenom }}<i class="person fa-solid fa-person mx-3"></i>
+                                        {{-- {{ Auth::user()->prenom }} --}}
+                                        <i class="person fa-solid fa-person mx-3"></i>
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
