@@ -116,10 +116,8 @@
                                             class="form-control" @error('description') is-invalid @enderror
                                             name="description" value="{{ old('description') }}" required> --}}
 
-                                    <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..."
-                                        class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required>
-                                        </textarea>
-                                    <div id="descriptionHelp" class="form-text ms-1">ex : La tomate peut être conservée ...
+                                    <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..." class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required></textarea>
+                                    <div id="descriptionHelp">
                                     </div>
 
                                     @error('descritpion')
@@ -181,17 +179,19 @@
 
                                 <div class="d-flex justify-content-center gap-2">
 
+
                                     <!-- ===== TYPE PRIX ===== -->
 
                                     <div class="col my-4">
-                                        <label class="pb-2" for="article_id"></label>
+                                        <label class="pb-2" for="article_id">Pièce ou kilo</label>
 
                                         <div class="col-form-label text-center">
                                             <select class="p-1" name="article_id">
-                                                <option>Pièce ou kilo</option>
-                                                @foreach ($articles as $article)
-                                                    <option value="{{ $article->id }}">{{ $article->type_prix }}</option>
-                                                @endforeach
+
+                                                <!-- faire un selected en dur -->
+                                                    <option value=pièce>Pièce</option>
+                                                    <option value=kilo>Kilo</option>
+                                              
                                             </select>
                                         </div>
 
@@ -201,11 +201,11 @@
                                     <!-- ===== GAMME ===== -->
 
                                     <div class="col my-4">
-                                        <label class="pb-2" for="gamme_id"></label>
+                                        <label class="pb-2" for="gamme_id">Choisissez une gamme</label>
 
                                         <div class="col-form-label text-center">
                                             <select class="p-1" name="gamme_id">
-                                                <option>Choisissez une gamme</option>
+                                                
                                                 @foreach ($gammes as $gamme)
                                                     <option value="{{ $gamme->id }}">{{ $gamme->nom }}</option>
                                                 @endforeach
@@ -491,8 +491,9 @@
                                 <tr>
                                     <td class="bo-gamme text-center fw-bolder">{{ $gamme->id }}</td>
                                     <td class="bo-gamme text-center fw-bolder">{{ $gamme->nom }}</td>
-                                    <td class="bo-gamme" img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
-                                        alt="{{ $gamme->nom }}" style="width: 7rem"></td>
+                                    <td class="bo-gamme"><img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
+                                        alt="{{ $gamme->nom }}" style="width: 7rem">
+                                    </td>
                                     
                                     <td class="text-center">
                                         <a href="{{ route('gammes.edit', $gamme) }}">
