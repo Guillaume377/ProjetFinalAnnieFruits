@@ -41,7 +41,7 @@
 
                             <!-- ===== FORMULAIRE CREATION ARTICLE ===== -->
 
-                            <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
                                 @csrf
 
 
@@ -74,9 +74,9 @@
                                         <label for="image"
                                             class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
 
-                                        <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                            name="image" placeholder="ex : image.jpg" value="{{ old('image') }}"
-                                            autocomplete="image" required>
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
+                                             placeholder="ex : image.jpg" value="{{ old('image') }}"
+                                            autocomplete="image">
 
                                         @error('image')
                                             <span class="invalid-feedback" role="alert">
@@ -184,10 +184,10 @@
                                     <!-- ===== TYPE PRIX ===== -->
 
                                     <div class="col-lg my-4 text-center">
-                                        <label class="pb-2" for="article_id">Pièce ou kilo</label>
+                                        <label class="pb-2" for="type_prix">Pièce ou kilo</label>
 
                                         <div class="col-form-label">
-                                            <select class="p-1" name="article_id">
+                                            <select class="p-1" name="type_prix">
 
                                                 <option value="pièce">pièce</option>
                                                 <option value="kilo">kilo</option>
@@ -385,7 +385,7 @@
 
                             <!-- ===== FORMULAIRE CREATION GAMME ===== -->
 
-                            <form action="{{ route('gammes.store') }}" method="POST" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('gammes.store') }}"  enctype="multipart/form-data">
                                 @csrf
 
 
@@ -418,8 +418,8 @@
                                         <label for="image"
                                             class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
 
-                                        <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                            name="image" placeholder="ex : image.jpg" value="{{ old('image') }}"
+                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
+                                             placeholder="ex : image.jpg" value="{{ old('image') }}"
                                             autocomplete="image" required>
 
                                         @error('image')
@@ -494,11 +494,17 @@
                                             class="rounded-top" alt="{{ $gamme->nom }}" style="width: 7rem">
                                     </td>
 
+
+                                    <!-- ===== BOUTON MOFIDIER ===== -->
+
                                     <td class="text-center">
                                         <a href="{{ route('gammes.edit', $gamme) }}">
                                             <button class="btn btn-ajout">Modifier</button>
                                         </a>
                                     </td>
+
+
+                                    <!-- ===== BOUTON SUPPRIMER ===== -->
 
                                     <td class="text-center">
                                         <form action="{{ route('gammes.destroy', $gamme) }}" method="post">

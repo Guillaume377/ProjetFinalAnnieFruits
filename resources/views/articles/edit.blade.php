@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+
     <!-- ===== SECTION MODIF ARTICLE ===== -->
 
     <h1 class="title_h1 text-center mx-auto">Modifier l'article " {{ $article->nom }} "</h1>
@@ -43,8 +45,7 @@
 
                         <!-- ===== FORMULAIRE MODIFICATION ARTICLE ===== -->
 
-                        <form action="{{ route('articles.update', $article) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('articles.update', $article) }}" enctype="multipart/form-data">   
                             @csrf
                             @method('PUT')
 
@@ -81,8 +82,8 @@
                                         class="col-form-label ms-1"><small>{{ __('Nouvelle image') }}</small></label>
 
                                     <div class="col-md-12">
-                                        <input id="image" type="file"
-                                            class="form-control @error('image') is-invalid @enderror" name="image">
+                                        <input type="file" name="image"
+                                            class="form-control @error('image') is-invalid @enderror" >
 
                                         @error('image')
                                             <span class="invalid-feedback" role="alert">
@@ -128,12 +129,6 @@
                                 <textarea id="description" type="text" rows="3" placeholder="Description" 
                                 class="form-control @error('description') is-invalid @enderror" name="description">{{ $article->description }}"</textarea>
                               
-                                       
-                                        
-
-
-
-
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -198,11 +193,11 @@
                                 <!-- ===== TYPE PRIX ===== -->
 
                                 <div class="col-lg  text-center">
-                                    <label for="type_prix_id"
+                                    <label for="type_prix"
                                         class="col-form-label new_type_prix"><small>{{ __('Nouveau type prix') }}</small></label>
 
                                     <div class="col-form-label">
-                                        <select class="p-1" name="article_id">
+                                        <select class="p-1" name="type_prix">
 
                                             <!-- faire un selected -->
 

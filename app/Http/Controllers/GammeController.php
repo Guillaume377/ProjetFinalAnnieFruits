@@ -36,7 +36,7 @@ class GammeController extends Controller
         $request->validate([
             //'name de l'input-> [critères]
             'nom' => 'required|min:5|max:50',
-            'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         //2) Sauvegarde du message => Va lancer un insert into en SQL
@@ -87,7 +87,7 @@ class GammeController extends Controller
     {
             $request->validate([
                 'nom' => 'required|min:5|max:50',
-                'image' => 'required|nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
     
             //2) Sauvegarde du message => Va lancer un insert into en SQL
