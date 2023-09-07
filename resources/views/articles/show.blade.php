@@ -21,7 +21,7 @@
 
 
             <!-- ===== card description article ===== -->
-            
+
             <div class="col-xl-6 d-flex justify-content-center ps-5 pb-5">
                 <div class="img-article">
 
@@ -33,10 +33,12 @@
                         <td> {{ $article->description }}</td>
                     </div>
 
-
                     <div class="prix_article text-center  my-5">
                         <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
+
+                    {{-- <i class="fas fa-box-open fa-2x mr-2"></i>@php displayStock($stock) @endphp --}}
+
 
 
                     <!-- ===== Champ quantité + bouton Ajouter au panier ===== -->
@@ -45,17 +47,31 @@
                         class="form-inline d-inline-block d-flex justify-content-center">
                         {{ csrf_field() }}
                         <div class="row w-50 ">
-                            @if ($article['type_prix'] == 'pièce')
-                                <input type="number" min="1" max="10" name="quantite" placeholder="Quantité ?"
-                                    class="form-control mb-3">
+
+                            @if ($article->stock > 0)
+                                @if ($article['type_prix'] == 'pièce')
+                                    @php
+                                        $maxValue = $article->stock >= 10 ? 10 : $article->stock;
+                                    @endphp
+
+                                    <input type="number" min="1" max="{{ $maxValue }}" name="quantite"
+                                        placeholder="Quantité ?" class="form-control mb-3">
+                                @else
+                                    <input type='number' min="100" max="5000" step="100" name="quantite"
+                                        placeholder="Indiquez le poids en grammes" class="form-control mb-3">
+                                @endif
+
+                                <div class="text-center mx-auto">
+                                    <button type="submit" class="btn btn-ajout px-4"><i
+                                            class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
+                                </div>
                             @else
-                                <input type='number' min="100" max="5000" step="100" name="quantite"
-                                    placeholder="Indiquez le poids en grammes" class="form-control mb-3">
+                                <p class="text-center">Produit en cours de réapprovisionnement</p>
                             @endif
-                            <div class="text-center mx-auto">
-                                <button type="submit" class="btn btn-ajout px-4"><i
-                                        class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
-                            </div>
+
+
+
+
                         </div>
 
                     </form>
@@ -78,4 +94,5 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

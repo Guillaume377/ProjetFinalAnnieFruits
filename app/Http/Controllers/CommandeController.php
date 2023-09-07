@@ -57,13 +57,14 @@ class CommandeController extends Controller
   
               // j'insère chacun de ses articles dans commande_articles (syntaxe attach)
               $commande->articles()->attach($article['id'], ['quantite' => $article['quantite']]);
-          }
 
-          // je fais baisser le stock de chaque article (stock actuel - stock commandé)
-          
-          $articleInDatabase = Article::find($article['id']);
-          $articleInDatabase->stock -= $article['quantite'];
-          $articleInDatabase->save();
+            // je fais baisser le stock de chaque article (stock actuel - stock commandé)
+
+            $articleInDatabase = Article::find($article['id']);
+            $articleInDatabase->stock -= $article['quantite'];
+            $articleInDatabase->save();
+
+          }
 
 
         // Redirection et afficher message de succès

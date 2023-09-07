@@ -29,6 +29,8 @@
         },
         "files": [
             "app/Helpers/UploadImage.php"
+            
+
         ]
     },
     "autoload-dev": {

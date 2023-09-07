@@ -48,7 +48,7 @@ class GammeController extends Controller
         // ]);
 
         // on fait appel au Helper pour charger l'image
-        $gamme->image = isset($request['image']) ? uploadImage($request['image']) : "default_user.jpg";
+        $gamme->image = isset($request['image']) ? uploadImage($request['image']) : $gamme->image;
         
         $gamme->save();
 
@@ -98,7 +98,7 @@ class GammeController extends Controller
     
 
             // On fait appel au Helper pour charger l'image
-            $gamme->image = isset($request['image']) ? uploadImage($request['image']) : "default_gamme.jpg";
+            $gamme->image = isset($request['image']) ? uploadImage($request['image']) : $gamme->image;
         
             $gamme->save();
 

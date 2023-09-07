@@ -50,7 +50,7 @@ class ArticleController extends Controller
         $article= Article::create($request->all());
         
         // on fait appel au Helper pour charger l'image
-        $article->image = isset($request['image']) ? uploadImage($request['image']) : "default_user.jpg";
+        $article->image = isset($request['image']) ? uploadImage($request['image']) : $article->image;
         
         $article->save();
 
@@ -104,8 +104,8 @@ class ArticleController extends Controller
         $article->update($request->except('_token'));
         
         // on fait appel au Helper pour charger l'image
-        $article->image = isset($request['image']) ? uploadImage($request['image']) : "default_article.jpg";
-        
+        $article->image = isset($request['image']) ? uploadImage($request['image']) : $article->image;
+
         $article->save();
 
 

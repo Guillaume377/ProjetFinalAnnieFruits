@@ -12,6 +12,8 @@ class Avis extends Model
     protected $fillable = [
         'commentaire',
         'note',
+        'user_id',
+        'article_id',
     ];
 
     //nom au singulier car un avis peut être associé qu'à un user
