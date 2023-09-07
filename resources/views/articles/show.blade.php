@@ -48,6 +48,7 @@
                         {{ csrf_field() }}
                         <div class="row w-50 ">
 
+                            <!-- ===== Condition si quantité en stock + si pièce ou Kilo ===== -->
                             @if ($article->stock > 0)
                                 @if ($article['type_prix'] == 'pièce')
                                     @php
@@ -66,11 +67,8 @@
                                             class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
                                 </div>
                             @else
-                                <p class="text-center">Produit en cours de réapprovisionnement</p>
+                                <p class="text-center">Rupture de stock</p>
                             @endif
-
-
-
 
                         </div>
 
@@ -82,17 +80,71 @@
 
                     <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
 
+                    <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{$article->note}}</span></p>
+
                     @if (count($article->avis) == 0)
                         <p class="text-center m-5">Pas d'avis pour cet article</p>
                     @else(isset($article->avis) && $article->avis !== null)
                         @foreach ($article->avis as $avis)
-                            <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
-                            <p class="px-5">{{ $avis->commentaire }}</p>
+
+                            <div class="container">
+                                <div class="d-flex flex-nowrap justify-content-between">
+                                    <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
+                                    <p class="mt-5 fw-bold pe-5">{{ $avis->user->prenom }}</p>
+                                </div>
+                            </div>
+
+                            <p class="description-article px-5">{{ $avis->commentaire }}</p>
                         @endforeach
                     @endif
+
+
+                    <!-- ===== Possibilité de laisser une note et un commentaire ===== -->
+
+
+                    <div class="container border p-2 mt-3 mb-3">
+                        <h5 class="py-4 mx-auto text-center">Vous avez goûté ce produit ? Notez-le !</h5>
+                        <form method="post" action="{{ route('avis.store') }}" class="w-50 m-auto">
+                            @csrf
+
+
+                             <!-- ===== NOTE ===== -->
+
+                            <div class="form-group">
+                                <label for="note">Note sur 5</label>
+                                <input required type="number" class="form-control" name="note" id="note"
+                                    min="1" max="5">
+                            </div>
+
+
+                            <!-- ===== COMMENTAIRES ===== -->
+
+                            <div class="form-group">
+                                <label for="commentaire">Commentaire (facultatif)</label>
+                                <textarea type="textarea" class="form-control" name="commentaire" rows="4" cols="33" id="commentaire"
+                                    placeholder="Un super produit, etc"></textarea>
+                            </div>
+                            <input type="hidden" name="articleId" value="{{ $article->id }}">
+
+
+                            <!-- ===== BOUTON ENVOYER ===== -->
+
+                        @if (auth()->check())
+                            <div class="text-center my-2">
+                                <button type="submit" class="btn btn-ajout">Envoyer</button>
+                            </div>
+                        @else
+                            <p class="py-3 fw-bolder text-center">Pour mettre une note et envoyer un commentaire, veuillez vous connecter.</p>
+                        @endif   
+                        </form>
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+
+
+    

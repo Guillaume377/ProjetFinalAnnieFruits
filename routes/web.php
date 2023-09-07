@@ -35,7 +35,7 @@ Route::put('/user/updatepassword/{user}', [App\Http\Controllers\UserController::
 
 
 
-//*********************** Route d'affichage  de la page home**********************************/
+//*********************** Route d'affichage de la page home**********************************/
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -99,11 +99,14 @@ Route::get('/sauvegardeCommande', [App\Http\Controllers\CommandeController::clas
 Route::resource('/articles', ArticleController::class);
 
 
-
 // ******************* Route ressources Gammes **************** //
 
 Route::resource('/gammes', GammeController::class);
 
+
+// ****************************Route Avis ******************** //
+
+Route::post('avis', [App\Http\Controllers\AvisController::class, 'store'])->name('avis.store');
 
 
 // ******************* Route pour la gestion du back-office ************************************/
