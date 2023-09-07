@@ -14,7 +14,7 @@ class GammeController extends Controller
     {
         $gammes = Gamme::with('articles')->get();
 
-        return view('gamme/index', [
+        return view('gammes/index', [
             'gammes' => $gammes,
         ]);
     }
@@ -68,16 +68,19 @@ class GammeController extends Controller
         $gamme->load('articles');
 
 
-        return view("gamme/show", ['gamme' => $gamme]);
+        return view("gammes/show", ['gamme' => $gamme]);
     }
     
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Gamme $gamme)
     {
-        //
+      
+        return view('gammes/edit', ['gamme' => $gamme]);
+    
+    
     }
 
     /**
@@ -90,10 +93,16 @@ class GammeController extends Controller
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             ]);
     
-            //2) Sauvegarde du message => Va lancer un insert into en SQL
+            //Sauvegarde du message => Va lancer un insert into en SQL
             $gamme->update($request->all());
     
-            //3) On redirige vers l'accueil avec un message de succès
+
+            // On fait appel au Helper pour charger l'image
+            $gamme->image = isset($request['image']) ? uploadImage($request['image']) : "default_gamme.jpg";
+        
+            $gamme->save();
+
+            // On redirige vers l'accueil avec un message de succès
             return redirect()->route('backoffice')->with('message', 'Gamme modifiée avec succès'); 
     }
 

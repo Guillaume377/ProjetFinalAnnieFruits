@@ -9,11 +9,9 @@
     <h1 class="title_h1 text-center mt-5 mx-auto">Back Office</h1>
 
 
-
-
     <!-- ====== SECTION CREATION ARTICLE ====== -->
 
-    <div id="section_creation_article">
+    
         <div class="container-fluid">
 
             <!-- ===== TITRE ===== -->
@@ -74,9 +72,9 @@
                                         <label for="image"
                                             class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
 
-                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
-                                             placeholder="ex : image.jpg" value="{{ old('image') }}"
-                                            autocomplete="image">
+                                        <input type="file" name="image"
+                                            class="form-control @error('image') is-invalid @enderror"
+                                            placeholder="ex : image.jpg" value="{{ old('image') }}" autocomplete="image">
 
                                         @error('image')
                                             <span class="invalid-feedback" role="alert">
@@ -112,14 +110,9 @@
                                     <label for="description"
                                         class="col-form-label ms-1"><small>{{ __('Description') }}</small></label>
 
-                                    {{-- <input id="description" type="text" placeholder="ex : La tomate peut être..."
-                                            class="form-control" @error('description') is-invalid @enderror
-                                            name="description" value="{{ old('description') }}" required> --}}
-
                                     <textarea id="description" name="description" type="text" rows="3" placeholder="ex : La tomate peut être..."
                                         class="form-control" @error('description') is-invalid @enderror value="{{ old('description') }}" required></textarea>
                                     <div id="descriptionHelp"></div>
-
 
                                     @error('description')
                                         <span class="invalid-feedback" role="alert">
@@ -191,12 +184,11 @@
 
                                                 <option value="pièce">pièce</option>
                                                 <option value="kilo">kilo</option>
-                                                    
+
                                             </select>
                                         </div>
 
                                     </div>
-
 
 
                                     <!-- ===== GAMME ===== -->
@@ -234,7 +226,7 @@
             </div>
 
         </div>
-    </div>
+    
 
 
     <!-- ===== SECTION GESTION ARTICLES ===== -->
@@ -329,35 +321,17 @@
 
                     </table>
                 </div>
+
             </div>
         </div>
+
     </div>
-
-
-
-    <!-- SECTION CREATION GAMMES -->
-
-
-
-    {{-- <div class="text-center mx-auto">
-        <h3 class="my-5">Créer une gamme</h3>
-        <form class="p-3" action="{{ route('gammes.store') }}" method="POST">
-            @csrf
-
-            <!-- ====== GAMME ===== -->
-
-            <input type="text" name="nom" placeholder="Nom de la gamme">
-
-            
-            <!-- Bouton de soumission -->
-            <button type="submit" class="btn btn-ajout">Ajouter</button>
-        </form> --}}
 
 
 
     <!-- ====== SECTION CREATION GAMME ====== -->
 
-    <div id="section_creation_article">
+    
         <div class="container-fluid">
 
             <!-- ===== TITRE ===== -->
@@ -385,7 +359,7 @@
 
                             <!-- ===== FORMULAIRE CREATION GAMME ===== -->
 
-                            <form method="POST" action="{{ route('gammes.store') }}"  enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('gammes.store') }}" enctype="multipart/form-data">
                                 @csrf
 
 
@@ -418,8 +392,9 @@
                                         <label for="image"
                                             class="col-md-4 col-form-label text-center text-light"><small>{{ __('image') }}</small></label>
 
-                                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror"
-                                             placeholder="ex : image.jpg" value="{{ old('image') }}"
+                                        <input type="file" name="image"
+                                            class="form-control @error('image') is-invalid @enderror"
+                                            placeholder="ex : image.jpg" value="{{ old('image') }}"
                                             autocomplete="image" required>
 
                                         @error('image')
@@ -450,10 +425,7 @@
             </div>
 
         </div>
-    </div>
-
-
-
+    
 
 
 
@@ -482,15 +454,17 @@
                         </tr>
                     </thead>
 
-                    <div class="form-group d-flex justify-content-center">
 
+                    <!-- ===== BOUTON MOFIDIER ET SUPPRIMER ===== -->
+
+                    <div class="form-group d-flex justify-content-center">
 
                         <tbody>
                             @foreach ($gammes as $gamme)
                                 <tr>
-                                    <td class="bo-gamme text-center fw-bolder">{{ $gamme->id }}</td>
-                                    <td class="bo-gamme text-center fw-bolder">{{ $gamme->nom }}</td>
-                                    <td class="bo-gamme"><img src="{{ asset('images/' . $gamme->image) }}"
+                                    <td class="text-center fw-bolder">{{ $gamme->id }}</td>
+                                    <td class="text-center fw-bolder">{{ $gamme->nom }}</td>
+                                    <td><img src="{{ asset('images/' . $gamme->image) }}"
                                             class="rounded-top" alt="{{ $gamme->nom }}" style="width: 7rem">
                                     </td>
 
@@ -510,15 +484,82 @@
                                         <form action="{{ route('gammes.destroy', $gamme) }}" method="post">
                                             @method ("delete")
                                             @csrf
-                                            <button type="submit" class="btn btn-suppr">Supprimer</button>
+                                            <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
                                         </form>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
+
                     </div>
+
                 </table>
             </div>
+
         </div>
+
     </div>
+
+
+
+ <!-- ===== LISTE DES UTILISATEURS ===== -->
+
+
+    <div class="mx-auto text-center">
+
+        <h3 class="pt-5 my-5">Liste des utilisateurs</h3>
+
+        <div class="container">
+
+
+            <!-- ===== TABLEAU ===== -->
+
+            <div class="tableau table-responsive my-5">
+                <table class="table table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Téléphone</th>
+                            <th scope="col">Supprimer</th>
+                        </tr>
+                    </thead>
+
+                    <div class="form-group d-flex justify-content-center">
+
+                        <tbody>
+                            @foreach ($users as $user)
+                                <tr>
+                                    <td class="text-center fw-bolder">{{ $user->id }}</td>
+                                    <td class="text-center fw-bolder">{{ $user->nom }}</td>
+                                    <td class="text-center fw-bolder">{{ $user->prenom }}</td>
+                                    <td class="text-center fw-bolder">{{ $user->email }}</td>
+                                    <td class="text-center fw-bolder">{{ $user->telephone }}</td>
+
+                                    <!-- ===== BOUTON SUPPRIMER ===== -->
+
+                                    <td class="text-center">
+                                        <form action="{{ route('user.destroy', $user) }}" method="post">
+                                            @method ("delete")
+                                            @csrf
+                                            <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+
+                    </div>
+
+                </table>
+            </div>
+
+        </div>
+
     </div>
+
+@endsection
+
+

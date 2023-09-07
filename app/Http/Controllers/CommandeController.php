@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Commande;
 use App\Models\User;
+use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -41,18 +42,29 @@ class CommandeController extends Controller
         $commande->date_retrait= session('date_retrait');
         $commande->heure_retrait= session('heure_retrait');
         $commande->user_id = Auth::user()->id;
-        $commande->save();
+        
 
         // Sauvegarder la commande articles
 
+        $commande->save();
+
           // je récupère le panier (stocké dans une variable), et je boucle dessus
+
           $panier = session()->get("panier");
+
 
           foreach ($panier as $article) {
   
               // j'insère chacun de ses articles dans commande_articles (syntaxe attach)
               $commande->articles()->attach($article['id'], ['quantite' => $article['quantite']]);
           }
+
+          // je fais baisser le stock de chaque article (stock actuel - stock commandé)
+          
+          $articleInDatabase = Article::find($article['id']);
+          $articleInDatabase->stock -= $article['quantite'];
+          $articleInDatabase->save();
+
 
         // Redirection et afficher message de succès
 

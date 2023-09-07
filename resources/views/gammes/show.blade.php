@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <h1 class="title_h1 text-center mx-auto">{{$gamme->nom}}</h1>
 
     <!-- ========================== CARD GAMMES ========================== -->

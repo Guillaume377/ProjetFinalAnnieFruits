@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Http\Middleware\IsAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -94,13 +95,31 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    // public function destroy(User $user)
+    // {
+    //     if (Auth::user()->id == $user->id && Auth::user()->role_id == 2) { 
+    //         $user->delete();
+    //         return redirect()->back()->with('message', 'Le compte a bien été supprimé');
+    //     } else {
+    //         return redirect()->back()->withErrors(['erreur' => 'Supression du compte impossible']);
+    //     }
+    // }
+
     public function destroy(User $user)
     {
-        if (Auth::user()->id == $user->id) {
+        if (Auth::user()->id == $user->id) { 
             $user->delete();
             return redirect()->route('home')->with('message', 'Le compte a bien été supprimé');
+        } else if 
+            (Auth::user()->role_id == 2) { 
+                $user->delete();
+                return redirect()->route('backoffice')->with('message', 'Le compte a bien été supprimé');
         } else {
             return redirect()->back()->withErrors(['erreur' => 'Supression du compte impossible']);
         }
     }
+
+
+
+
 }

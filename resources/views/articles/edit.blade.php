@@ -5,16 +5,11 @@
 @endsection
 
 @section('content')
-
-
     <!-- ===== SECTION MODIF ARTICLE ===== -->
 
     <h1 class="title_h1 text-center mx-auto">Modifier l'article " {{ $article->nom }} "</h1>
+
     <div class="container-fluid pt-5" id="section_modif_article">
-
-        <!-- ===== Titre section ===== -->
-
-
         <div class="row justify-content-center">
             <div class="col-md-5">
 
@@ -45,7 +40,8 @@
 
                         <!-- ===== FORMULAIRE MODIFICATION ARTICLE ===== -->
 
-                        <form method="POST" action="{{ route('articles.update', $article) }}" enctype="multipart/form-data">   
+                        <form method="POST" action="{{ route('articles.update', $article) }}"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -83,7 +79,7 @@
 
                                     <div class="col-md-12">
                                         <input type="file" name="image"
-                                            class="form-control @error('image') is-invalid @enderror" >
+                                            class="form-control @error('image') is-invalid @enderror">
 
                                         @error('image')
                                             <span class="invalid-feedback" role="alert">
@@ -126,9 +122,9 @@
                                         class="form-control @error('description') is-invalid @enderror" name="description"
                                         value="{{ $article->description }}"> --}}
 
-                                <textarea id="description" type="text" rows="3" placeholder="Description" 
-                                class="form-control @error('description') is-invalid @enderror" name="description">{{ $article->description }}"</textarea>
-                              
+                                <textarea id="description" type="text" rows="3" placeholder="Description"
+                                    class="form-control @error('description') is-invalid @enderror" name="description">{{ $article->description }}"</textarea>
+
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -238,7 +234,7 @@
                             </div>
 
 
-                            <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
+                            <!-- ===== BOUTON VALIDATION MODIFICATION ===== -->
 
                             <div class="row mt-4">
                                 <div class="text-center mx-auto">
@@ -251,7 +247,7 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

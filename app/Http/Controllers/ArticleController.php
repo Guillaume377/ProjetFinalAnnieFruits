@@ -67,7 +67,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
 
-        // on charge les articles via un eager loading
+        // on charge les avis via un eager loading
         $article->load('avis');
 
 
@@ -104,7 +104,7 @@ class ArticleController extends Controller
         $article->update($request->except('_token'));
         
         // on fait appel au Helper pour charger l'image
-        $article->image = isset($request['image']) ? uploadImage($request['image']) : "default_user.jpg";
+        $article->image = isset($request['image']) ? uploadImage($request['image']) : "default_article.jpg";
         
         $article->save();
 
