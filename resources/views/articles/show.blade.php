@@ -19,7 +19,6 @@
             </div>
 
 
-
             <!-- ===== card description article ===== -->
 
             <div class="col-xl-6 d-flex justify-content-center ps-5 pb-5">
@@ -49,7 +48,9 @@
                         {{ csrf_field() }}
                         <div class="row w-50 ">
 
+
                             <!-- ===== Condition si quantité en stock + si pièce ou Kilo ===== -->
+
                             @if ($article->stock > 0)
                                 @if ($article['type_prix'] == 'pièce')
                                     @php
@@ -58,6 +59,7 @@
 
                                     <input type="number" min="1" max="{{ $maxValue }}" name="quantite"
                                         placeholder="Quantité ?" class="form-control mb-3">
+
                                 @elseif ($article['type_prix'] == 'kilo')
                                     @php
                                         $maxValue = $article->stock >= 5 ? 5 : $article->stock * 1000;
@@ -67,13 +69,16 @@
                                         class="form-control mb-3">
                                 @endif
 
+
+                                <!-- ===== BOUTON PANIER ===== -->
+
                                 <div class="text-center mx-auto">
                                     <button type="submit" class="btn btn-ajout px-4"><i
                                             class="img-btn-ajout fa-solid fa-cart-plus"></i>
                                     </button>
                                 </div>
                             @else
-                                {{-- <p class="text-center">Rupture de stock</p> --}}
+                                
                             @endif
 
                         </div>
@@ -108,14 +113,14 @@
 
                     <!-- ===== Possibilité de laisser une note et un commentaire ===== -->
 
-
                     <div class="container border-top p-2 mt-3 mb-3">
                         <h5 class="py-4 mx-auto text-center">Vous avez goûté ce produit ? Notez-le !</h5>
                         <form method="post" action="{{ route('avis.store') }}" class="w-50 m-auto">
                             @csrf
 
-
                             @if (auth()->check())
+
+
                                 <!-- ===== NOTE ===== -->
 
                                 <div class="form-group">
@@ -137,7 +142,6 @@
 
                                 <!-- ===== BOUTON ENVOYER ===== -->
 
-                                {{-- @if (auth()->check()) --}}
                                 <div class="text-center my-2">
                                     <button type="submit" class="btn btn-ajout">Envoyer</button>
                                 </div>

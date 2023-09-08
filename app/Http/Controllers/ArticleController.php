@@ -38,7 +38,7 @@ class ArticleController extends Controller
         // on met en place un validateur avec les critères attendus
         $request->validate([
             'nom' => 'required|string|min:2|max:30',
-            'description' => 'required|min:10|max:500',
+            'description' => 'required|min:10',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix' => 'required',
             'stock' => 'required',

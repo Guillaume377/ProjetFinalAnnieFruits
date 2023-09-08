@@ -37,6 +37,8 @@ class AvisController extends Controller
 
         $newAverageNote = ($currentAverageNote * $notesNumber + $newNote) / ($notesNumber + 1);
 
+        // Arrondir la note moyenne à un chiffre après la virgule
+        $newAverageNote = round($newAverageNote, 1);
 
         // 3) sauvegarde de la nouvelle note moyenne de l'article
 
