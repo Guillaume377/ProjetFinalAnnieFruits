@@ -28,8 +28,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/UploadImage.php"
-            
+            "app/Helpers/UploadImage.php",
+            "app/Helpers/DisplayStock.php"
 
         ]
     },
@@ -38,7 +38,8 @@
             "Tests\\": "tests/"
         },
         "files": [
-            "app/Helpers/UploadImage.php"
+            "app/Helpers/UploadImage.php",
+            "app/Helpers/DisplayStock.php"
         ]
     },
     "scripts": {

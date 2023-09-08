@@ -196,16 +196,10 @@
                                         <select class="p-1" name="type_prix">
 
                                             <!-- faire un selected -->
-
-                                            <option @if ($article->id == $article->article_id) selected @endif
-                                                value="{{ $article->id }}">
-                                                {{ $article->type_prix }}</option>
-
-                                            @if ($article->type_prix == 'pièce')
-                                                <option value=kilo>kilo</option>
-                                            @else
-                                                <option value=pièce>pièce</option>
-                                            @endif
+                                            <option value="kilo" @if ($article->type_prix == "kilo") selected @endif> kilo </option>
+                                            <option value="pièce" @if ($article->type_prix == "pièce") selected @endif> pièce </option>
+                                                
+                                           
 
                                         </select>
                                     </div>

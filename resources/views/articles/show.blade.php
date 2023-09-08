@@ -37,8 +37,9 @@
                         <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
-                    {{-- <i class="fas fa-box-open fa-2x mr-2"></i>@php displayStock($stock) @endphp --}}
-
+                    <div class="text-center">
+                        <i class="fas fa-box-open fa-2x mx-3"></i>@php displayStock($article->type_prix, $article->stock) @endphp
+                    </div>
 
 
                     <!-- ===== Champ quantité + bouton Ajouter au panier ===== -->
@@ -57,17 +58,22 @@
 
                                     <input type="number" min="1" max="{{ $maxValue }}" name="quantite"
                                         placeholder="Quantité ?" class="form-control mb-3">
-                                @else
-                                    <input type='number' min="100" max="5000" step="100" name="quantite"
-                                        placeholder="Indiquez le poids en grammes" class="form-control mb-3">
+                                @elseif ($article['type_prix'] == 'kilo')
+                                    @php
+                                        $maxValue = $article->stock >= 5 ? 5 : $article->stock * 1000;
+                                    @endphp
+                                    <input type='number' min="100" max="{{ $maxValue }}" step="100"
+                                        name="quantite" placeholder="Indiquez le poids en grammes"
+                                        class="form-control mb-3">
                                 @endif
 
                                 <div class="text-center mx-auto">
                                     <button type="submit" class="btn btn-ajout px-4"><i
-                                            class="img-btn-ajout fa-solid fa-cart-plus"></i></button>
+                                            class="img-btn-ajout fa-solid fa-cart-plus"></i>
+                                    </button>
                                 </div>
                             @else
-                                <p class="text-center">Rupture de stock</p>
+                                {{-- <p class="text-center">Rupture de stock</p> --}}
                             @endif
 
                         </div>
@@ -78,15 +84,15 @@
 
                     <!-- ===== Je fais apparaitre les avis pour cet article ===== -->
 
+                    <div class="container border-top p-2 mt-3 mb-3">
                     <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
 
-                    <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{$article->note}}</span></p>
+                    <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{ $article->note }}</span></p>
 
                     @if (count($article->avis) == 0)
                         <p class="text-center m-5">Pas d'avis pour cet article</p>
                     @else(isset($article->avis) && $article->avis !== null)
                         @foreach ($article->avis as $avis)
-
                             <div class="container">
                                 <div class="d-flex flex-nowrap justify-content-between">
                                     <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
@@ -97,45 +103,48 @@
                             <p class="description-article px-5">{{ $avis->commentaire }}</p>
                         @endforeach
                     @endif
+                    </div>
 
 
                     <!-- ===== Possibilité de laisser une note et un commentaire ===== -->
 
 
-                    <div class="container border p-2 mt-3 mb-3">
+                    <div class="container border-top p-2 mt-3 mb-3">
                         <h5 class="py-4 mx-auto text-center">Vous avez goûté ce produit ? Notez-le !</h5>
                         <form method="post" action="{{ route('avis.store') }}" class="w-50 m-auto">
                             @csrf
 
 
-                             <!-- ===== NOTE ===== -->
+                            @if (auth()->check())
+                                <!-- ===== NOTE ===== -->
 
-                            <div class="form-group">
-                                <label for="note">Note sur 5</label>
-                                <input required type="number" class="form-control" name="note" id="note"
-                                    min="1" max="5">
-                            </div>
-
-
-                            <!-- ===== COMMENTAIRES ===== -->
-
-                            <div class="form-group">
-                                <label for="commentaire">Commentaire (facultatif)</label>
-                                <textarea type="textarea" class="form-control" name="commentaire" rows="4" cols="33" id="commentaire"
-                                    placeholder="Un super produit, etc"></textarea>
-                            </div>
-                            <input type="hidden" name="articleId" value="{{ $article->id }}">
+                                <div class="form-group">
+                                    <label for="note">Note sur 5</label>
+                                    <input required type="number" class="form-control" name="note" id="note"
+                                        min="1" max="5">
+                                </div>
 
 
-                            <!-- ===== BOUTON ENVOYER ===== -->
+                                <!-- ===== COMMENTAIRES ===== -->
 
-                        @if (auth()->check())
-                            <div class="text-center my-2">
-                                <button type="submit" class="btn btn-ajout">Envoyer</button>
-                            </div>
-                        @else
-                            <p class="py-3 fw-bolder text-center">Pour mettre une note et envoyer un commentaire, veuillez vous connecter.</p>
-                        @endif   
+                                <div class="form-group">
+                                    <label for="commentaire">Commentaire (facultatif)</label>
+                                    <textarea type="textarea" class="form-control" name="commentaire" rows="4" cols="33" id="commentaire"
+                                        placeholder="Un super produit, etc"></textarea>
+                                </div>
+                                <input type="hidden" name="articleId" value="{{ $article->id }}">
+
+
+                                <!-- ===== BOUTON ENVOYER ===== -->
+
+                                {{-- @if (auth()->check()) --}}
+                                <div class="text-center my-2">
+                                    <button type="submit" class="btn btn-ajout">Envoyer</button>
+                                </div>
+                            @else
+                                <p class="py-3 fw-bolder text-center">Pour mettre une note et envoyer un commentaire,
+                                    veuillez vous connecter.</p>
+                            @endif
                         </form>
                     </div>
 
@@ -144,7 +153,3 @@
         </div>
     </div>
 @endsection
-
-
-
-    
