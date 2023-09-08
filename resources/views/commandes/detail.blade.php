@@ -46,7 +46,7 @@
                             <th scope="col" >Article</th>
                             <th scope="col" >Prix unitaire</th>
                             <th scope="col" >Quantité</th>
-                            <th scope="col">Prix</th>
+                            <th scope="col" >Prix</th>
                         </tr>
 
                     </thead>

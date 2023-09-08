@@ -195,12 +195,10 @@
                                     <div class="col-form-label">
                                         <select class="p-1" name="type_prix">
 
-                                            <!-- faire un selected -->
+                                            <!-- selected -->
                                             <option value="kilo" @if ($article->type_prix == "kilo") selected @endif> kilo </option>
                                             <option value="pièce" @if ($article->type_prix == "pièce") selected @endif> pièce </option>
                                                 
-                                           
-
                                         </select>
                                     </div>
 

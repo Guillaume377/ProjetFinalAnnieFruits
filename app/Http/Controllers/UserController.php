@@ -95,15 +95,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(User $user)
-    // {
-    //     if (Auth::user()->id == $user->id && Auth::user()->role_id == 2) { 
-    //         $user->delete();
-    //         return redirect()->back()->with('message', 'Le compte a bien été supprimé');
-    //     } else {
-    //         return redirect()->back()->withErrors(['erreur' => 'Supression du compte impossible']);
-    //     }
-    // }
+   
 
     public function destroy(User $user)
     {
