@@ -62,7 +62,7 @@
 
                                 @elseif ($article['type_prix'] == 'kilo')
                                     @php
-                                        $maxValue = $article->stock >= 5 ? 5 : $article->stock * 1000;
+                                        $maxValue = $article->stock >= 5 ? 5000 : $article->stock * 1000;
                                     @endphp
                                     <input type='number' min="100" max="{{ $maxValue }}" step="100"
                                         name="quantite" placeholder="Indiquez le poids en grammes"

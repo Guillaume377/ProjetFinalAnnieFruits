@@ -352,7 +352,7 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
             <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
             <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
         </div>
@@ -536,7 +536,7 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
             <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
             <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
         </div>
@@ -606,7 +606,7 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
             <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
             <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
         </div>

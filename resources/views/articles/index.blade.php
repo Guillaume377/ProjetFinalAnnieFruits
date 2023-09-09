@@ -61,7 +61,6 @@
 
                                     <!-- si dans les favoris-->
 
-
                                     <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
                                         @csrf
                                         @method('delete')
@@ -72,9 +71,7 @@
                                     </form>
                                 @else
 
-
                                     <!-- si le produit n'est pas dans les favoris-->
-
 
                                     <form method="post" action="{{ route('favoris.store') }}">
                                         @csrf
@@ -83,9 +80,13 @@
                                             favoris</button>
                                     </form>
                                 @endif
+
                             @endif
                         </div>
 
+
+                        <!-- ====== BOUTON AJOUT PANIER ===== -->
+                        
                         <div class="col">
 
                             <form method="POST" action="{{ route('panier.add', 1) }}"

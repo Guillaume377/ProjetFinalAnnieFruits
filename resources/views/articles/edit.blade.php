@@ -118,10 +118,6 @@
                                 <label for="description"
                                     class="col-form-label ms-1"><small>{{ __('Nouvelle description') }}</small></label>
 
-                                {{-- <input id="description" type="text" placeholder="Description"
-                                        class="form-control @error('description') is-invalid @enderror" name="description"
-                                        value="{{ $article->description }}"> --}}
-
                                 <textarea id="description" type="text" rows="3" placeholder="Description"
                                     class="form-control @error('description') is-invalid @enderror" name="description">{{ $article->description }}"</textarea>
 

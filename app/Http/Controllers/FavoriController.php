@@ -20,10 +20,10 @@ class FavoriController extends Controller
         $user = User::find(Auth::user()->id); 
 
         // je charge les favoris du user connecté avec un eager loading
-        $user->load('favoris.campagnes');
+        $user->load('favoris');
 
         // je retourne ces infos dans la view campagne pour les afficher
-        return view ('favoris.index', ['user' => $user]);
+        return view ('favori', ['user' => $user]);
                     
     }
 
