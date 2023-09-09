@@ -1,24 +1,40 @@
 @extends('layouts.app')
 
-{{-- @section('title')
+@section('title')
     Back office - Annie fruits
-@endsection --}}
+@endsection
 
 @section('content')
+
+    <!-- ===== TITRE H1 ===== -->
+
     <h1 class="title_h1 text-center mt-5 mx-auto">Back Office</h1>
 
 
-    <!-- ====== SECTION CREATION ARTICLE ====== -->
+    <!-- ===== LIENS VERS LES AUTRE SECTIONS ===== -->
 
+    <div class="container">
+        <div class="text-center">
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gamme</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+        </div>
+    </div>
+
+
+    <!-- =============================== SECTION CREATION ARTICLE ============================= -->
+
+
+    <!-- ===== TITRE ===== -->
+
+    <section id="creation-article">
+        <h3 class="text-center my-5">Enregistrer un article</h3>
+    </section>
+
+
+    <!-- ===== CARD ===== -->
 
     <div class="container-fluid">
-
-        <!-- ===== TITRE ===== -->
-
-        <h3 class="text-center my-5">Enregistrer un article</h3>
-
-        <!-- ===== CARD ===== -->
-
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <div class="tableau table-responsive card mb-5">
@@ -227,11 +243,14 @@
 
 
 
-    <!-- ===== SECTION GESTION ARTICLES ===== -->
+    <!-- ================================= SECTION GESTION ARTICLES ======================================== -->
 
     <!-- ===== TITRE ===== -->
 
-    <h3 class="text-center my-5">Gestion des articles</h3>
+    <section id="gestion-articles">
+        <h3 class="text-center my-5">Gestion des articles</h3>
+    </section>
+
 
     <div class="container-fluid col-lg-11 p-1 mt-2 justify-content-center">
 
@@ -298,6 +317,7 @@
                                     <td class="border-end fs-5 text-center">{{ $article->type_prix }}</td>
 
                                     <!-- Bouton modifier -->
+
                                     <td>
                                         <a href="{{ route('articles.edit', $article) }}">
                                             <button type="button mx-auto" class="btn btn-ajout my-2">Modifier</button>
@@ -311,7 +331,6 @@
                                             <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
                                         </form>
                                     </td>
-
 
                                 </tr>
                             </tbody>
@@ -327,17 +346,28 @@
 
 
 
-    <!-- ====== SECTION CREATION GAMME ====== -->
+    <!-- ============================= SECTION CREATION GAMME ===================================== -->
 
+    <!-- ===== LIENS VERS LES AUTRE SECTIONS ===== -->
+
+    <div class="container pt-5 mt-5">
+        <div class="text-center">
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+        </div>
+    </div>
+
+
+    <!-- ===== TITRE ===== -->
+
+    <section id="creation-gamme">
+        <h3 class="text-center py-5">Créer une gamme</h3>
+    </section>
+
+    <!-- ===== CARD ===== -->
 
     <div class="container-fluid">
-
-        <!-- ===== TITRE ===== -->
-
-        <h3 class="text-center pt-5 my-5">Créer une gamme</h3>
-
-        <!-- ===== CARD ===== -->
-
         <div class="row d-flex justify-content-center">
             <div class="col-md-5">
                 <div class="tableau table-responsive card mb-5">
@@ -427,133 +457,71 @@
 
 
 
-    <!-- ===== SECTION GESTION GAMMES ===== -->
+    <!-- ========================== SECTION GESTION GAMMES =========================== -->
 
     <!-- ===== TITRE ===== -->
 
-    <div class="mx-auto text-center">
+    <section id="gestion-gammes">
+        <h3 class="text-center py-5">Liste des gammes</h3>
+    </section>
 
-        <h3 class="my-5">Liste des gammes</h3>
-
-        <div class="container">
-
-
-            <!-- ===== TABLEAU ===== -->
-
-            <div class="tableau table-responsive my-5">
-                <table class="table table-striped mb-0">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Modifier</th>
-                            <th scope="col">Supprimer</th>
-                        </tr>
-                    </thead>
+    <div class="container">
 
 
-                    <!-- ===== BOUTON MOFIDIER ET SUPPRIMER ===== -->
+        <!-- ===== TABLEAU ===== -->
 
-                    <div class="form-group d-flex justify-content-center">
-
-                        <tbody>
-                            @foreach ($gammes as $gamme)
-                                <tr>
-                                    <td class="text-center fw-bolder">{{ $gamme->id }}</td>
-                                    <td class="text-center fw-bolder">{{ $gamme->nom }}</td>
-                                    <td><img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
-                                            alt="{{ $gamme->nom }}" style="width: 7rem">
-                                    </td>
-
-
-                                    <!-- ===== BOUTON MOFIDIER ===== -->
-
-                                    <td class="text-center">
-                                        <a href="{{ route('gammes.edit', $gamme) }}">
-                                            <button class="btn btn-ajout">Modifier</button>
-                                        </a>
-                                    </td>
+        <div class="tableau table-responsive my-5">
+            <table class="table table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Modifier</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
 
 
-                                    <!-- ===== BOUTON SUPPRIMER ===== -->
+                <!-- ===== BOUTON MOFIDIER ET SUPPRIMER ===== -->
 
-                                    <td class="text-center">
-                                        <form action="{{ route('gammes.destroy', $gamme) }}" method="post">
-                                            @method ("delete")
-                                            @csrf
-                                            <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                <div class="form-group d-flex justify-content-center">
 
-                    </div>
-
-                </table>
-            </div>
-
-        </div>
-
-    </div>
+                    <tbody>
+                        @foreach ($gammes as $gamme)
+                            <tr>
+                                <td class="text-center fw-bolder">{{ $gamme->id }}</td>
+                                <td class="text-center fw-bolder">{{ $gamme->nom }}</td>
+                                <td><img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
+                                        alt="{{ $gamme->nom }}" style="width: 7rem">
+                                </td>
 
 
+                                <!-- ===== BOUTON MOFIDIER ===== -->
 
-    <!-- ===== LISTE DES UTILISATEURS ===== -->
-
-
-    <div class="mx-auto text-center">
-
-        <h3 class="pt-5 my-5">Liste des utilisateurs</h3>
-
-        <div class="container">
+                                <td class="text-center">
+                                    <a href="{{ route('gammes.edit', $gamme) }}">
+                                        <button class="btn btn-ajout">Modifier</button>
+                                    </a>
+                                </td>
 
 
-            <!-- ===== TABLEAU ===== -->
+                                <!-- ===== BOUTON SUPPRIMER ===== -->
 
-            <div class="tableau table-responsive my-5">
-                <table class="table table-striped mb-0">
-                    <thead>
-                        <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">Nom</th>
-                            <th scope="col">Prénom</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Téléphone</th>
-                            <th scope="col">Supprimer</th>
-                        </tr>
-                    </thead>
+                                <td class="text-center">
+                                    <form action="{{ route('gammes.destroy', $gamme) }}" method="post">
+                                        @method ("delete")
+                                        @csrf
+                                        <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
 
-                    <div class="form-group d-flex justify-content-center">
+                </div>
 
-                        <tbody>
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td class="text-center fw-bolder">{{ $user->id }}</td>
-                                    <td class="text-center fw-bolder">{{ $user->nom }}</td>
-                                    <td class="text-center fw-bolder">{{ $user->prenom }}</td>
-                                    <td class="text-center fw-bolder">{{ $user->email }}</td>
-                                    <td class="text-center fw-bolder">{{ $user->telephone }}</td>
-
-                                    <!-- ===== BOUTON SUPPRIMER ===== -->
-
-                                    <td class="text-center">
-                                        <form action="{{ route('user.destroy', $user) }}" method="post">
-                                            @method ("delete")
-                                            @csrf
-                                            <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-
-                    </div>
-
-                </table>
-            </div>
-
+            </table>
         </div>
 
     </div>
@@ -561,7 +529,95 @@
 
 
 
-    <h3 class="text-center pt-5 my-5">Listes des commandes</h3>
+
+    <!-- ============================== LISTE DES UTILISATEURS =================================== -->
+
+    <!-- ===== LIENS VERS LES AUTRE SECTIONS ===== -->
+
+    <div class="container pt-5 mt-5">
+        <div class="text-center">
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+        </div>
+    </div>
+
+
+    <!-- ===== TITRE ===== -->
+
+    <section id="liste-utilisateurs">
+        <h3 class="text-center py-5">Liste des utilisateurs</h3>
+    </section>
+
+    <div class="container">
+
+
+        <!-- ===== TABLEAU ===== -->
+
+        <div class="tableau table-responsive my-5">
+            <table class="table table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
+
+                <div class="form-group d-flex justify-content-center">
+
+                    <tbody>
+                        @foreach ($users as $user)
+                            <tr>
+                                <td class="text-center fw-bolder">{{ $user->id }}</td>
+                                <td class="text-center fw-bolder">{{ $user->nom }}</td>
+                                <td class="text-center fw-bolder">{{ $user->prenom }}</td>
+                                <td class="text-center fw-bolder">{{ $user->email }}</td>
+                                <td class="text-center fw-bolder">{{ $user->telephone }}</td>
+
+                                <!-- ===== BOUTON SUPPRIMER ===== -->
+
+                                <td class="text-center">
+                                    <form action="{{ route('user.destroy', $user) }}" method="post">
+                                        @method ("delete")
+                                        @csrf
+                                        <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+
+                </div>
+
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- ============================== LISTE DES COMMANDES =================================== -->
+
+
+    <!-- ===== LIENS VERS LES AUTRE SECTIONS ===== -->
+
+    <div class="container pt-5 mt-5">
+        <div class="text-center">
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">section articles</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
+        </div>
+    </div>
+
+
+    <!-- ===== TITRE ===== -->
+
+    <section id="liste-commandes">
+        <h3 class="text-center py-5">Listes des commandes</h3>
+    </section>
 
 
     <!-- ===== BOUCLE SUR LES COMMANDES DU USER CONNECTE DANS UN TABLEAU ===== -->
@@ -589,7 +645,7 @@
                     @foreach ($commandes as $commande)
                         <tr>
                             <td scope="row">{{ $commande->numero }}</td>
-                            <td>{{ $commande->user->nom }}</td> 
+                            <td>{{ $commande->user->nom }}</td>
                             <td>{{ $commande->user->prenom }}</td>
                             <td>{{ $commande->prix }} €</td>
                             <td>{{ date('d/m/Y', strtotime($commande->created_at)) }}</td>

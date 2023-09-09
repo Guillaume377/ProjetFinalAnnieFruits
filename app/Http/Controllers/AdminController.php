@@ -22,7 +22,7 @@ class AdminController extends Controller
 
         // $commandes = Commande::all();
 
-        $commandes = Commande::with('user')->get();
+        $commandes = Commande::with('user')->orderByDesc('date_retrait')->get();
 
 
         return view('backoffice.index', [

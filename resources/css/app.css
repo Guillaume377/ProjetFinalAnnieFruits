@@ -387,10 +387,6 @@ th {
 
 /* ============= . VALIDATION.BLADE (validation panier) ========== */
 
-/* .totalapayer {
-    font-size: 300%;
-} */
-
 .prix_total {
     padding-top: 3%;
     padding-bottom: 3%;
@@ -541,6 +537,21 @@ footer {
 
 .new_gamme {
     margin-left: 36%;
+}
+
+
+.btn-ghost-bo {
+    background-image:
+        url(/public/images/ardoise4.jpg);
+    color: white;
+    font-family: 'Paprika', cursive;
+    white-space: nowrap;
+}
+
+
+.btn-ghost-bo:hover {
+    color: white;
+    box-shadow: 5px 5px 5px #E2403E;
 }
 
 
