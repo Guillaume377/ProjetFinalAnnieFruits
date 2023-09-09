@@ -4,38 +4,48 @@
     Catalogue - Annie fruits
 @endsection
 
+<!-- ===== TITRE ===== -->
 
-<h1 class="text-center mx-auto">{{$article->nom}}</h1>
+<h1 class="text-center mx-auto">{{ $article->nom }}</h1>
 
-
-
-
-{{-- * * * Titre * * * --}}
 
 <div class="row w-75 mx-auto pt-5">
     @foreach ($articles as $article)
         <div class="col-md-4">
-            <div class="card_promo card p-3 mb-5 rounded-4">
+
+
+            <!-- ===== Image  ===== -->
+
+            <div class="card p-3 mb-5 rounded-4">
                 <img class="rounded-1" src="{{ asset('images/' . $article->image) }}">
+
+
+                <!-- ===== Nom ===== -->
+
                 <div class="card-body">
                     <h3 class="card-title text-center mb-3">{{ $article->nom }}</h3>
+
+
+                    <!-- ===== Description ===== -->
+
                     <div class="row">
                         <div class="col-md-9">
                             <p class="card-text">{{ $article->description }}</p>
                         </div>
 
-                        <div class="col">
 
-                                <p>{{ $article->prix }} €</p>
-                          
+                        <!-- ===== Prix ===== -->
+
+                        <div class="col">
+                            <p>{{ $article->prix }} €</p>
                         </div>
 
                     </div>
+
                 </div>
 
 
-                <!-- bouton ajout au panier -->
-
+                <!-- ===== Champ quantité ===== -->
 
                 <div class="container text-center">
                     <div class="row text-center mt-1">
@@ -55,7 +65,6 @@
 
                                 <!-- si le produit est déjà dans les favoris-->
 
-
                                 @if (Auth::user()->isInFavorites($article))
 
 
@@ -64,11 +73,9 @@
                                     <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-outline-danger m-2">Retirer
-                                            des
-                                            favoris</button>
-
+                                        <button type="submit" class="btn btn-outline-danger m-2">Retirer des favoris</button>
                                     </form>
+
                                 @else
 
                                     <!-- si le produit n'est pas dans les favoris-->
@@ -86,7 +93,7 @@
 
 
                         <!-- ====== BOUTON AJOUT PANIER ===== -->
-                        
+
                         <div class="col">
 
                             <form method="POST" action="{{ route('panier.add', 1) }}"

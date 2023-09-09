@@ -36,8 +36,33 @@
                         <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
-                    <div class="text-center">
-                        <i class="fas fa-box-open fa-2x mx-3"></i>@php displayStock($article->type_prix, $article->stock) @endphp
+
+                    <div class="d-flex flex-nowrap justify-content-evenly">
+                        <div class="my-3 ms-2">
+                            <i class="fas fa-box-open fa-2x mx-3"></i>@php displayStock($article->type_prix, $article->stock) @endphp
+                        </div>
+
+                        <!--affichage du bouton de retrait des favoris pour le user connecté-->
+                        <div class="mt-3 me-3">
+                        @if (Auth::user())
+                            <!-- si le produit est déjà dans les favoris-->
+                            @if (Auth::user()->isInFavorites($article))
+                                <!-- si dans les favoris-->
+                                <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-suppr"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            @else
+                                <form method="post" action="{{ route('favoris.store', $article->id) }}">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit" class="btn btn-ajout"><i class="fa-solid fa-heart"></i></button>
+                                </form>
+                            @endif
+                        @endif
+                        </div>
+
                     </div>
 
 
@@ -59,7 +84,6 @@
 
                                     <input type="number" min="1" max="{{ $maxValue }}" name="quantite"
                                         placeholder="Quantité ?" class="form-control mb-3">
-
                                 @elseif ($article['type_prix'] == 'kilo')
                                     @php
                                         $maxValue = $article->stock >= 5 ? 5000 : $article->stock * 1000;
@@ -78,7 +102,6 @@
                                     </button>
                                 </div>
                             @else
-                                
                             @endif
 
                         </div>
@@ -90,24 +113,25 @@
                     <!-- ===== Je fais apparaitre les avis pour cet article ===== -->
 
                     <div class="container border-top p-2 mt-3 mb-3">
-                    <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
+                        <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
 
-                    <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{ $article->note }}</span></p>
+                        <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{ $article->note }}</span>
+                        </p>
 
-                    @if (count($article->avis) == 0)
-                        <p class="text-center m-5">Pas d'avis pour cet article</p>
-                    @else(isset($article->avis) && $article->avis !== null)
-                        @foreach ($article->avis as $avis)
-                            <div class="container">
-                                <div class="d-flex flex-nowrap justify-content-between">
-                                    <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
-                                    <p class="mt-5 fw-bold pe-5">{{ $avis->user->prenom }}</p>
+                        @if (count($article->avis) == 0)
+                            <p class="text-center m-5">Pas d'avis pour cet article</p>
+                        @else(isset($article->avis) && $article->avis !== null)
+                            @foreach ($article->avis as $avis)
+                                <div class="container">
+                                    <div class="d-flex flex-nowrap justify-content-between">
+                                        <p class="mt-5 fw-bold ps-5">Note : {{ $avis->note }}/5</p>
+                                        <p class="mt-5 fw-bold pe-5">{{ $avis->user->prenom }}</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <p class="description-article px-5">{{ $avis->commentaire }}</p>
-                        @endforeach
-                    @endif
+                                <p class="description-article px-5">{{ $avis->commentaire }}</p>
+                            @endforeach
+                        @endif
                     </div>
 
 
@@ -119,8 +143,6 @@
                             @csrf
 
                             @if (auth()->check())
-
-
                                 <!-- ===== NOTE ===== -->
 
                                 <div class="form-group">

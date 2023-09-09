@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 
+
 class FavoriController extends Controller
 {
     /**
@@ -48,6 +49,23 @@ class FavoriController extends Controller
         $user->favoris()->attach($articleId);
 
         return redirect()->back()->with ('message', 'Produit ajouté aux favoris !');
+    }
+
+
+
+    public function show(User $user)
+    {
+        //Charger les favoris du user connecté pour les injecter dans la vue ('/favoris.index')
+        
+        //je récupère le user connecté dans une variable
+        $user = User::find(Auth::user()->id); 
+
+        // je charge les favoris du user connecté avec un eager loading
+        $user->load('favoris');
+
+        // je retourne ces infos dans la view campagne pour les afficher
+        return view ('favori', ['user' => $user]);
+                    
     }
 
         
