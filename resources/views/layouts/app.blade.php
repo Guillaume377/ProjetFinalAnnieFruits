@@ -44,9 +44,15 @@
 
         <!-- ===== NAVBAR ===== -->
 
-        <nav class="navbar navbar-expand-md pb-2 fixed-top">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg pb-2 fixed-top">
+            <div class="container-fluid d-flex flex-nowrap">
 
+
+                <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
+
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
+                </a>
 
                 <!-- ===== NAVBAR TOGGLER ===== -->
 
@@ -65,9 +71,9 @@
 
                         <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
 
-                        <a class="navbar-brand" href="{{ route('home') }}">
+                        {{-- <a class="navbar-brand" href="{{ route('home') }}">
                             <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
-                        </a>
+                        </a> --}}
 
 
                         <!-- ===== BOUTON NOS PRODUITS / LIEN PAGE NOS PRODUITS ===== -->
@@ -84,10 +90,10 @@
                         </a>
 
 
-                         <!-- Authentication Links -->
+                        <!-- Authentication Links -->
 
                         <ul class="navbar-nav ms-auto">
-                           
+
 
 
                             <!-- ========================= LIENS ACCESSIBLES AUX INVITES UNIQUEMENT ====================== -->
@@ -97,31 +103,26 @@
                                 <!-- ===== BOUTON CONNEXION / LIEN PAGE CONNEXION ===== -->
 
                                 @if (Route::has('login'))
-                                    
-                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
-                                            href="{{ route('login') }}">{{ __('Connexion') }}</a>
-                                    
+                                    <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                        href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                 @endif
 
                                 <!-- ===== BOUTON INSCRIPTION / LIEN PAGE INSCRIPTION ===== -->
 
                                 @if (Route::has('register'))
-                                    
-                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
-                                            href="{{ route('register') }}">{{ __('Inscription') }}</a>
-                                    
+                                    <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                        href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 @endif
 
-                               
-                               <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
 
-                               @else
-                               
-                               <!-- ===== BOUTON MON COMPTE ===== -->
+                                <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
+                            @else
+                                <!-- ===== BOUTON MON COMPTE ===== -->
 
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        v-pre>
                                         {{-- {{ Auth::user()->prenom }} --}}
                                         <i class="person fa-solid fa-person mx-3"></i>
                                     </a>
@@ -134,7 +135,6 @@
                                             <a class="dropdown-item" href="{{ route('backoffice') }}">
                                                 Back-office
                                             </a>
-
                                         @endif
 
 
@@ -148,7 +148,7 @@
                                             @csrf
                                         </form>
 
-                                       
+
 
                                         <!-------------------------------- favoris : uniquement si connecté --------------------------------->
 
@@ -191,7 +191,7 @@
 
 
 
-<!-- ===== MESSAGEs SUCCES / ERROR ===== -->
+    <!-- ===== MESSAGEs SUCCES / ERROR ===== -->
 
     <main>
         <div class="container-fluid text-center mt-5">
@@ -213,9 +213,9 @@
         @yield('content')
     </main>
 
-    
 
-<!-- =================================== FOOTER ========================================== -->
+
+    <!-- =================================== FOOTER ========================================== -->
 
     <footer class="py-3 mx-auto">
 
