@@ -50,14 +50,23 @@
                                         class="form-inline d-inline-block d-flex justify-content-center">
                                         @csrf
                                         <div class="row w-50 ">
+
+                                            <!-- si type prix : pièce -->
+
                                             @if ($article['type_prix'] == 'pièce')
                                                 <input type="number" min="1" max="10" name="quantite"
                                                     value="{{ $article['quantite'] }}" class="form-control mb-3">
+
+                                            <!-- si type prix : kilo -->
+
                                             @else
                                                 <input type='number' min="100" max="5000" step="100"
                                                     name="quantite" value="{{ $article['quantite'] }}"
                                                     class="form-control mb-3">
                                             @endif
+
+                                            <!-- bouton Modifier -->
+
                                             <div class="text-center mx-auto">
                                             <button type="submit" class="btn btn-ajout px-2"><i
                                                     class="img-btn-ajout fa-solid fa-pen"></i> Modifier</button>
@@ -88,7 +97,7 @@
                                         @endphp
                                     @else
 
-                                    <!-- ===== On convertit les kilos en grammes = (prix * quantité) / 1000 ===== -->
+                                    <!-- ===== Si type prix : kilo, on convertit les kilos en grammes = (prix * quantité) / 1000 ===== -->
 
                                         @php $prixLigne = ($article['prix'] * $article['quantite']) / 1000;
                                             echo number_format($prixLigne, 2, ',', ' ') . '€';

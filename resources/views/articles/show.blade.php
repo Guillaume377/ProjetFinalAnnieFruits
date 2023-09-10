@@ -24,40 +24,53 @@
             <div class="col-xl-6 d-flex justify-content-center ps-5 pb-5">
                 <div class="img-article">
 
+
+                    <!-- ===== titre ===== -->
+
                     <div class="text-center py-5">
                         <h5>{{ $article->titre }}</h5>
                     </div>
 
+
+                    <!-- ===== description produit ===== -->
+
                     <div class="description-article px-5">
                         <td> {{ $article->description }}</td>
                     </div>
+
+
+                    <!-- ===== prix ===== -->
 
                     <div class="prix_article text-center  my-5">
                         <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
 
-                    <div class="d-flex flex-nowrap justify-content-evenly">
+                    <!-- ===== Stock ===== -->
+
+                    <div class="d-flex flex-nowrap justify-content-center">
                         <div class="my-3 ms-2">
                             <i class="fas fa-box-open fa-2x mx-3"></i>@php displayStock($article->type_prix, $article->stock) @endphp
                         </div>
 
                         <!--affichage du bouton de retrait des favoris pour le user connecté-->
-                        <div class="mt-3 me-3">
+                        <div class="mt-3 mx-4">
+                            
                         @if (Auth::user())
+                        
                             <!-- si le produit est déjà dans les favoris-->
                             @if (Auth::user()->isInFavorites($article))
                                 <!-- si dans les favoris-->
-                                <form method="post" action="{{ route('favoris.destroy', $article->id) }}">
+                                <form method="get" action="{{ route('favori.destroy', $article->id) }}">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-suppr"><i class="fa-solid fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-suppr"><i class="fa-solid fa-star fa-xl px-1"></i></button>
                                 </form>
                             @else
-                                <form method="post" action="{{ route('favoris.store', $article->id) }}">
+                                <form method="post" action="{{ route('favori.store', $article->id) }}">
                                     @csrf
                                     @method('post')
-                                    <button type="submit" class="btn btn-ajout"><i class="fa-solid fa-heart"></i></button>
+                                    <button type="submit" class="btn btn-ajout"><i class="fa-regular fa-star fa-xl px-1"></i></button>
                                 </form>
                             @endif
                         @endif

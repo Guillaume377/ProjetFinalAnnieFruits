@@ -137,15 +137,6 @@
 
                                         @endif
 
-                                        {{-- @if (Auth::user()->role_id == 2)
-                                        <a href="#creation-article" class="dropdown-item">Créer un article</a>
-                                        <a href="#gestion-articles" class="dropdown-item">Gestion des articles</a>
-                                        <a href="#creation-gamme" class="dropdown-item">Créer une gamme</a>
-                                        <a href="#gestion-gammes" class="dropdown-item">Gestion des gammes</a>
-                                        <a href="#liste-utilisateurs" class="dropdown-item">Liste des utilisateurs</a>
-                                        <a href="#liste-commandes" class="dropdown-item">Liste des commandes</a>
-                                        @endif --}}
-
 
                                         <!-- ===== LIEN VERS "MON COMPTE" ===== -->
 
@@ -161,8 +152,8 @@
 
                                         <!-------------------------------- favoris : uniquement si connecté --------------------------------->
 
-                                        <a class="dropdown-item" aria-current="panier"
-                                            href="{{ route('favoris.index') }}">Favoris</a>
+                                        <a class="dropdown-item" aria-current="favori"
+                                            href="{{ route('favori.index') }}">Favoris</a>
 
 
                                         <!-- ===== LIEN VERS "COMMANDES" ===== -->

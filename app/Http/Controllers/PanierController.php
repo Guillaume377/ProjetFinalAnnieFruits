@@ -87,10 +87,6 @@ class PanierController extends Controller
 
 
 
-
-
-
-
 	// ================================ Validation d'une commande ============================= //
 
 	public function validation()

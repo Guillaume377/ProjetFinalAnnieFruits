@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 
 
+
 class FavoriController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
