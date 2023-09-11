@@ -45,15 +45,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/favori', \App\Http\Controllers\FavoriController::class)->except('create', 'show', 'update', 'edit');
 
-// Route::get('favori', [App\Http\Controllers\FavoriController::class, 'show'])->name('favori.show');
-// // « favori.show » pour afficher les favoris
-
-// Route::post('favori/add/{article}', [App\Http\Controllers\FavoriController::class, 'add'])->name('favori.add');
-// // « favori.add » pour ajouter ou mettre à jour un produit en favori
-
-// Route::get('favori/remove/{article}', [App\Http\Controllers\FavoriController::class, 'remove'])->name('favori.remove');
-// //« favori.remove » pour retirer un produit des favoris
-
 
 
 //***************** Route d'affichage de la page Nous contacter *****************************/

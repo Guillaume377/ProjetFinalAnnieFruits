@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <!-- ===== TITRE ===== -->
 
     <h1 class="title_h1 text-center mx-auto">Mes favoris</h1>
@@ -9,8 +10,8 @@
 
     <div class="container">
 
-        @if (session()->has('favori'))
-
+        
+        @if (count($user->favoris) > 0)
 
             <!-- ===== TABLEAU ===== -->
 
@@ -129,7 +130,7 @@
                                         <!-- si le produit est déjà dans les favoris-->
                                         @if (Auth::user()->isInFavorites($favori))
                                             <!-- si dans les favoris-->
-                                            <form method="post" action="{{ route('favoris.destroy', $favori->id) }}">
+                                            <form method="post" action="{{ route('favori.destroy', $favori->id) }}">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-suppr"><i

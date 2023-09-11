@@ -67,9 +67,9 @@
                                     <button type="submit" class="btn btn-suppr"><i class="fa-solid fa-star fa-xl px-1"></i></button>
                                 </form>
                             @else
-                                <form method="post" action="{{ route('favori.store', $article->id) }}">
+                                <form method="post" action="{{ route('favori.store') }}">
                                     @csrf
-                                    @method('post')
+                                   <input type=hidden name="articleId" value="{{$article->id}}"> <!-- type, name et value indispensable-->
                                     <button type="submit" class="btn btn-ajout"><i class="fa-regular fa-star fa-xl px-1"></i></button>
                                 </form>
                             @endif

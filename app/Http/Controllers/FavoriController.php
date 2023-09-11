@@ -27,7 +27,7 @@ class FavoriController extends Controller
         $user->load('favoris');
 
         // je retourne ces infos dans la view campagne pour les afficher
-        return view ('favori', ['user' => $user]);
+        return view ('favoris.index', ['user' => $user]);
                     
     }
 
