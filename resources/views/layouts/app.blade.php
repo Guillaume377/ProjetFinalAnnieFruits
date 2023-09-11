@@ -40,80 +40,57 @@
 </head>
 
 <body>
+
     <div id="app">
-
-        <!-- ===== NAVBAR ===== -->
-
-        <nav class="navbar navbar-expand-lg pb-2 fixed-top">
-            <div class="container-fluid d-flex flex-nowrap">
-
-
-                <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
+        <nav class="navbar navbar-expand-lg py-4 fixed-top" data-bs-theme="dark">
+            <div class="container-fluid">
 
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
                 </a>
 
-                <!-- ===== NAVBAR TOGGLER ===== -->
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="navbar-nav ms-auto">
+                        <ul class="navbar-nav">
 
-                <!-- ===== LIENS/BOUTONS NAVBAR ===== -->
+                            <li class="nav-item">
+                                <a class="btn btn-ghost pt-3 mx-3" href="{{ route('gammes.index') }}"
+                                    aria-current="articles">
+                                    Nos produits
+                                </a>
+                            </li>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-nav py-4">
-
-
-                        <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
-
-                        {{-- <a class="navbar-brand" href="{{ route('home') }}">
-                            <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
-                        </a> --}}
-
-
-                        <!-- ===== BOUTON NOS PRODUITS / LIEN PAGE NOS PRODUITS ===== -->
-
-                        <a class="btn btn-ghost pt-3 mx-3" aria-current="articles" href="{{ route('gammes.index') }}">
-                            Nos produits
-                        </a>
-
-
-                        <!-- ===== BOUTON NOUS CONTACTER / LIEN PAGE NOUS CONTACTER ===== -->
-
-                        <a class="btn btn-ghost pt-3 mx-3" href="{{ route('contact') }}">
-                            Nous contacter
-                        </a>
-
-
-                        <!-- Authentication Links -->
-
-                        <ul class="navbar-nav ms-auto">
-
-
-
-                            <!-- ========================= LIENS ACCESSIBLES AUX INVITES UNIQUEMENT ====================== -->
+                            <li class="nav-item">
+                                <a class="btn btn-ghost pt-3 mx-3" href="{{ route('contact') }}">
+                                    Nous contacter
+                                </a>
+                            </li>
 
                             @guest
 
                                 <!-- ===== BOUTON CONNEXION / LIEN PAGE CONNEXION ===== -->
 
                                 @if (Route::has('login'))
-                                    <a class="btn btn-ghost pt-3 mx-3 nav-link"
-                                        href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                    <li class="nav-item">
+                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                            href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                                    </li>
                                 @endif
 
                                 <!-- ===== BOUTON INSCRIPTION / LIEN PAGE INSCRIPTION ===== -->
 
                                 @if (Route::has('register'))
-                                    <a class="btn btn-ghost pt-3 mx-3 nav-link"
-                                        href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                    <li class="nav-item">
+                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                            href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                                    </li>
                                 @endif
-
 
                                 <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
                             @else
@@ -123,7 +100,6 @@
                                     <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#"
                                         role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         v-pre>
-                                        {{-- {{ Auth::user()->prenom }} --}}
                                         <i class="person fa-solid fa-person mx-3"></i>
                                     </a>
 
@@ -137,7 +113,6 @@
                                             </a>
                                         @endif
 
-
                                         <!-- ===== LIEN VERS "MON COMPTE" ===== -->
 
                                         <a class="dropdown-item" href="{{ route('user.edit', $user = Auth::user()) }}">Mon
@@ -147,7 +122,6 @@
                                             class="d-none">
                                             @csrf
                                         </form>
-
 
 
                                         <!-------------------------------- favoris : uniquement si connecté --------------------------------->
@@ -166,7 +140,7 @@
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
+                                 document.getElementById('logout-form').submit();">
                                             {{ __('Déconnexion') }}
                                         </a>
 
@@ -176,22 +150,18 @@
 
 
                             <!-- ===== BOUTON PANIER / LIEN VERS "PANIER" ===== -->
-
-                            <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
-                                <i class="cart fa-solid fa-cart-shopping pt-2 mx-4"></i>
-                            </a>
-
+                            <li class="nav-item">
+                                <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
+                                    <i class="cart fa-solid fa-cart-shopping pt-2 mx-4"></i>
+                                </a>
+                            </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
         </nav>
     </div>
-
-
-
-    <!-- ===== MESSAGEs SUCCES / ERROR ===== -->
+    <!-- ===== MESSAGES SUCCES / ERROR ===== -->
 
     <main>
         <div class="container-fluid text-center mt-5">

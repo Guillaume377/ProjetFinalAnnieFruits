@@ -175,12 +175,12 @@ nav {
 
 }
 
-.star{
-    background-color: white;
-    color: #E2403E;
+
+
+.custom-toggler {
+    position: absolute;
+    right: 0;
 }
-
-
 
 
 /* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
@@ -352,6 +352,11 @@ span {
 }
 
 
+
+.star{
+    background-color: white;
+    color: #E2403E;
+}
 
 /* ============= . SHOW.BLADE (panier) ========== */
 
