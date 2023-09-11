@@ -61,16 +61,20 @@
                             <!-- si le produit est déjà dans les favoris-->
                             @if (Auth::user()->isInFavorites($article))
                                 <!-- si dans les favoris-->
-                                <form method="get" action="{{ route('favori.destroy', $article->id) }}">
+                                <form method="post" action="{{ route('favori.destroy', $article->id) }}">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-suppr"><i class="fa-solid fa-star fa-xl px-1"></i></button>
+                                    <button type="submit" class="star border-0">
+                                        <i class="fa-solid fa-star fa-xl"></i>
+                                    </button>
                                 </form>
                             @else
                                 <form method="post" action="{{ route('favori.store') }}">
                                     @csrf
                                    <input type=hidden name="articleId" value="{{$article->id}}"> <!-- type, name et value indispensable-->
-                                    <button type="submit" class="btn btn-ajout"><i class="fa-regular fa-star fa-xl px-1"></i></button>
+                                    <button type="submit" class="star border-0">
+                                        <i class="fa-regular fa-star fa-xl"></i>
+                                    </button>
                                 </form>
                             @endif
                         @endif
@@ -128,8 +132,8 @@
                     <div class="container border-top p-2 mt-3 mb-3">
                         <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
 
-                        <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{ $article->note }}</span>
-                        </p>
+                        <p class="mt-5 fw-bold text-center">Note moyenne : <span class="px-3">{{ $article->note }}</span>/ 5</p>
+                        
 
                         @if (count($article->avis) == 0)
                             <p class="text-center m-5">Pas d'avis pour cet article</p>
