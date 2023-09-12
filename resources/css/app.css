@@ -551,6 +551,7 @@ footer {
 }
 
 
+
 /* ================ MEDIA QUERIES 1200px =============== */
 
 
@@ -587,6 +588,9 @@ footer {
         padding: 1%;
     }
 
+    
+  
+
 
     /* ================ HOME =============== */
 
@@ -600,6 +604,13 @@ footer {
 
     .h3_carousel {
         font-size: 150%;
+    }
+
+
+/* ================ INDEX.BLADE (gammes) =============== */
+
+    .title_h1 {
+        margin-top: 10%;
     }
 }
 
@@ -621,6 +632,12 @@ footer {
 
     .h3_carousel {
         font-size: 100%;
+    }
+
+/* ================ INDEX.BLADE (gammes) =============== */
+
+    .title_h1 {
+        margin-top: 15%;
     }
 }
 
@@ -644,9 +661,12 @@ footer {
     .h3_carousel {
         font-size: 70%;
     }
+    
+    .title_h1 {
+        margin-top: 22%;
+    }
+
 }
-
-
 
 
 /* ================ MEDIA QUERIES 475px =============== */
@@ -662,6 +682,14 @@ footer {
     }
 
   
+/* ================ INDEX.BLADE (gammes) =============== */
+    .title_h1 {
+        margin-top: 28%;
+    }
+
+    h1{
+        font-size: xx-large;
+    }
 }
 
 
@@ -689,6 +717,12 @@ footer {
 
     .logo_bandeau {
         font-size: 200%;
+    }
+
+/* ================ INDEX.BLADE (gammes) =============== */
+
+    .title_h1 {
+        margin-top: 35%;
     }
 
 }
