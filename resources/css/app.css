@@ -632,6 +632,11 @@ footer {
 
 @media screen and (max-width: 575px) {
 
+
+    .carousel-caption {
+        margin-bottom: 10%;
+    }
+
     .h1_carousel {
         font-size: 130%;
     }
@@ -639,6 +644,24 @@ footer {
     .h3_carousel {
         font-size: 70%;
     }
+}
+
+
+
+
+/* ================ MEDIA QUERIES 475px =============== */
+
+
+/* ================ HOME.BLADE =============== */
+
+@media screen and (max-width: 475px) {
+
+
+    .carousel-caption {
+        margin-bottom: 6%;
+    }
+
+  
 }
 
 
@@ -652,15 +675,15 @@ footer {
 @media screen and (max-width: 401px) {
 
     .carousel-caption {
-        margin-bottom: 6%;
+        margin-bottom: 1%;
     }
 
     .h1_carousel {
-        font-size: 100%;
+        font-size: 80%;
     }
 
     .h3_carousel {
-        font-size: 60%;
+        font-size: 40%;
     }
 
 

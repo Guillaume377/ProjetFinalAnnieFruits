@@ -42,7 +42,7 @@
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-lg py-4 fixed-top" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg py-5 fixed-top" data-bs-theme="dark">
             <div class="container-fluid">
 
 
