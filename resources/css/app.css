@@ -104,7 +104,7 @@ nav {
 
 
 .logo_navbar {
-    width: 20%;
+    width: 200px;
     border-end-end-radius: 30px;
     border-start-start-radius: 30px;
 }
@@ -128,17 +128,6 @@ nav {
     color: white;
     box-shadow: 5px 5px 5px white;
 }
-
-
-/* .prenom {
-    color: white;
-    font-weight: bolder;
-}
-
-
-.prenom:hover {
-    color: #E2403E
-} */
 
 
 .dropdown-item {
@@ -175,12 +164,10 @@ nav {
 
 }
 
-
-
-.custom-toggler {
-    position: absolute;
-    right: 0;
+.hamburger {
+    background-color: #E2403E;
 }
+
 
 
 /* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
@@ -353,7 +340,7 @@ span {
 
 
 
-.star{
+.star {
     background-color: white;
     color: #E2403E;
 }
@@ -566,3 +553,21 @@ footer {
 
 
 
+
+
+
+/* =================MEDIA QUERIES 991px================ */
+
+@media screen and (max-width: 991px) {
+
+
+    .buttons_navbar {
+        margin-left: 0% !important;
+    }
+
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+    }
+}

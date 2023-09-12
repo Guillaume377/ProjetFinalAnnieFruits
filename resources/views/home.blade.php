@@ -8,7 +8,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('images/entree.jpg') }}" class="d-block w-100" alt="entrée du magasin">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-block">
                     <h1>Bienvenue chez Annie fruits !</h1>
                     <h3>Votre magasin de proximité à Rochefort.</h3>
                 </div>
@@ -16,7 +16,7 @@
 
             <div class="carousel-item">
                 <img src="{{ asset('images/fraise2.jpg') }}" class="d-block w-100" alt="barquettes de fraises">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-block">
                     <h1>Bienvenue chez Annie fruits !</h1>
                     <h3>Votre magasin de proximité à Rochefort.</h3>
                 </div>
@@ -24,7 +24,7 @@
 
             <div class="carousel-item">
                 <img src="{{ asset('images/rayon.jpg') }}" class="d-block w-100" alt="rayon fruits et légumes">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-block">
                     <h1>Bienvenue chez Annie fruits !</h1>
                     <h3>Votre magasin de proximité à Rochefort.</h3>
                 </div>
@@ -32,7 +32,7 @@
 
             <div class="carousel-item">
                 <img src="{{ asset('images/corbeille.jpg') }}" class="d-block w-100" alt="corbeille de fruits">
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-block">
                     <h1>Bienvenue chez Annie fruits !</h1>
                     <h3>Votre magasin de proximité à Rochefort.</h3>
                 </div>

@@ -49,15 +49,15 @@
                     <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
                 </a>
 
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                <button class="hamburger navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <div class="navbar-nav ms-auto">
-                        <ul class="navbar-nav">
+                <div class="buttons_navbar collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="buttons_navbar navbar-nav ms-auto">
+                        <ul class=" navbar-nav">
 
                             <li class="nav-item">
                                 <a class="btn btn-ghost pt-3 mx-3" href="{{ route('gammes.index') }}"
@@ -78,7 +78,7 @@
 
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                        <a class="btn btn-ghost pt-3 mx-3"
                                             href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                     </li>
                                 @endif
@@ -87,7 +87,7 @@
 
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="btn btn-ghost pt-3 mx-3 nav-link"
+                                        <a class="btn btn-ghost pt-3 mx-3"
                                             href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                     </li>
                                 @endif
@@ -95,7 +95,7 @@
                                 <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
                             @else
                                 <!-- ===== BOUTON MON COMPTE ===== -->
-
+                                    
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#"
                                         role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -161,6 +161,8 @@
             </div>
         </nav>
     </div>
+
+
     <!-- ===== MESSAGES SUCCES / ERROR ===== -->
 
     <main>
