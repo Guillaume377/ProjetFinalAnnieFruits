@@ -112,3 +112,8 @@ Route::post('avis', [App\Http\Controllers\AvisController::class, 'store'])->name
 // ******************* Route pour la gestion du back-office ************************************/
 
 Route::get('/backoffice', [AdminController::class, 'index'])->name('backoffice');
+
+
+// ******************* Route Politique de confidentialité ************************************/
+ 
+ Route::get('/politique', [App\Http\Controllers\HomeController::class, 'index'])->name('politique');
