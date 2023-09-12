@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
     <!-- ========================== CAROUSEL ========================== -->
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -39,11 +41,17 @@
             </div>
         </div>
 
+
+        <!-- ====== BOUTON GAUCHE ===== -->
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
+
+
+        <!-- ====== BOUTON DROITE ===== -->
 
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
             data-bs-slide="next">
@@ -81,10 +89,16 @@
 
     <div class="container p-5">
         <div class="row ">
-            {{-- <div class="d-flex justify-content-between"> --}}
+            
+
+            <!-- ====== IMAGE ENTREE MAGASIN ===== -->
+
                 <div class="col-lg-6 py-3 pe-0 pe-lg-5">
                     <img src="{{ asset('images/entree.jpg') }}" class="entree d-block w-100" alt="entrée du magasin">
                 </div>
+
+
+                <!-- ====== HISTOIRE MAGASIN ===== -->
 
                 <div class="col-lg-6 py-3 ps-0 ps-lg-5">
                     <h3 class="histoire text-center">Un peu d'histoire...</h3>
@@ -105,7 +119,7 @@
                         </p>
                     </div>
                 </div>
-            {{-- </div> --}}
+            
         </div>
     </div>
 

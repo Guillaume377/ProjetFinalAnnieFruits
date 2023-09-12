@@ -46,6 +46,7 @@ white
 
 h1 {
     font-family: 'Paprika', cursive;
+    margin-top: 5%;
     font-size: 400%;
     color: #4BAD3B;
 }
@@ -149,7 +150,6 @@ nav {
 
 .person:hover {
     color: #E2403E;
-    /* color: white; */
 }
 
 
@@ -276,6 +276,7 @@ span {
     color: white;
 }
 
+
 /* ============= 4. SHOW.BLADE (articles) ========== */
 
 
@@ -284,7 +285,6 @@ span {
     padding-bottom: 7%;
     background-image:
         url(/public/images/ardoise4.jpg);
-    /* box-shadow: 10px 5px 5px darkred; */
     border-radius: 10px;
     color: white;
     font-weight: bolder;
@@ -552,12 +552,30 @@ footer {
 
 
 
-/* ================ MEDIA QUERIES 1200px =============== */
 
 
-/* ================ HOME.BLADE =============== */
+
+
+/* *************** MEDIA QUERIES 1400px *************** */
+
+@media screen and (max-width: 1400px) {
+
+
+
+}
+
+
+
+
+
+
+
+/* *************** MEDIA QUERIES 1200px *************** */
 
 @media screen and (max-width: 1200px) {
+
+
+    /* ========== HOME.BLADE ========== */
 
     .carousel-caption {
         margin-bottom: 20%;
@@ -570,17 +588,27 @@ footer {
     .h3_carousel {
         font-size: 150%;
     }
+
+
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
+        margin-top: 10%;
+    }
+
+
+   
+
 }
 
 
 
-/* ================ MEDIA QUERIES 991px =============== */
-
-
-/* ================ NAVBAR =============== */
-
+/* *************** MEDIA QUERIES 991px *************** */
 
 @media screen and (max-width: 991px) {
+
+
+    /* ========== NAVBAR ========== */
 
     .nav-item {
         display: flex;
@@ -588,11 +616,8 @@ footer {
         padding: 1%;
     }
 
-    
-  
 
-
-    /* ================ HOME =============== */
+    /* ========== HOME.BLADE ========== */
 
     .carousel-caption {
         margin-bottom: 15%;
@@ -607,7 +632,7 @@ footer {
     }
 
 
-/* ================ INDEX.BLADE (gammes) =============== */
+    /* ========== INDEX.BLADE (gammes) ========== */
 
     .title_h1 {
         margin-top: 10%;
@@ -617,14 +642,12 @@ footer {
 
 
 
-/* ================ MEDIA QUERIES 767px =============== */
-
-
-/* ================ HOME.BLADE =============== */
+/* *************** MEDIA QUERIES 767px *************** */
 
 @media screen and (max-width: 767px) {
 
-   
+
+    /* ========== HOME.BLADE ========== */
 
     .h1_carousel {
         font-size: 200%;
@@ -634,21 +657,31 @@ footer {
         font-size: 100%;
     }
 
-/* ================ INDEX.BLADE (gammes) =============== */
+
+    /* ========== INDEX.BLADE (gammes) ========== */
 
     .title_h1 {
+        margin-top: 15%;
+    }
+
+
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
         margin-top: 15%;
     }
 }
 
 
-/* ================ MEDIA QUERIES 575px =============== */
 
 
-/* ================ HOME.BLADE =============== */
+
+/* *************** MEDIA QUERIES 575px *************** */
 
 @media screen and (max-width: 575px) {
 
+
+    /* ========== HOME.BLADE ========== */
 
     .carousel-caption {
         margin-bottom: 10%;
@@ -661,34 +694,47 @@ footer {
     .h3_carousel {
         font-size: 70%;
     }
-    
+
+
+    /* ========== INDEX.BLADE (gammes) ========== */
+
     .title_h1 {
         margin-top: 22%;
+    }
+
+
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
+        margin-top: 20%;
     }
 
 }
 
 
-/* ================ MEDIA QUERIES 475px =============== */
-
-
-/* ================ HOME.BLADE =============== */
+/* *************** MEDIA QUERIES 475px *************** */
 
 @media screen and (max-width: 475px) {
 
+
+    /* ========== HOME.BLADE ========== */
 
     .carousel-caption {
         margin-bottom: 6%;
     }
 
-  
-/* ================ INDEX.BLADE (gammes) =============== */
+
+    /* ========== INDEX.BLADE (gammes) ========== */
+
     .title_h1 {
         margin-top: 28%;
     }
 
-    h1{
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
         font-size: xx-large;
+        margin-top: 25%;
     }
 }
 
@@ -697,10 +743,10 @@ footer {
 
 /* ================ MEDIA QUERIES 401px =============== */
 
-
-/* ================ HOME.BLADE =============== */
-
 @media screen and (max-width: 401px) {
+
+
+    /* ========== HOME.BLADE ========== */
 
     .carousel-caption {
         margin-bottom: 1%;
@@ -719,10 +765,53 @@ footer {
         font-size: 200%;
     }
 
-/* ================ INDEX.BLADE (gammes) =============== */
+    /* ========== INDEX.BLADE (gammes) ========== */
 
     .title_h1 {
         margin-top: 35%;
     }
+
+
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
+        margin-top: 30%;
+    }
+
+}
+
+
+
+
+/* ================ MEDIA QUERIES 350px =============== */
+
+@media screen and (max-width: 350px) {
+
+
+
+
+
+
+
+    /* ========== SHOW.BLADE (articles) ========== */
+
+    h1 {
+        margin-top: 35%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -13,7 +13,7 @@
     <div class="container mb-3">
         <div class="row">
 
-            <div class="col-xl-6 d-flex justify-content-center pe-5 pb-5">
+            <div class="col-xl-6 d-flex justify-content-center pe-3 pe-xl-5 pb-5">
                 <img class="img-article" style="object-fit: cover" src="{{ asset("images/$article->image") }} "
                     alt={{ $article->nom }}>
             </div>
@@ -21,7 +21,7 @@
 
             <!-- ===== card description article ===== -->
 
-            <div class="col-xl-6 d-flex justify-content-center ps-5 pb-5">
+            <div class="col-xl-6 d-flex justify-content-center ps-3 ps-xl-5 pb-5">
                 <div class="img-article">
 
 

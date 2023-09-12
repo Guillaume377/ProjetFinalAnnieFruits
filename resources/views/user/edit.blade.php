@@ -9,14 +9,14 @@
 
     <!-- ===== FORMULAIRE MODIF INFO + MODIF MOT DE PASSE ===== -->
 
-    <div class="d-flex align-items-center" id="edit_blade_formulaire_infos_mdp">
+    <div class="" id="edit_blade_formulaire_infos_mdp">
 
 
         <!-- ===== Section modif info ===== -->
 
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
+            <div class="row">
+                <div class="col-lg-6">
 
 
                     <!-- ===== Card ===== -->
@@ -160,17 +160,17 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
+            {{-- </div>
+        </div> --}}
 
 
 
 
         <!-- ===== Section MODIF MOT DE PASSE ===== -->
 
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-10">
+        {{-- <div class="container-fluid">
+            <div class="row justify-content-center"> --}}
+                <div class="col-lg-6 py-5">
 
 
                     <!-- ===== Card ===== -->
