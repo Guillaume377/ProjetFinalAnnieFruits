@@ -551,24 +551,121 @@ footer {
 }
 
 
+/* ================ MEDIA QUERIES 1200px =============== */
+
+
+/* ================ HOME.BLADE =============== */
+
+@media screen and (max-width: 1200px) {
+
+    .carousel-caption {
+        margin-bottom: 20%;
+    }
+
+    .h1_carousel {
+        font-size: 320%;
+    }
+
+    .h3_carousel {
+        font-size: 150%;
+    }
+}
 
 
 
+/* ================ MEDIA QUERIES 991px =============== */
 
-/* =================MEDIA QUERIES 991px================ */
 
-
-/* =================NAVBAR================ */
+/* ================ NAVBAR =============== */
 
 
 @media screen and (max-width: 991px) {
-
-
-
 
     .nav-item {
         display: flex;
         justify-content: center;
         padding: 1%;
     }
+
+
+    /* ================ HOME =============== */
+
+    .carousel-caption {
+        margin-bottom: 15%;
+    }
+
+    .h1_carousel {
+        font-size: 270%;
+    }
+
+    .h3_carousel {
+        font-size: 150%;
+    }
+}
+
+
+
+
+/* ================ MEDIA QUERIES 767px =============== */
+
+
+/* ================ HOME.BLADE =============== */
+
+@media screen and (max-width: 767px) {
+
+   
+
+    .h1_carousel {
+        font-size: 200%;
+    }
+
+    .h3_carousel {
+        font-size: 100%;
+    }
+}
+
+
+/* ================ MEDIA QUERIES 575px =============== */
+
+
+/* ================ HOME.BLADE =============== */
+
+@media screen and (max-width: 575px) {
+
+    .h1_carousel {
+        font-size: 130%;
+    }
+
+    .h3_carousel {
+        font-size: 70%;
+    }
+}
+
+
+
+
+/* ================ MEDIA QUERIES 401px =============== */
+
+
+/* ================ HOME.BLADE =============== */
+
+@media screen and (max-width: 401px) {
+
+    .carousel-caption {
+        margin-bottom: 6%;
+    }
+
+    .h1_carousel {
+        font-size: 100%;
+    }
+
+    .h3_carousel {
+        font-size: 60%;
+    }
+
+
+    .logo_bandeau {
+        font-size: 200%;
+    }
+
 }
