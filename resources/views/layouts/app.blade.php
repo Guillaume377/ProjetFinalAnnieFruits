@@ -45,9 +45,15 @@
         <nav class="navbar navbar-expand-lg py-4 fixed-top" data-bs-theme="dark">
             <div class="container-fluid">
 
+
+                <!-- ===== LOGO ANNIE FRUITS ===== -->
+
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="logo_navbar" src="{{ asset('images/logo-annie-fruits.png') }}" alt="Logo">
                 </a>
+
+
+                <!-- ===== HAMBURGER ===== -->
 
                 <button class="hamburger navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -55,9 +61,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
+                <!-- ===== BOUTONS ===== -->
+
                 <div class="buttons_navbar collapse navbar-collapse" id="navbarNavDropdown">
-                    <div class="buttons_navbar navbar-nav ms-auto">
+                    <div class="buttons_navbar navbar-nav ms-0 ms-lg-auto">
                         <ul class=" navbar-nav">
+
+
+                            <!-- ===== BOUTON "NOS PRODUITS" ===== -->
 
                             <li class="nav-item">
                                 <a class="btn btn-ghost pt-3 mx-3" href="{{ route('gammes.index') }}"
@@ -66,6 +78,9 @@
                                 </a>
                             </li>
 
+
+                            <!-- ===== BOUTON "NOUS CONTACTER" ===== -->
+
                             <li class="nav-item">
                                 <a class="btn btn-ghost pt-3 mx-3" href="{{ route('contact') }}">
                                     Nous contacter
@@ -73,6 +88,7 @@
                             </li>
 
                             @guest
+
 
                                 <!-- ===== BOUTON CONNEXION / LIEN PAGE CONNEXION ===== -->
 
@@ -83,6 +99,7 @@
                                     </li>
                                 @endif
 
+
                                 <!-- ===== BOUTON INSCRIPTION / LIEN PAGE INSCRIPTION ===== -->
 
                                 @if (Route::has('register'))
@@ -92,10 +109,11 @@
                                     </li>
                                 @endif
 
+
                                 <!-- ========================= LIENS ACCESSIBLES AUX CONNECTES UNIQUEMENT ====================== -->
                             @else
                                 <!-- ===== BOUTON MON COMPTE ===== -->
-                                    
+
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="prenom nav-link dropdown-toggle" href="#"
                                         role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -105,6 +123,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
+
                                         <!-- ===== LIEN VERS "BACKOFFICE" ===== -->
 
                                         @if (Auth::user()->role_id == 2)
@@ -112,6 +131,7 @@
                                                 Back-office
                                             </a>
                                         @endif
+
 
                                         <!-- ===== LIEN VERS "MON COMPTE" ===== -->
 
@@ -139,8 +159,7 @@
                                         <!-- ===== LIEN VERS "DECONNEXION" ===== -->
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                             {{ __('Déconnexion') }}
                                         </a>
 
@@ -150,14 +169,17 @@
 
 
                             <!-- ===== BOUTON PANIER / LIEN VERS "PANIER" ===== -->
+
                             <li class="nav-item">
                                 <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
                                     <i class="cart fa-solid fa-cart-shopping pt-2 mx-4"></i>
                                 </a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
+
             </div>
         </nav>
     </div>
@@ -206,7 +228,7 @@
 
             <!-- ===== LIEN PAGE NOS PRODUITS ===== -->
 
-            <div class="lien col-md-3 fs-5 pt-2">
+            <div class="col-md-3 fs-5 pt-2">
                 <a class="footer-lien navbar-brand" href="{{ route('gammes.index') }}">
                     <p>Nos produits</p>
                 </a>

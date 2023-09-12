@@ -339,7 +339,6 @@ span {
 }
 
 
-
 .star {
     background-color: white;
     color: #E2403E;
@@ -487,7 +486,7 @@ footer {
 
 
 .logo_footer {
-    width: 40%;
+    width: 200px;
     border-end-end-radius: 25px;
     border-start-start-radius: 25px;
 }
@@ -558,12 +557,14 @@ footer {
 
 /* =================MEDIA QUERIES 991px================ */
 
+
+/* =================NAVBAR================ */
+
+
 @media screen and (max-width: 991px) {
 
 
-    .buttons_navbar {
-        margin-left: 0% !important;
-    }
+
 
     .nav-item {
         display: flex;

@@ -80,30 +80,32 @@
     <!-- ========================== HISTORIQUE DE l'ENTREPRISE ========================== -->
 
     <div class="container p-5">
-        <div class="row">
-
-            <div class="col-md-6 pt-3 pe-5">
-                <img src="{{ asset('images/entree.jpg') }}" class="entree d-block w-100" alt="entrée du magasin">
-            </div>
-
-            <div class="col-md-6 ps-5">
-                <h3 class="histoire text-center">Un peu d'histoire...</h3>
-
-                <div class=" text_histoire pt-3">
-                    <p class="text-justify"> L'entreprise Annie fruits a été créé le 10 juin 2009 par M. Villate. Son
-                        activité est la vente de
-                        fruits et légumes.
-                    </p>
-                    <p class="text-justify">Il se situe au 56 avenue du 11 novembre 1918 17300 ROCHEFORT (entre les magasins
-                        BUT et BRICORAMA).
-                    </p>
-                    <p class="text-justify">Il a été repris par M. Claude DELMOTTE au 01 octobre 2015.</p>
-                    <p class="text-justify">L'équipe est constituée de 3 personnes : le gérant M. DELMOTTE ainsi que 2
-                        salariés.</p>
-                    <p class="text-justify">Depuis le magasin s'est aussi diversifié en proposant la vente de fromages.</p>
+        <div class="row ">
+            {{-- <div class="d-flex justify-content-between"> --}}
+                <div class="col-lg-6 py-3 pe-0 pe-lg-5">
+                    <img src="{{ asset('images/entree.jpg') }}" class="entree d-block w-100" alt="entrée du magasin">
                 </div>
 
-            </div>
+                <div class="col-lg-6 py-3 ps-0 ps-lg-5">
+                    <h3 class="histoire text-center">Un peu d'histoire...</h3>
+
+                    <div class=" text_histoire pt-3">
+                        <p class="text-justify"> L'entreprise Annie fruits a été créé le 10 juin 2009 par M. Villate. Son
+                            activité est la vente de
+                            fruits et légumes.
+                        </p>
+                        <p class="text-justify">Il se situe au 56 avenue du 11 novembre 1918 17300 ROCHEFORT (entre les
+                            magasins
+                            BUT et BRICORAMA).
+                        </p>
+                        <p class="text-justify">Il a été repris par M. Claude DELMOTTE au 01 octobre 2015.</p>
+                        <p class="text-justify">L'équipe est constituée de 3 personnes : le gérant M. DELMOTTE ainsi que 2
+                            salariés.</p>
+                        <p class="text-justify">Depuis le magasin s'est aussi diversifié en proposant la vente de fromages.
+                        </p>
+                    </div>
+                </div>
+            {{-- </div> --}}
         </div>
     </div>
 
