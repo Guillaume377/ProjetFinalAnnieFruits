@@ -33,7 +33,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="{{ asset('images/corbeille.jpg') }}" class="d-block w-100" alt="corbeille de fruits">
+                <img src="{{ asset('images/corbeille3.jpg') }}" class="d-block w-100" alt="corbeille de fruits">
                 <div class="carousel-caption d-block">
                     <h1 class="h1_carousel">Bienvenue chez Annie fruits !</h1>
                     <h3 class="h3_carousel">Votre magasin de proximité à Rochefort.</h3>
