@@ -82,7 +82,9 @@ class PanierController extends Controller
 		// Heure de retrait
 		$heureRetrait = $request->input('heure_retrait');
 		session()->put('heure_retrait', $heureRetrait);
-		return back()->withMessage("Créneau de retrait de la commande validé");
+
+		$message = "Créneau de retrait de la commande validé. <br>Vous pouvez cliquer sur le bouton 'Valider la commande' en bas de la page.";
+		return back()->withMessage($message);
 	}
 
 
@@ -104,6 +106,6 @@ class PanierController extends Controller
 		session()->forget('panier'); // On supprime le panier en session
 
 		// Redirection vers la page "home"
-		return redirect()->route('home')->withMessage('success', 'Votre commande a été validée.');
+		return redirect()->route('home')->withMessage('Votre commande a été validée.');
 	}
 }

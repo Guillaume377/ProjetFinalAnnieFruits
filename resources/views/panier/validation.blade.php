@@ -262,9 +262,7 @@
                                 <div class="d-flex justify-content-center">
                                     
                                     <button type="submit" class="btn btn-ajout">
-                                        <a href="#total-a-payer">
                                             <small>Valider le créneau</small>
-                                        </a>
                                     </button>
                                 </div>
                             </div>
@@ -282,7 +280,7 @@
 
         <td>
             <!-- ===== On affiche le total à payer avec un arrondi de 2 chiffres après la virgule ===== -->
-            <section id="total-a-payer">
+            <section id="total">
                 <div class="prix_total text-center my-5">Total à payer en magasin :
                     <div class="pt-3">
                         {{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€

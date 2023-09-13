@@ -36,7 +36,7 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-5">
+            <div class="col-lg-5">
                 <div class="tableau table-responsive card mb-5">
 
 
@@ -301,14 +301,14 @@
 
                                     <!-- Image -->
                                     <td class="border-end text-center"><img
-                                            src="{{ asset('images/' . $article->image) }}" class="rounded-top"
+                                            src="{{ asset('images/' . $article->image) }}" class="rounded"
                                             alt="{{ $article->nom }}" style="width: 7rem"></td>
 
                                     <!-- Gamme -->
                                     <td class="border-end fs-5 text-center">{{ $article->gamme->nom }}</td>
 
                                     <!-- Prix -->
-                                    <td class="border-end fs-5 text-center">{{ $article->prix }} €</td>
+                                    <td class="border-end fs-5 text-center">{{ $article->prix }}€</td>
 
                                     <!-- Stock -->
                                     <td class="border-end fs-5 text-center">{{ $article->stock }}</td>
@@ -393,8 +393,6 @@
 
                             <!-- ===== SECTION NOM + IMAGE ===== -->
 
-                            <div class="d-flex flex-column gap-2">
-
 
                                 <!-- ===== NOM ===== -->
 
@@ -432,9 +430,7 @@
                                     @enderror
                                 </div>
 
-                            </div>
-
-
+                            
                             <!-- ===== BOUTON VALIDATION ENREGISTREMENT ===== -->
 
                             <div class="row mt-4">
@@ -492,7 +488,8 @@
                             <tr>
                                 <td class="text-center fw-bolder">{{ $gamme->id }}</td>
                                 <td class="text-center fw-bolder">{{ $gamme->nom }}</td>
-                                <td><img src="{{ asset('images/' . $gamme->image) }}" class="rounded-top"
+                                <td class="d-flex justify-content-center">
+                                    <img src="{{ asset('images/' . $gamme->image) }}" class="rounded"
                                         alt="{{ $gamme->nom }}" style="width: 7rem">
                                 </td>
 
@@ -501,7 +498,7 @@
 
                                 <td class="text-center">
                                     <a href="{{ route('gammes.edit', $gamme) }}">
-                                        <button class="btn btn-ajout">Modifier</button>
+                                        <button class="btn btn-ajout mt-2">Modifier</button>
                                     </a>
                                 </td>
 
@@ -512,7 +509,7 @@
                                     <form action="{{ route('gammes.destroy', $gamme) }}" method="post">
                                         @method ("delete")
                                         @csrf
-                                        <button type="submit" class="btn btn-suppr my-2">Supprimer</button>
+                                        <button type="submit" class="btn btn-suppr mt-2">Supprimer</button>
                                     </form>
                                 </td>
                             </tr>
