@@ -77,7 +77,8 @@
                                     <form method="POST" action="{{ route('panier.add', $favori->id) }}"
                                         class="form-inline d-inline-block d-flex justify-content-center">
                                         {{ csrf_field() }}
-                                        <div class="row w-50 ">
+                                        <div class="row text-center">
+                                            <div class="w-75 mx-auto">
 
 
                                             <!-- ===== Condition si quantité en stock + si pièce ou Kilo ===== -->
@@ -98,7 +99,7 @@
                                                         step="100" name="quantite" placeholder="Poids en grammes"
                                                         class="form-control mb-3">
                                                 @endif
-
+                                            </div>
 
                                                 <!-- ===== BOUTON PANIER ===== -->
 
@@ -108,6 +109,8 @@
                                                     </button>
                                                 </div>
                                             @else
+                                            
+                                            <img src="/images/rupture_stock.jpg" class="img_rupture w-50">
                                             @endif
 
                                         </div>
@@ -146,6 +149,9 @@
                 </table>
             </div>
 
+
+            <!-- ===== SI PANIER VIDE ===== -->
+
         @else
             <h3 class="h3_panier_vide mx-auto text-center">Aucun produit dans vos favoris</h3>
         @endif
@@ -158,17 +164,4 @@
 
 
 
-        <!--bouton d'ajout au panier-->
-                                {{-- <td>
-                                <div class="col">
-
-                                    <form method="POST" action="{{ route('panier.add', 1) }}"
-                                        class="form-inline d-inline-block">
-                                        {{ csrf_field() }}
-
-                                        <button type="submit" class="ajoutValider btn">Ajouter au panier</button>
-
-                                    </form>
-
-                                </div>
-                            </td> --}}
+       

@@ -64,7 +64,8 @@
                                                     name="quantite" value="{{ $article['quantite'] }}"
                                                     class="form-control mb-3">
                                             @endif
-</div>
+                                            </div>
+                                            
                                             <!-- bouton Modifier -->
 
                                             <div class="text-center mx-auto">

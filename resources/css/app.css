@@ -253,7 +253,7 @@ iframe {
         url(/public/images/bandeau3.png);
     color: white;
     font-weight: bolder;
-    
+
 }
 
 
@@ -345,6 +345,13 @@ span {
     background-color: white;
     color: #E2403E;
 }
+
+
+/* ============= . INDEX.BLADE (favoris) ========== */
+
+/* .img_rupture {
+    width:100px;
+} */
 
 /* ============= . SHOW.BLADE (panier) ========== */
 
@@ -554,17 +561,13 @@ footer {
 
 
 
-
+/* ************************** MEDIA QUERIES *************************** */
 
 
 
 /* *************** MEDIA QUERIES 1400px *************** */
 
-@media screen and (max-width: 1400px) {
-
-
-
-}
+@media screen and (max-width: 1400px) {}
 
 
 
@@ -599,7 +602,7 @@ footer {
     }
 
 
-   
+
 
 }
 
@@ -639,6 +642,13 @@ footer {
     .title_h1 {
         margin-top: 10%;
     }
+
+
+    /* =========== . INDEX.BLADE (favoris) ========== */
+
+    .img_rupture {
+        width: 70% !important;
+    }
 }
 
 
@@ -671,6 +681,12 @@ footer {
 
     h1 {
         margin-top: 15%;
+    }
+
+    /* =========== . INDEX.BLADE (favoris) ========== */
+
+    .img_rupture {
+        width: 120% !important;
     }
 }
 
@@ -741,12 +757,12 @@ footer {
 
     /* ========== . VALIDATION.BLADE (validation panier) ========== */
 
-.prix_total {
-   
-    font-size: 150% !important;
-  
+    .prix_total {
 
-}
+        font-size: 150% !important;
+
+
+    }
 }
 
 
@@ -820,10 +836,10 @@ footer {
     /* ================ MEDIA QUERIES 320px =============== */
 
     @media screen and (max-width: 320px) {
-    
-    
+
+
         /* ========== INDEX.BLADE (gammes) ========== */
-    
+
         .title_h1 {
             margin-top: 45%;
         }
