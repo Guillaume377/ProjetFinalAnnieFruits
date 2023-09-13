@@ -116,4 +116,4 @@ Route::get('/backoffice', [AdminController::class, 'index'])->name('backoffice')
 
 // ******************* Route Politique de confidentialité ************************************/
  
- Route::get('/politique', [App\Http\Controllers\HomeController::class, 'index'])->name('politique');
+ Route::get('/politique', [App\Http\Controllers\HomeController::class, 'politique'])->name('politique');

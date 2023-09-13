@@ -49,8 +49,8 @@
                                     <form method="POST" action="{{ route('panier.add', $article['id']) }}"
                                         class="form-inline d-inline-block d-flex justify-content-center">
                                         @csrf
-                                        <div class="row w-50 ">
-
+                                        <div class="row">
+                                            <div class="w-50 mx-auto">
                                             <!-- si type prix : pièce -->
 
                                             @if ($article['type_prix'] == 'pièce')
@@ -64,13 +64,13 @@
                                                     name="quantite" value="{{ $article['quantite'] }}"
                                                     class="form-control mb-3">
                                             @endif
-
+</div>
                                             <!-- bouton Modifier -->
 
                                             <div class="text-center mx-auto">
                                             <button type="submit" class="btn btn-ajout px-2"><i
                                                     class="img-btn-ajout fa-solid fa-pen"></i> Modifier</button>
-                                        </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </td>

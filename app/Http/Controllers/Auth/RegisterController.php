@@ -55,14 +55,21 @@ class RegisterController extends Controller
             'prenom' => ['required', 'string', 'max:50'],
             'telephone' => ['required', 'digits:10'], //digits:10 = imposer le nombre de 10 chiffres
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
-            'password' => ['required', 'confirmed',
+            'password' => [
+                'required', 'confirmed',
                 Password::min(8)    // minimum 8 caractères 
                     ->mixedCase()   // une minuscule, une majuscule 
                     ->letters()     // min 1 lettre
                     ->numbers()     // Min 1 chiffre
                     ->symbols()     // carcatère speciaux 
             ],
-        ]);
+            // nouvelle syntaxe validation mdp, + d'infos : https://laravel.com/docs/8.x/validation#validating-passwords
+            'politique' => 'required', 
+            /*--> pour empêcher l’inscription d’une personne qui aurait rendu le bouton
+            visible sans cocher la checkbox (en modifiant le code dans l’inspecteur)*/
+        ],
+        ['politique.required' => 'Veuillez cocher la case pour accepter la politique de confidentialité et les mentions légales']
+        );
     }
 
     /**
@@ -81,4 +88,5 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
 }

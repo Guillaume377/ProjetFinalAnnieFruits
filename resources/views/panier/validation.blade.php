@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <h1 class="title_h1 text-center mx-auto">Valider ma commande</h1>
 
     <div class="container">
@@ -171,6 +172,7 @@
 
                         <div class="row d-flex justify-content-center">
 
+
                             <!-- ===== Jour de retrait ===== -->
 
                             <label for="date_time">Jour*</label>
@@ -184,9 +186,11 @@
                             <input type="time" min="09:00" max="19:00" name="heure_retrait"
                                 class="jour-heure form-control mb-3" required>
 
-                            <div id="creneauHelp" class="form-text ms-1">* = champs obligatoires pour pouvoir valider la commande</div>
+                            <div id="creneauHelp" class="form-text ms-1">* = champs obligatoires pour pouvoir valider la
+                                commande</div>
 
-                            <p class="text-center pt-5">Heure de retrait possible pendant les horaires d'ouvertures du magasin
+                            <p class="text-center pt-5">Heure de retrait possible pendant les horaires d'ouvertures du
+                                magasin
                             </p>
 
 
@@ -195,12 +199,12 @@
                             <div class="col-lg-6">
                                 <div class="tableau table-responsive my-5">
                                     <table class="table table-striped mb-0 mx-auto">
-                                        
+
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th>Jour</th>
-                                                <th>Matin</th>                                               
-                                                <th>Après-midi</th>    
+                                                <th>Matin</th>
+                                                <th>Après-midi</th>
                                             </tr>
                                         </thead>
 
@@ -256,8 +260,12 @@
 
                             <div class="row mb-0 mt-2">
                                 <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-ajout"><small>Valider le
-                                            créneau</small></button>
+                                    
+                                    <button type="submit" class="btn btn-ajout">
+                                        <a href="#total-a-payer">
+                                            <small>Valider le créneau</small>
+                                        </a>
+                                    </button>
                                 </div>
                             </div>
 
@@ -274,16 +282,17 @@
 
         <td>
             <!-- ===== On affiche le total à payer avec un arrondi de 2 chiffres après la virgule ===== -->
-
-            <div class="prix_total text-center my-5">Total à payer en magasin :
-                <div class="pt-3">
-                {{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€
-            </div>
-            </div>
+            <section id="total-a-payer">
+                <div class="prix_total text-center my-5">Total à payer en magasin :
+                    <div class="pt-3">
+                        {{ number_format(session()->get('totalCommande'), 2, ',', ' ') }}€
+                    </div>
+                </div>
+            </section>
         </td>
 
 
-        <!-- ===================================================== BOUTON VALIDER LA COMMANDE ===================================================== -->
+        <!-- ======================================================== BOUTON VALIDER LA COMMANDE ===================================================== -->
 
         <div class="d-flex justify-content-center">
 
@@ -297,7 +306,7 @@
         </div>
 
 
-        <!-- =========================================================== MODAL =========================================================== -->
+        <!-- ==================================================================== MODAL ============================================================== -->
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -315,7 +324,7 @@
                             aria-label="Close"></button>
 
                     </div>
-                    
+
                     <div class="modal-body">
                         <p>Votre commande a été validée.</p>
 
@@ -345,7 +354,7 @@
                     <!-- ========================================== BOUTON RETOUR A L'ACCUEIL =============================================== -->
 
                     <div class="modal-footer d-flex justify-content-center">
-                        
+
                         <a href="{{ route('commandes.store') }}">
                             <button class="btn btn-ajout m-3">
                                 Retour à l'accueil

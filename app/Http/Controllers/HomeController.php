@@ -21,5 +21,11 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+    
+
+    public function politique()
+    {
+        return view('politique');
+    }
 }
 

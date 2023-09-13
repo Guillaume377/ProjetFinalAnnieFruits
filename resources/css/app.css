@@ -246,12 +246,14 @@ iframe {
 /* ============= . INDEX.BLADE (GAMMES) ========== */
 
 .title_h1 {
+    margin-top: 0%;
     padding-top: 7%;
     padding-bottom: 7%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
         url(/public/images/bandeau3.png);
     color: white;
     font-weight: bolder;
+    
 }
 
 
@@ -733,9 +735,18 @@ footer {
     /* ========== SHOW.BLADE (articles) ========== */
 
     h1 {
-        font-size: xx-large;
+        font-size: x-large;
         margin-top: 25%;
     }
+
+    /* ========== . VALIDATION.BLADE (validation panier) ========== */
+
+.prix_total {
+   
+    font-size: 150% !important;
+  
+
+}
 }
 
 
@@ -788,6 +799,11 @@ footer {
 @media screen and (max-width: 350px) {
 
 
+    /* ========== INDEX.BLADE (gammes) ========== */
+
+    .title_h1 {
+        margin-top: 40%;
+    }
 
 
 
@@ -801,11 +817,20 @@ footer {
 
 
 
+    /* ================ MEDIA QUERIES 320px =============== */
+
+    @media screen and (max-width: 320px) {
+    
+    
+        /* ========== INDEX.BLADE (gammes) ========== */
+    
+        .title_h1 {
+            margin-top: 45%;
+        }
 
 
 
-
-
+    }
 
 
 

@@ -162,8 +162,8 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-ajout" style="visibility: hidden">
-                                        
+                                    <button id="valider" type="submit" class="btn btn-ajout" 
+                                        style="visibility: hidden">
                                         {{ __('Valider') }}
                                     </button>
                                 </div>
@@ -176,4 +176,15 @@
             </div>
         </div>
     </div>
+
+    
+<!-- ===== SCRIPT POUR LE FONCTIONNEMENT DE LA CHECKBOX ===== -->
+
+    <script>
+        function toggleValidationButtonDisplay() {
+            let checkbox = document.getElementById("politique");
+            let boutonValider = document.getElementById("valider");
+            checkbox.checked ? boutonValider.style.visibility = "visible" : boutonValider.style.visibility = "hidden"  
+        }
+    </script>
 @endsection
