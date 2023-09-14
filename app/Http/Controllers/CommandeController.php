@@ -49,9 +49,11 @@ class CommandeController extends Controller
         // Sauvegarder la commande articles
 
         $commande->save();
+        
+
+        // Vider la session créneau après la suavegarde commande (pour obliger le user à valider le créneau horaire après chaque commande)
 
         session()->forget(['date_retrait', 'heure_retrait']);
-
 
 
         // je récupère le panier (stocké dans une variable), et je boucle dessus
