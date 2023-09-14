@@ -37,41 +37,50 @@ class CommandeController extends Controller
         // Créer et sauvegarder la commande
 
         $commande = new Commande();
-        $commande->numero = rand(1000000,9999999);
+        $commande->numero = rand(1000000, 9999999);
         $commande->prix = session('totalCommande');
-        $commande->date_retrait= session('date_retrait');
-        $commande->heure_retrait= session('heure_retrait');
+        $commande->date_retrait = session('date_retrait');
+        $commande->heure_retrait = session('heure_retrait');
         $commande->user_id = Auth::user()->id;
-        
+
+
+
 
         // Sauvegarder la commande articles
 
         $commande->save();
 
-          // je récupère le panier (stocké dans une variable), et je boucle dessus
-
-          $panier = session()->get("panier");
+        session()->forget(['date_retrait', 'heure_retrait']);
 
 
-          foreach ($panier as $article) {
-  
-              // j'insère chacun de ses articles dans commande_articles (syntaxe attach)
-              $commande->articles()->attach($article['id'], ['quantite' => $article['quantite']]);
+
+        // je récupère le panier (stocké dans une variable), et je boucle dessus
+
+        $panier = session()->get("panier");
+
+
+        foreach ($panier as $article) {
+
+            // j'insère chacun de ses articles dans commande_articles (syntaxe attach)
+            $commande->articles()->attach($article['id'], ['quantite' => $article['quantite']]);
 
             // je fais baisser le stock de chaque article (stock actuel - stock commandé)
 
             $articleInDatabase = Article::find($article['id']);
-            $articleInDatabase->stock -= $article['quantite'];
-            $articleInDatabase->save();
 
-          }
+            if ($article['type_prix'] == 'kilo') {
+                $articleInDatabase->stock -= $article['quantite'] / 1000;
+            } else {
+                $articleInDatabase->stock -= $article['quantite'];
+            }
+            $articleInDatabase->save();
+        }
 
 
         // Redirection et afficher message de succès
 
         return redirect()->route('emptyAfterOrder');
-
-    } 
+    }
 
 
     /**
@@ -82,10 +91,9 @@ class CommandeController extends Controller
         //je charge les articles de la commande
         //grace à Models/Commande qui lie cette table par la FK à la table articles
         $commande->load('articles');
-    
+
         // je les retourne dans une page de détail et j'injecte les données de ma variable "$commande"
         // avec la fonction compact('commande')
         return view('commandes.detail', compact('commande'));
     }
-
 }

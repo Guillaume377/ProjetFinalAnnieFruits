@@ -63,6 +63,18 @@ h5 {
 }
 
 
+.title_h1 {
+    margin-top: 0%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(/public/images/bandeau3.png);
+    color: white;
+    font-weight: bolder;
+
+}
+
+
 p {
     font-family: 'Assistant', sans-serif;
 }
@@ -251,7 +263,7 @@ iframe {
 
 /* ============= . INDEX.BLADE (GAMMES) ========== */
 
-.title_h1 {
+/* .title_h1 {
     margin-top: 0%;
     padding-top: 7%;
     padding-bottom: 7%;
@@ -260,7 +272,7 @@ iframe {
     color: white;
     font-weight: bolder;
 
-}
+} */
 
 
 .nos_univers {
@@ -353,11 +365,7 @@ span {
 }
 
 
-/* ============= . INDEX.BLADE (favoris) ========== */
 
-/* .img_rupture {
-    width:100px;
-} */
 
 /* ============= . SHOW.BLADE (panier) ========== */
 

@@ -294,7 +294,7 @@
 
         <div class="d-flex justify-content-center">
 
-            @if (session()->get('date_retrait') && session()->get('heure_retrait'))
+            @if (session()->has('date_retrait') && session()->has('heure_retrait'))
                 <button type="submit" name="clearCart" class="btn btn-ajout fs-5 mb-5" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     Valider la commande

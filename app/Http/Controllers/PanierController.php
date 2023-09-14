@@ -84,6 +84,9 @@ class PanierController extends Controller
 		session()->put('heure_retrait', $heureRetrait);
 
 		$message = "Créneau de retrait de la commande validé. <br>Vous pouvez cliquer sur le bouton 'Valider la commande' en bas de la page.";
+
+		
+
 		return back()->withMessage($message);
 	}
 
