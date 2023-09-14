@@ -105,6 +105,7 @@ body {
 th {
     background-color: #4BAD3B !important;
     color: white !important;
+    text-align: center;
 }
 
 
@@ -120,6 +121,11 @@ th {
 }
 
 
+.tableau {
+    border-end-end-radius: 30px;
+    border-start-start-radius: 30px;
+    box-shadow: 10px 5px 5px green;
+}
 
 
 /* =============== 2. NAVBAR =============== */
@@ -293,7 +299,6 @@ footer {
 
 /* =============== 5. NOUS CONTACTER =============== */
 
-
 .coordonnees {
     padding-top: 15%
 }
@@ -418,18 +423,6 @@ span {
 }
 
 
-.tableau {
-    border-end-end-radius: 30px;
-    border-start-start-radius: 30px;
-    box-shadow: 10px 5px 5px green;
-}
-
-
-th {
-    text-align: center;
-}
-
-
 .fa-pen {
     font-size: 100%;
 }
@@ -473,7 +466,7 @@ th {
 }
 
 
-/* ========== 10. LOGIN / VERIFY / EMAIL.BLADE ========== */ 
+/* ========== 10. LOGIN / VERIFY / EMAIL.BLADE ========== */
 /* ===== (Connexion, vérifier email, mot de passe oublié) ===== */
 
 .card-login {
@@ -488,7 +481,6 @@ th {
     padding-top: 4%;
     padding-bottom: 4%;
 }
-
 
 
 /* =============== 12. RESS/VIEWS/USER/EDIT.BLADE (Mon compte) =============== */
@@ -525,7 +517,6 @@ th {
     box-shadow: 10px 5px 5px #E2403E;
 
 }
-
 
 
 /* =============== 13. BACK OFFICE =============== */
@@ -593,6 +584,12 @@ th {
 @media screen and (max-width: 991px) {
 
 
+    /* ===== GENERAL ===== */
+
+    .title_h1 {
+        margin-top: 10%;
+    }
+
     /* ===== NAVBAR ===== */
 
     .nav-item {
@@ -617,13 +614,6 @@ th {
     }
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
-
-    .title_h1 {
-        margin-top: 10%;
-    }
-
-
     /* ====== INDEX.BLADE (favoris) ===== */
 
     .img_rupture {
@@ -639,6 +629,13 @@ th {
 @media screen and (max-width: 767px) {
 
 
+    /* ===== GENERAL ===== */
+
+    .title_h1 {
+        margin-top: 15%;
+    }
+
+
     /* ===== HOME.BLADE ===== */
 
     .h1_carousel {
@@ -647,13 +644,6 @@ th {
 
     .h3_carousel {
         font-size: 100%;
-    }
-
-
-    /* ===== INDEX.BLADE (gammes) ===== */
-
-    .title_h1 {
-        margin-top: 15%;
     }
 
 
@@ -671,9 +661,33 @@ th {
 }
 
 
+/* *************** MEDIA QUERIES 643px *************** */
+
+@media screen and (max-width: 643px) {
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword1 {
+        margin-top: 12%;
+    }
+
+    .newPassword2 {
+        margin-top: 12%;
+    }
+
+}
+
+
 /* *************** MEDIA QUERIES 575px *************** */
 
 @media screen and (max-width: 575px) {
+
+    /* ===== GENERAL ===== */
+
+    .title_h1 {
+        margin-top: 22%;
+    }
 
 
     /* ===== HOME.BLADE ===== */
@@ -691,13 +705,6 @@ th {
     }
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
-
-    .title_h1 {
-        margin-top: 22%;
-    }
-
-
     /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
@@ -707,9 +714,16 @@ th {
 }
 
 
-/* *************** MEDIA QUERIES 475px *************** */
+/* *************** MEDIA QUERIES 474px *************** */
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 474px) {
+
+
+    /* ===== GENERAL ===== */
+
+    .title_h1 {
+        margin-top: 28%;
+    }
 
 
     /* ===== HOME.BLADE ===== */
@@ -719,18 +733,13 @@ th {
     }
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
-
-    .title_h1 {
-        margin-top: 28%;
-    }
-
     /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         font-size: x-large;
         margin-top: 25%;
     }
+
 
     /* ===== VALIDATION.BLADE (validation panier) ===== */
 
@@ -739,12 +748,80 @@ th {
         font-size: 150% !important;
 
     }
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword1 {
+        margin-top: 17%;
+    }
+
+
+    .newPassword2 {
+        margin-top: 17%;
+    }
 }
 
 
-/* *************** MEDIA QUERIES 401px *************** */
 
-@media screen and (max-width: 401px) {
+
+/* *************** MEDIA QUERIES 473px *************** */
+
+@media screen and (max-width: 473px) {
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword2 {
+        margin-top: 0%;
+    }
+
+}
+
+
+/* *************** MEDIA QUERIES 425px *************** */
+
+@media screen and (max-width: 425px) {
+
+    /* ===== GENERAL ===== */
+
+    .title_h1 {
+        margin-top: 30%;
+    }
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword1 {
+        margin-top: 0%;
+    }
+
+}
+
+
+
+/* *************** MEDIA QUERIES 416px *************** */
+
+@media screen and (max-width: 416px) {
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newNom {
+        margin-top: 20%;
+    }
+
+    .newPrenom {
+        margin-top: 20%;
+    }
+
+}
+
+
+
+/* *************** MEDIA QUERIES 407px *************** */
+
+@media screen and (max-width: 407px) {
 
 
     /* ===== HOME.BLADE ===== */
@@ -753,9 +830,11 @@ th {
         margin-bottom: 1%;
     }
 
+
     .h1_carousel {
         font-size: 80%;
     }
+
 
     .h3_carousel {
         font-size: 40%;
@@ -767,10 +846,10 @@ th {
     }
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
+    /* ===== GENERAL ===== */
 
     .title_h1 {
-        margin-top: 35%;
+        margin-top: 34%;
     }
 
 
@@ -780,7 +859,34 @@ th {
         margin-top: 30%;
     }
 
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword1 {
+        margin-top: 22%;
+    }
+
+    .newPassword2 {
+        margin-top: 22%;
+    }
+
 }
+
+
+
+/* *************** MEDIA QUERIES 376px *************** */
+
+@media screen and (max-width: 376px) {
+
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPrenom {
+        margin-top: 0%;
+    }
+
+}
+
 
 
 /* *************** MEDIA QUERIES 350px *************** */
@@ -788,7 +894,7 @@ th {
 @media screen and (max-width: 350px) {
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
+    /* ===== GENERAL ===== */
 
     .title_h1 {
         margin-top: 40%;
@@ -801,6 +907,14 @@ th {
         margin-top: 35%;
     }
 
+
+     /* ===== EDIT.BLADE (Mon compte) ===== */
+
+     .newNom {
+        margin-top: 25%;
+    }
+
+
 }
 
 /* *************** MEDIA QUERIES 320px *************** */
@@ -808,10 +922,16 @@ th {
 @media screen and (max-width: 320px) {
 
 
-    /* ===== INDEX.BLADE (gammes) ===== */
+    /* ===== GENERAL ===== */
 
     .title_h1 {
         margin-top: 45%;
+    }
+
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newNom {
+        margin-top: 0%;
     }
 
 }

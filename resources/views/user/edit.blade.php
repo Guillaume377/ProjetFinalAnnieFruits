@@ -55,7 +55,7 @@
 
                                         <div class="col-md-12">
                                             <input id="nom" type="text" placeholder="Nouveau nom"
-                                                class="form-control @error('name') is-invalid @enderror" name="nom"
+                                                class="form-control newNom @error('name') is-invalid @enderror" name="nom"
                                                 value="{{ $user->nom }}" required autocomplete="on" autofocus>
 
                                             @error('nom')
@@ -75,7 +75,7 @@
 
                                         <div class="col-md-12">
                                             <input id="prenom" type="text" placeholder="Nouveau prénom"
-                                                class="form-control @error('prenom') is-invalid @enderror" name="prenom"
+                                                class="form-control newPrenom @error('prenom') is-invalid @enderror" name="prenom"
                                                 value="{{ $user->prenom }}" required autocomplete="prenom" autofocus>
 
                                             @error('prenom')
@@ -205,7 +205,7 @@
 
                                         <div class="col-md-12">
                                             <input id="password" type="password" placeholder="Mot de passe actuel"
-                                                class="form-control @error('password') is-invalid @enderror"
+                                                class="form-control newPassword1 @error('password') is-invalid @enderror"
                                                 name="actuel_password" value="{{ old('password') }}" required
                                                 autocomplete="password" autofocus>
 
@@ -226,7 +226,7 @@
 
                                         <div class="col-md-12">
                                             <input id="password" type="password" placeholder="Nouveau mot de passe"
-                                                class="form-control @error('password') is-invalid @enderror"
+                                                class="form-control newPassword2 @error('password') is-invalid @enderror"
                                                 name="nouveau_password" value="{{ old('password') }}" required
                                                 autocomplete="password" autofocus>
                                             <div id="passwordHelp" class="form-text ms-1">minimum 8 caractères dont au

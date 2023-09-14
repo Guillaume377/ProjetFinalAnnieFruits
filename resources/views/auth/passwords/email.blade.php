@@ -27,6 +27,8 @@
                         </div>
                     @endif
 
+                    <!-- ===== EMAIL ===== -->
+
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
 
@@ -44,6 +46,9 @@
                             </div>
                         </div>
 
+
+                        <!-- ===== BOUTON ===== -->
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-ajout">
@@ -52,8 +57,11 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>
