@@ -51,6 +51,7 @@
                                         @csrf
                                         <div class="row">
                                             <div class="w-50 mx-auto">
+                                                
                                             <!-- si type prix : pièce -->
 
                                             @if ($article['type_prix'] == 'pièce')

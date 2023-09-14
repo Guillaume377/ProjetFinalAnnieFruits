@@ -4,45 +4,50 @@
     - Author: Guillaume
 */
 
+
 /* COLORS
 
-Vert :  #4BAD3B
-        green
-Rouge:  #E2403E
-        darkred
-Bleu:   #1877F2
+    Vert :  #4BAD3B
+            green
 
-moccasin
-white
-           
+    Rouge:  #E2403E
+            darkred
+
+    Bleu:   #1877F2
+
+    moccasin    
+    white        
 */
 
 /* FONTS
-    -Default        font-family: 'Assistant', sans-serif;
-    h1              font-family: 'Paprika', cursive;
+
+    Default = font-family: 'Assistant', sans-serif;
+    h1      = font-family: 'Paprika', cursive;
 
 */
 
 /* CSS DIRECTORY
-    1. =GLOBAL
-    2. =NAVBAR
-    3. =HOME.BLADE (ACCUEIL)
-    4. =INDEX.BLADE (GAMMES)
-    5. =
-    6. =
-    7. =
-    8. =
 
-
-
-
-    9. =FOOTER
-
-
+    1. = GLOBAL
+    2. = NAVBAR
+    3. = FOOTER
+    4. = HOME.BLADE (Accueil)
+    5. = NOUS CONTACTER
+    6. = INDEX.BLADE (Gammes)
+    7. = SHOW.BLADE (Article)
+    8. = SHOW.BLADE (Panier)
+    9. = VALIDATION.BLADE (Validation panier)
+    10.= LOGIN.BLADE (Connexion)
+    11.= REGISTER.BLADE (Inscription)
+    12.= VERIFY.BLADE (Mdp)
+    13.= EMAIL.BLADE (Mdp oublié)
+    14.= EDIT.BLADE (Mon compte)
+    15.= BACK OFFICE
+    16.= MEDIA QUERIES
 
 */
 
-/* =============== 1. GLOBAL ==================*/
+/* =============== 1. GLOBAL =============== */
 
 h1 {
     font-family: 'Paprika', cursive;
@@ -102,6 +107,13 @@ th {
 }
 
 
+.alert {
+    margin-top: 5%;
+
+}
+
+
+
 /* page commande et détail commande */
 .red-text {
     color: red !important;
@@ -109,12 +121,9 @@ th {
 }
 
 
-.alert{
-    margin-top: 5%;
 
-}
 
-/* ================== 2. NAVBAR ================= */
+/* =============== 2. NAVBAR =============== */
 
 nav {
     background-color: #4BAD3B;
@@ -188,7 +197,54 @@ nav {
 
 
 
-/* =============== 3. HOME.BLADE (ACCUEIL) ==================*/
+/* =============== 3. FOOTER =============== */
+
+footer {
+    background-color: #4BAD3B;
+}
+
+
+.logo_footer {
+    width: 200px;
+    border-end-end-radius: 25px;
+    border-start-start-radius: 25px;
+}
+
+
+.logo_footer:hover {
+    box-shadow: 10px 5px 5px green;
+}
+
+
+.footer-lien {
+    color: white;
+    font-weight: bolder;
+}
+
+
+.footer-lien:hover {
+    color: #E2403E;
+}
+
+
+.logo-facebook {
+    font-size: 400%;
+    color: #E2403E;
+}
+
+
+.logo-facebook:hover {
+    color: #1877F2;
+}
+
+
+.copyright {
+    color: white;
+    font-size: small;
+}
+
+
+/* =============== 4. HOME.BLADE (Accueil) =============== */
 
 .carousel-caption {
     background: linear-gradient(rgba(0, 0, 0, 0.8),
@@ -235,7 +291,7 @@ nav {
 }
 
 
-/* ============= 4. NOUS CONTACTER ========== */
+/* =============== 5. NOUS CONTACTER =============== */
 
 
 .coordonnees {
@@ -261,18 +317,7 @@ iframe {
 
 }
 
-/* ============= . INDEX.BLADE (GAMMES) ========== */
-
-/* .title_h1 {
-    margin-top: 0%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
-        url(/public/images/bandeau3.png);
-    color: white;
-    font-weight: bolder;
-
-} */
+/* =============== 6. INDEX.BLADE (Gammes) =============== */
 
 
 .nos_univers {
@@ -297,8 +342,7 @@ span {
 }
 
 
-/* ============= 4. SHOW.BLADE (articles) ========== */
-
+/* =============== 7. SHOW.BLADE (Articles) =============== */
 
 .prix_article {
     padding-top: 7%;
@@ -367,8 +411,7 @@ span {
 
 
 
-/* ============= . SHOW.BLADE (panier) ========== */
-
+/* =============== 8. SHOW.BLADE (Panier) =============== */
 
 .h3_panier_vide {
     margin-top: 10%;
@@ -404,14 +447,13 @@ th {
 }
 
 
-/* ============= . VALIDATION.BLADE (validation panier) ========== */
+/* =============== 9. VALIDATION.BLADE (validation panier) =============== */
 
 .prix_total {
     padding-top: 3%;
     padding-bottom: 3%;
     background-image:
         url(/public/images/ardoise4.jpg);
-    /* box-shadow: 10px 5px 5px darkred; */
     border-radius: 10px;
     color: white !important;
     font-weight: bolder;
@@ -432,7 +474,7 @@ th {
 }
 
 
-/* ============= RESS/VIEWS/AUTH/LOGIN.BLADE (CONNEXION) ==========*/
+/* =============== 10. RESS/VIEWS/AUTH/LOGIN.BLADE (Connexion) =============== */
 
 .card-login {
     padding-top: 10%;
@@ -440,7 +482,7 @@ th {
 }
 
 
-/* ============= RESS/VIEWS/AUTH/REGISTER.BLADE (INSCRIPTION) ==========*/
+/* =============== 11. RESS/VIEWS/AUTH/REGISTER.BLADE (Inscription) =============== */
 
 .card-register {
     padding-top: 4%;
@@ -448,14 +490,14 @@ th {
 }
 
 
-/* ============= RESS/VIEWS/AUTH/VERIFY.BLADE (INSCRIPTION) ==========*/
+/* =============== 12. RESS/VIEWS/AUTH/VERIFY.BLADE (Mdp) =============== */
 
 .card-verify {
     padding-top: 10%;
     padding-bottom: 10%;
 }
 
-/* ============= RESS/VIEWS/PASSWORDS/EMAIL.BLADE (MDP OUBLIE) ==========*/
+/* =============== 13. RESS/VIEWS/PASSWORDS/EMAIL.BLADE (Mdp oublié) =============== */
 
 .card-mdp-oublie {
     padding-top: 10%;
@@ -463,7 +505,7 @@ th {
 }
 
 
-/* ============= RESS/VIEWS/USER/EDIT.BLADE (Mon compte) ==========*/
+/* =============== 14. RESS/VIEWS/USER/EDIT.BLADE (Mon compte) =============== */
 
 .btn-modif {
     background-color: #4BAD3B;
@@ -500,55 +542,7 @@ th {
 
 
 
-
-/* ============== FOOTER ===============*/
-
-footer {
-    background-color: #4BAD3B;
-}
-
-
-.logo_footer {
-    width: 200px;
-    border-end-end-radius: 25px;
-    border-start-start-radius: 25px;
-}
-
-
-.logo_footer:hover {
-    box-shadow: 10px 5px 5px green;
-}
-
-
-.footer-lien {
-    color: white;
-    font-weight: bolder;
-}
-
-
-.footer-lien:hover {
-    color: #E2403E;
-}
-
-
-.logo-facebook {
-    font-size: 400%;
-    color: #E2403E;
-}
-
-
-.logo-facebook:hover {
-    color: #1877F2;
-}
-
-
-.copyright {
-    color: white;
-    font-size: small;
-}
-
-
-/* ============== BACK OFFICE ===============*/
+/* =============== 15. BACK OFFICE =============== */
 
 .text-description {
     text-align: justify;
@@ -575,17 +569,7 @@ footer {
 
 
 
-/* ************************** MEDIA QUERIES *************************** */
-
-
-
-/* *************** MEDIA QUERIES 1400px *************** */
-
-@media screen and (max-width: 1400px) {}
-
-
-
-
+/* =============== 16. MEDIA QUERIES =============== */
 
 
 
@@ -594,7 +578,7 @@ footer {
 @media screen and (max-width: 1200px) {
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
         margin-bottom: 20%;
@@ -609,17 +593,13 @@ footer {
     }
 
 
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         margin-top: 10%;
     }
 
-
-
-
 }
-
 
 
 /* *************** MEDIA QUERIES 991px *************** */
@@ -627,7 +607,7 @@ footer {
 @media screen and (max-width: 991px) {
 
 
-    /* ========== NAVBAR ========== */
+    /* ===== NAVBAR ===== */
 
     .nav-item {
         display: flex;
@@ -636,7 +616,7 @@ footer {
     }
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
         margin-bottom: 15%;
@@ -651,14 +631,14 @@ footer {
     }
 
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 10%;
     }
 
 
-    /* =========== . INDEX.BLADE (favoris) ========== */
+    /* ====== INDEX.BLADE (favoris) ===== */
 
     .img_rupture {
         width: 70% !important;
@@ -673,7 +653,7 @@ footer {
 @media screen and (max-width: 767px) {
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .h1_carousel {
         font-size: 200%;
@@ -684,20 +664,20 @@ footer {
     }
 
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 15%;
     }
 
 
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         margin-top: 15%;
     }
 
-    /* =========== . INDEX.BLADE (favoris) ========== */
+    /* ====== . INDEX.BLADE (favoris) ===== */
 
     .img_rupture {
         width: 120% !important;
@@ -705,15 +685,12 @@ footer {
 }
 
 
-
-
-
 /* *************** MEDIA QUERIES 575px *************** */
 
 @media screen and (max-width: 575px) {
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
         margin-bottom: 10%;
@@ -728,14 +705,14 @@ footer {
     }
 
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 22%;
     }
 
 
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         margin-top: 20%;
@@ -749,45 +726,42 @@ footer {
 @media screen and (max-width: 475px) {
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
         margin-bottom: 6%;
     }
 
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 28%;
     }
 
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         font-size: x-large;
         margin-top: 25%;
     }
 
-    /* ========== . VALIDATION.BLADE (validation panier) ========== */
+    /* ===== VALIDATION.BLADE (validation panier) ===== */
 
     .prix_total {
 
         font-size: 150% !important;
 
-
     }
 }
 
 
-
-
-/* ================ MEDIA QUERIES 401px =============== */
+/* *************** MEDIA QUERIES 401px *************** */
 
 @media screen and (max-width: 401px) {
 
 
-    /* ========== HOME.BLADE ========== */
+    /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
         margin-bottom: 1%;
@@ -806,14 +780,15 @@ footer {
         font-size: 200%;
     }
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 35%;
     }
 
 
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         margin-top: 30%;
@@ -822,51 +797,35 @@ footer {
 }
 
 
-
-
-/* ================ MEDIA QUERIES 350px =============== */
+/* *************** MEDIA QUERIES 350px *************** */
 
 @media screen and (max-width: 350px) {
 
 
-    /* ========== INDEX.BLADE (gammes) ========== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
     .title_h1 {
         margin-top: 40%;
     }
 
 
-
-
-
-    /* ========== SHOW.BLADE (articles) ========== */
+    /* ===== SHOW.BLADE (articles) ===== */
 
     h1 {
         margin-top: 35%;
     }
 
+}
+
+/* *************** MEDIA QUERIES 320px *************** */
+
+@media screen and (max-width: 320px) {
 
 
-    /* ================ MEDIA QUERIES 320px =============== */
+    /* ===== INDEX.BLADE (gammes) ===== */
 
-    @media screen and (max-width: 320px) {
-
-
-        /* ========== INDEX.BLADE (gammes) ========== */
-
-        .title_h1 {
-            margin-top: 45%;
-        }
-
-
-
+    .title_h1 {
+        margin-top: 45%;
     }
-
-
-
-
-
-
-
 
 }
