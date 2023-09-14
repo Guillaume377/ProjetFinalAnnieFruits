@@ -5,7 +5,7 @@
 <h1 class="title_h1 text-center mx-auto">Mot de passe oublié</h1>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card-mdp-oublie col-md-8">
+        <div class="card-login col-md-8">
 
 
             <!-- ===== TABLEAU===== -->
@@ -45,9 +45,9 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-ajout">
-                                    {{ __('Envoyer le lien de réinitialisation du mot de passe') }}
+                                    {{ __('Envoyer le lien') }}
                                 </button>
                             </div>
                         </div>

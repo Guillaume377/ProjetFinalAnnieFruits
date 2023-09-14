@@ -19,12 +19,14 @@
     white        
 */
 
+
 /* FONTS
 
     Default = font-family: 'Assistant', sans-serif;
     h1      = font-family: 'Paprika', cursive;
 
 */
+
 
 /* CSS DIRECTORY
 
@@ -39,11 +41,9 @@
     9. = VALIDATION.BLADE (Validation panier)
     10.= LOGIN.BLADE (Connexion)
     11.= REGISTER.BLADE (Inscription)
-    12.= VERIFY.BLADE (Mdp)
-    13.= EMAIL.BLADE (Mdp oublié)
-    14.= EDIT.BLADE (Mon compte)
-    15.= BACK OFFICE
-    16.= MEDIA QUERIES
+    12.= EDIT.BLADE (Mon compte)
+    13.= BACK OFFICE
+    14.= MEDIA QUERIES
 
 */
 
@@ -61,6 +61,7 @@ h3 {
     font-family: 'Paprika', cursive;
     color: #E2403E;
 }
+
 
 h5 {
     font-family: 'Paprika', cursive;
@@ -113,8 +114,6 @@ th {
 }
 
 
-
-/* page commande et détail commande */
 .red-text {
     color: red !important;
     font-weight: bolder;
@@ -190,6 +189,7 @@ nav {
     color: #E2403E;
 
 }
+
 
 .hamburger {
     background-color: #E2403E;
@@ -410,7 +410,6 @@ span {
 
 
 
-
 /* =============== 8. SHOW.BLADE (Panier) =============== */
 
 .h3_panier_vide {
@@ -474,7 +473,8 @@ th {
 }
 
 
-/* =============== 10. RESS/VIEWS/AUTH/LOGIN.BLADE (Connexion) =============== */
+/* ========== 10. LOGIN / VERIFY / EMAIL.BLADE ========== */ 
+/* ===== (Connexion, vérifier email, mot de passe oublié) ===== */
 
 .card-login {
     padding-top: 10%;
@@ -490,22 +490,8 @@ th {
 }
 
 
-/* =============== 12. RESS/VIEWS/AUTH/VERIFY.BLADE (Mdp) =============== */
 
-.card-verify {
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
-
-/* =============== 13. RESS/VIEWS/PASSWORDS/EMAIL.BLADE (Mdp oublié) =============== */
-
-.card-mdp-oublie {
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
-
-
-/* =============== 14. RESS/VIEWS/USER/EDIT.BLADE (Mon compte) =============== */
+/* =============== 12. RESS/VIEWS/USER/EDIT.BLADE (Mon compte) =============== */
 
 .btn-modif {
     background-color: #4BAD3B;
@@ -542,7 +528,7 @@ th {
 
 
 
-/* =============== 15. BACK OFFICE =============== */
+/* =============== 13. BACK OFFICE =============== */
 
 .text-description {
     text-align: justify;
@@ -569,7 +555,7 @@ th {
 
 
 
-/* =============== 16. MEDIA QUERIES =============== */
+/* =============== 14. MEDIA QUERIES =============== */
 
 
 
