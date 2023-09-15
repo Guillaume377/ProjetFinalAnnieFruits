@@ -16,7 +16,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-xl-6">
 
 
                     <!-- ===== Card ===== -->
@@ -170,7 +170,7 @@
 
         {{-- <div class="container-fluid">
             <div class="row justify-content-center"> --}}
-                <div class="col-lg-6 py-5">
+                <div class="col-xl-6 py-5">
 
 
                     <!-- ===== Card ===== -->

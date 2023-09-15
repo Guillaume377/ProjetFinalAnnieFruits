@@ -51,7 +51,7 @@
 
 h1 {
     font-family: 'Paprika', cursive;
-    margin-top: 5%;
+    margin-top: 5%; /* modifie le h1_carousel = à revoir */
     font-size: 400%;
     color: #4BAD3B;
 }
@@ -70,7 +70,7 @@ h5 {
 
 
 .title_h1 {
-    margin-top: 4%;
+    margin-top: 3%;
     padding-top: 7%;
     padding-bottom: 7%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
@@ -457,9 +457,11 @@ span {
 
 }
 
+
 .jour-heure {
     box-shadow: 10px 5px 5px green;
 }
+
 
 .modal-title {
     margin-left: 35%;
@@ -525,6 +527,7 @@ span {
     text-align: justify;
 }
 
+
 .new_gamme {
     margin-left: 36%;
 }
@@ -549,31 +552,61 @@ span {
 /* =============== 14. MEDIA QUERIES =============== */
 
 
+/* *************** MEDIA QUERIES 1287px *************** */
 
-/* *************** MEDIA QUERIES 1200px *************** */
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1287px) {
 
 
-    /* ===== HOME.BLADE ===== */
+     /* ===== HOME.BLADE ===== */
 
-    .carousel-caption {
+     .carousel-caption {
         margin-bottom: 20%;
+        padding-top: 0%;
     }
 
     .h1_carousel {
         font-size: 320%;
     }
 
+    
     .h3_carousel {
         font-size: 150%;
     }
 
 
+    /* ===== EDIT.BLADE (Mon compte) ===== */
+
+    .newPassword1 {
+        margin-top: 12%;
+    }
+
+    .newPassword2 {
+        margin-top: 12%;
+    }
+
+}
+
+
+/* *************** MEDIA QUERIES 1200px *************** */
+
+@media screen and (max-width: 1200px) {
+
+
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         margin-top: 10%;
+    }
+
+
+     /* ===== EDIT.BLADE (Mon compte) ===== */
+
+     .newPassword1 {
+        margin-top: 0%;
+    }
+
+    .newPassword2 {
+        margin-top: 0%;
     }
 
 }
@@ -590,6 +623,7 @@ span {
         margin-top: 10%;
     }
 
+
     /* ===== NAVBAR ===== */
 
     .nav-item {
@@ -601,8 +635,8 @@ span {
 
     /* ===== HOME.BLADE ===== */
 
-    .carousel-caption {
-        margin-bottom: 15%;
+    .carousel {
+        margin-top: 10%;
     }
 
     .h1_carousel {
@@ -621,12 +655,28 @@ span {
     }
 }
 
+/* *************** MEDIA QUERIES 833px *************** */
+
+@media screen and (max-width: 833px) {
 
 
+    /* ===== HOME.BLADE ===== */
 
-/* *************** MEDIA QUERIES 767px *************** */
+   .h1_carousel {
+       font-size: 250%;
+   }
 
-@media screen and (max-width: 767px) {
+   
+   .h3_carousel {
+       font-size: 130%;
+   }
+
+}
+
+
+/* *************** MEDIA QUERIES 771px *************** */
+
+@media screen and (max-width: 771px) {
 
 
     /* ===== GENERAL ===== */
@@ -642,6 +692,7 @@ span {
         font-size: 200%;
     }
 
+
     .h3_carousel {
         font-size: 100%;
     }
@@ -649,9 +700,10 @@ span {
 
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         margin-top: 15%;
     }
+
 
     /* ====== . INDEX.BLADE (favoris) ===== */
 
@@ -664,6 +716,22 @@ span {
 /* *************** MEDIA QUERIES 643px *************** */
 
 @media screen and (max-width: 643px) {
+
+
+    /* ===== HOME.BLADE ===== */
+
+    .carousel-caption {
+        margin-bottom: 10%;
+    }
+
+    .h1_carousel {
+        font-size: 170%;
+    }
+
+
+    .h3_carousel {
+        font-size: 80%;
+    }
 
 
     /* ===== EDIT.BLADE (Mon compte) ===== */
@@ -693,21 +761,21 @@ span {
     /* ===== HOME.BLADE ===== */
 
     .carousel-caption {
-        margin-bottom: 10%;
+        margin-bottom: 5%;
     }
 
-    .h1_carousel {
+    /* .h1_carousel {
         font-size: 130%;
     }
 
     .h3_carousel {
         font-size: 70%;
-    }
+    } */
 
 
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         margin-top: 20%;
     }
 
@@ -735,7 +803,7 @@ span {
 
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         font-size: x-large;
         margin-top: 25%;
     }
@@ -855,7 +923,7 @@ span {
 
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         margin-top: 30%;
     }
 
@@ -903,7 +971,7 @@ span {
 
     /* ===== SHOW.BLADE (articles) ===== */
 
-    h1 {
+    .h1_article {
         margin-top: 35%;
     }
 
@@ -927,6 +995,7 @@ span {
     .title_h1 {
         margin-top: 45%;
     }
+
 
     /* ===== EDIT.BLADE (Mon compte) ===== */
 

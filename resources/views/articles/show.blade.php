@@ -8,7 +8,7 @@
 
     <!-- ===== TITRE ===== -->
 
-    <h1 class="fw-bold text-center py-5"> {{ $article->nom }}</h1>
+    <h1 class="h1_article fw-bold text-center py-5"> {{ $article->nom }}</h1>
 
     <div class="container mb-3">
         <div class="row">
