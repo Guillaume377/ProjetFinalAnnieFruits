@@ -29,6 +29,9 @@
                     </tr>
                 </thead>
 
+
+                <!-- ====== ELEMENTS DU TABLEAU ===== -->
+
                 <tbody class="text-center">
                     @foreach ($user->commandes as $commande)
                         <tr>
@@ -42,7 +45,6 @@
 
                                 {{ date('d/m/Y', strtotime($commande->date_retrait)) }} à
                                 {{ date('H', strtotime($commande->heure_retrait)) }}h
-
                                 {{ date('i', strtotime($commande->heure_retrait)) }}
                             </td>
 

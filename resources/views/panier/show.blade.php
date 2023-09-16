@@ -96,6 +96,8 @@
                                     @if ($article['type_prix'] == 'pièce')
                                         @php $prixLigne = $article['prix'] * $article['quantite'];
                                             echo number_format($prixLigne, 2, ',', ' ') . '€';
+                                            // 2 : le nombre de décimales, ',' : C'est le séparateur décimal, ' ' (un espace) : C'est le séparateur des milliers
+
                                         @endphp
                                     @else
 

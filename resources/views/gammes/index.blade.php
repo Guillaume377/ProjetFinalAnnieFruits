@@ -10,6 +10,9 @@
 
     <h1 class="title_h1 text-center mx-auto">Nos produits</h1>
 
+
+    <!-- ====== TEXTE ===== -->
+
     <div class="container text-center">
 
         <p class="nos_univers py-5">Chez <span>Annie fruits</span>, venez découvrir nos univers :<br> nos fruits savoureux,

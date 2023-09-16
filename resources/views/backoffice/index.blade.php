@@ -638,6 +638,9 @@
                     </tr>
                 </thead>
 
+
+                <!-- ====== INFORMATIONS COMMANDES ===== -->
+
                 <tbody class="text-center">
                     @foreach ($commandes as $commande)
                         <tr>

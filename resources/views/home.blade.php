@@ -35,7 +35,7 @@
             <!-- ===== PHOTO RAYON FRUITS ET LEGUMES ===== -->
 
             <div class="carousel-item">
-                <img src="{{ asset('images/rayon.jpg') }}" class="d-block w-100" alt="rayon fruits et légumes">
+                <img src="{{ asset('images/rayon6.jpg') }}" class="d-block w-100" alt="rayon fruits et légumes">
                 <div class="carousel-caption d-block">
                     <h1 class="h1_carousel">Bienvenue chez Annie fruits !</h1>
                     <h3 class="h3_carousel">Votre magasin de proximité à Rochefort.</h3>

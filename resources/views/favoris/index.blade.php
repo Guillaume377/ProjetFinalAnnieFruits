@@ -25,7 +25,6 @@
                             <th>Quantité</th>
                             <th>Unité</th>
                             <th>Favoris</th>
-                            {{-- <th>Panier</th> --}}
                         </tr>
                     </thead>
 
@@ -110,6 +109,8 @@
                                                 </div>
                                             @else
                                             
+                                            <!-- ===== Image rupture de stock ===== -->
+
                                             <img src="/images/rupture_stock.jpg" class="img_rupture w-50">
                                             @endif
 
@@ -130,8 +131,10 @@
                                 <!--affichage du bouton de retrait des favoris pour le user connecté-->
                                 <td>
                                     @if (Auth::user())
+
                                         <!-- si le produit est déjà dans les favoris-->
                                         @if (Auth::user()->isInFavorites($favori))
+
                                             <!-- si dans les favoris-->
                                             <form method="post" action="{{ route('favori.destroy', $favori->id) }}">
                                                 @csrf
@@ -140,8 +143,10 @@
                                                         class="fa-solid fa-trash"></i></button>
                                             </form>
                                         @endif
+
                                     @endif
                                 </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>

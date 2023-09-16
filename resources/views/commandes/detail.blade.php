@@ -7,6 +7,7 @@
 
     <h1 class="title_h1 text-center mx-auto">Détail de la commande</h1>
     <p class="text-center pt-5 fs-1">n° {{ $commande->numero }} </p>
+
     <!--MONTANT-->
     <p class="text-center pt-5 fs-3">Montant : <strong>{{ $commande->prix }} €</strong></p>
 
@@ -67,8 +68,8 @@
                                 grammes
                                 @endif
                             
-                            
-                            </td> <!-- "->pivot" : pour récupérer un élement d'une table intermédiaire -->
+                            <!-- "->pivot" : pour récupérer un élement d'une table intermédiaire -->
+                            </td> 
                             
                             <td>                        
                             @if ($article['type_prix'] == 'pièce')
