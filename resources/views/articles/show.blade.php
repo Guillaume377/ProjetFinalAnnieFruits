@@ -49,12 +49,12 @@
                     <!-- ===== Stock ===== -->
 
                     <div class="d-flex flex-nowrap justify-content-center">
-                        <div class="my-3 ms-2">
+                        <div class="box-open my-3 ms-2">
                             <i class="fas fa-box-open fa-2x mx-3"></i>@php displayStock($article->type_prix, $article->stock) @endphp
                         </div>
 
                         <!--affichage du bouton de retrait des favoris pour le user connecté-->
-                        <div class="mt-3 mx-4">
+                        <div class="btn_favori mt-3 mx-4">
 
                             @if (Auth::user())
                                 <!-- si le produit est déjà dans les favoris-->
