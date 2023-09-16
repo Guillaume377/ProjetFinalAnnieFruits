@@ -55,8 +55,9 @@
 
                                         <div class="col-md-12">
                                             <input id="nom" type="text" placeholder="Nouveau nom"
-                                                class="form-control newNom @error('name') is-invalid @enderror" name="nom"
-                                                value="{{ $user->nom }}" required autocomplete="on" autofocus>
+                                                class="form-control newNom @error('name') is-invalid @enderror"
+                                                name="nom" value="{{ $user->nom }}" required autocomplete="on"
+                                                autofocus>
 
                                             @error('nom')
                                                 <span class="invalid-feedback" role="alert">
@@ -75,8 +76,9 @@
 
                                         <div class="col-md-12">
                                             <input id="prenom" type="text" placeholder="Nouveau prénom"
-                                                class="form-control newPrenom @error('prenom') is-invalid @enderror" name="prenom"
-                                                value="{{ $user->prenom }}" required autocomplete="prenom" autofocus>
+                                                class="form-control newPrenom @error('prenom') is-invalid @enderror"
+                                                name="prenom" value="{{ $user->prenom }}" required autocomplete="prenom"
+                                                autofocus>
 
                                             @error('prenom')
                                                 <span class="invalid-feedback" role="alert">
@@ -160,16 +162,11 @@
                     </div>
 
                 </div>
-            {{-- </div>
-        </div> --}}
 
 
 
+                <!-- ===== Section MODIF MOT DE PASSE ===== -->
 
-        <!-- ===== Section MODIF MOT DE PASSE ===== -->
-
-        {{-- <div class="container-fluid">
-            <div class="row justify-content-center"> --}}
                 <div class="col-xl-6 py-5">
 
 
@@ -198,7 +195,7 @@
 
 
                                     <!-- ===== Mot de passe actuel ===== -->
-                                              
+
                                     <div class="col mb-3">
                                         <label for="password"
                                             class="col-form-label ms-1"><small>{{ __('Mot de passe actuel') }}</small></label>
@@ -219,7 +216,7 @@
 
 
                                     <!-- ===== Nouveau mot de passe ===== -->
-                                                
+
                                     <div class="col mb-3">
                                         <label for="password"
                                             class="col-form-label ms-1"><small>{{ __('Nouveau mot de passe') }}</small></label>
@@ -243,7 +240,7 @@
 
 
                                     <!-- ===== Confirmation mot de passe ===== -->
-                                                    
+
                                     <div class="col mb-3">
                                         <label for="password"
                                             class="col-form-label ms-1"><small>{{ __('Confirmer nouveau mot de passe') }}</small></label>
@@ -266,7 +263,7 @@
 
 
                                 <!-- ===== Bouton validation modification ===== -->
-                                                
+
                                 <div class="row mb-0 mt-2">
                                     <div class="col-md-12 d-flex justify-content-center">
                                         <button type="submit"
@@ -282,6 +279,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

@@ -1,33 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- ===== TITRE PAGE ===== -->
 
     <h1 class="title_h1 text-center mx-auto">Mes commandes</h1>
 
 
     <!-- ===== BOUCLE SUR LES COMMANDES DU USER CONNECTE DANS UN TABLEAU ===== -->
-    
-    <div class="container-fluid p-5">
-        @foreach ($user->commandes as $commande)
 
-        
+    <div class="container-fluid p-5">
+
+
         <!-- ====== TABLEAU ===== -->
 
-            <div class="row tableau table-responsive mb-5">
-                <table class="table table-bordered bg-white mb-0">
-                    <thead class="text-center">
-                        <tr>
-                            <th scope="col">Numéro</th>
-                            <th scope="col">Prix</th>
-                            <th scope="col">Date de commande</th>
-                            <th scope="col">Date de retrait</th>
-                            <th scope="col">Détails</th>
-                        </tr>
-                    </thead>
+        <div class="row tableau table-responsive mb-5">
+            <table class="table table-bordered bg-white mb-0">
+                <thead class="text-center">
+                    <tr>
+                        <th scope="col">Numéro</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Date de commande</th>
+                        <th scope="col">Date de retrait</th>
+                        <th scope="col">Détails</th>
+                    </tr>
+                </thead>
 
-                    <tbody class="text-center">
+                <tbody class="text-center">
+                    @foreach ($user->commandes as $commande)
                         <tr>
                             <td scope="row">{{ $commande->numero }}</td>
                             <td>{{ $commande->prix }} €</td>
@@ -42,7 +41,7 @@
 
                                 {{ date('i', strtotime($commande->heure_retrait)) }}
                             </td>
-                            
+
                             <td>
                                 <!-- ====== BOUTON DU DETAIL DE LA COMMANDE ===== -->
 
@@ -52,10 +51,11 @@
                                 </a><i class="fa-solid fa-magnifying-glass"></i>
                             </td>
                         </tr>
-                    </tbody>
+                    @endforeach
+                </tbody>
 
-                </table>
-            </div>
-        @endforeach
+            </table>
+        </div>
+
     </div>
 @endsection

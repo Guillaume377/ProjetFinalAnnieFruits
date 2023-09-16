@@ -50,13 +50,13 @@
                                         class="form-inline d-inline-block d-flex justify-content-center">
                                         @csrf
                                         <div class="row">
-                                            <div class="w-50 mx-auto">
+                                            <div class="w-75 mx-auto">
                                                 
                                             <!-- si type prix : pièce -->
 
                                             @if ($article['type_prix'] == 'pièce')
                                                 <input type="number" min="1" max="10" name="quantite"
-                                                    value="{{ $article['quantite'] }}" class="form-control mb-3">
+                                                    value="{{ $article['quantite'] }}" class="input_quantite form-control mb-3">
 
                                             <!-- si type prix : kilo -->
 

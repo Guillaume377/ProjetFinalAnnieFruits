@@ -8,16 +8,16 @@
 
     <!-- ===== TITRE H1 ===== -->
 
-    <h1 class="title_h1 text-center mt-5 mx-auto">Back Office</h1>
+    <h1 class="title_h1 text-center mx-auto">Back Office</h1>
 
 
     <!-- ===== LIENS VERS LES AUTRE SECTIONS ===== -->
 
     <div class="container">
         <div class="text-center">
-            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gamme</a>
-            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
-            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 m-3">Section gamme</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 m-3">Section utilisateurs</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 m-3">Section commandes</a>
         </div>
     </div>
 
@@ -352,9 +352,9 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
-            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
-            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 m-3">Section articles</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 m-3">Section utilisateurs</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 m-3">Section commandes</a>
         </div>
     </div>
 
@@ -533,9 +533,9 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
-            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
-            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 mx-3">Section commandes</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 m-3">Section articles</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 m-3">Section gammes</a>
+            <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 m-3">Section commandes</a>
         </div>
     </div>
 
@@ -603,9 +603,9 @@
 
     <div class="container pt-5 mt-5">
         <div class="text-center">
-            <a href="#creation-article" class="btn btn-ghost-bo pt-3 mx-3">Section articles</a>
-            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 mx-3">Section gammes</a>
-            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 mx-3">Section utilisateurs</a>
+            <a href="#creation-article" class="btn btn-ghost-bo pt-3 m-3">Section articles</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 m-3">Section gammes</a>
+            <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 m-3">Section utilisateurs</a>
         </div>
     </div>
 
@@ -617,7 +617,7 @@
     </section>
 
 
-    <!-- ===== BOUCLE SUR LES COMMANDES DU USER CONNECTE DANS UN TABLEAU ===== -->
+    <!-- ===== BOUCLE SUR LES COMMANDES DES USERS DANS UN TABLEAU ===== -->
 
     <div class="container-fluid p-5">
 

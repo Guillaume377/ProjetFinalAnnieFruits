@@ -155,7 +155,7 @@
 
                                     <!-- ===== LIEN POL. CONF. et MENT. LEGALES ===== -->
 
-                                    <label for="politique"> J’ai lu et j’accepte les
+                                    <label for="politique" class = "ms-2"> J’ai lu et j’accepte les
                                         <a href="{{ route('politique') }}">mentions légales et la politique de
                                             confidentialité</a>
                                     </label>

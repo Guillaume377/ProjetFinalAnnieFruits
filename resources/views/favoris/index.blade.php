@@ -78,7 +78,7 @@
                                         class="form-inline d-inline-block d-flex justify-content-center">
                                         {{ csrf_field() }}
                                         <div class="row text-center">
-                                            <div class="w-75 mx-auto">
+                                            <div class="w-100 mx-auto">
 
 
                                             <!-- ===== Condition si quantité en stock + si pièce ou Kilo ===== -->

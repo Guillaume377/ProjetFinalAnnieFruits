@@ -595,9 +595,9 @@ span {
 
 @media screen and (max-width: 1200px) {
 
-     /* ===== GENERAL ===== */
+    /* ===== GENERAL ===== */
 
-     .title_h1 {
+    .title_h1 {
         margin-top: 5%;
     }
 
@@ -618,6 +618,7 @@ span {
     .newPassword2 {
         margin-top: 0%;
     }
+
 
 }
 
@@ -674,7 +675,7 @@ span {
     /* ====== INDEX.BLADE (favoris) ===== */
 
     .img_rupture {
-        width: 70% !important;
+        width: 50% !important;
     }
 
     /* ===== 8. SHOW.BLADE (Panier) ===== */
@@ -683,7 +684,9 @@ span {
         margin-top: 15%;
         margin-bottom: 20%;
     }
+
 }
+
 
 /* *************** MEDIA QUERIES 833px *************** */
 
@@ -705,6 +708,9 @@ span {
     .h3_carousel {
         font-size: 130%;
     }
+
+    
+
 
 }
 
@@ -743,17 +749,19 @@ span {
     /* ====== . INDEX.BLADE (favoris) ===== */
 
     .img_rupture {
-        width: 120% !important;
+        width: 80% !important;
     }
+
+
 }
 
 /* *************** MEDIA QUERIES 693px *************** */
 
 @media screen and (max-width: 693px) {
 
-      /* ===== GENERAL ===== */
+    /* ===== GENERAL ===== */
 
-      .title_h1 {
+    .title_h1 {
         margin-top: 18%;
     }
 
@@ -794,6 +802,7 @@ span {
         margin-top: 12%;
     }
 
+
 }
 
 
@@ -830,6 +839,7 @@ span {
         margin-top: 20%;
     }
 
+
 }
 
 
@@ -837,9 +847,9 @@ span {
 
 @media screen and (max-width: 500px) {
 
-      /* ===== GENERAL ===== */
+    /* ===== GENERAL ===== */
 
-      .title_h1 {
+    .title_h1 {
         margin-top: 25%;
     }
 
@@ -901,6 +911,8 @@ span {
     .newPassword2 {
         margin-top: 17%;
     }
+
+
 }
 
 
@@ -1010,9 +1022,9 @@ span {
     }
 
 
-     /* ===== 8. SHOW.BLADE (Panier) ===== */
+    /* ===== 8. SHOW.BLADE (Panier) ===== */
 
-     .h3_panier_vide {
+    .h3_panier_vide {
         margin-top: 20%;
         margin-bottom: 25%;
     }
@@ -1039,7 +1051,6 @@ span {
     }
 
 }
-
 
 
 /* *************** MEDIA QUERIES 355px *************** */
