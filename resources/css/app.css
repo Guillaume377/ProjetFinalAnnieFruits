@@ -4,7 +4,6 @@
     - Author: Guillaume
 */
 
-
 /* COLORS
 
     Vert :  #4BAD3B
@@ -325,7 +324,6 @@ iframe {
 
 /* =============== 6. INDEX.BLADE (Gammes) =============== */
 
-
 .nos_univers {
     font-size: xx-large;
 }
@@ -353,6 +351,7 @@ span {
 .h1_article {
     margin-top: 5%;
 }
+
 
 .prix_article {
     padding-top: 7%;
@@ -568,6 +567,7 @@ span {
         margin-bottom: 20%;
     }
 
+
     .h1_carousel {
         font-size: 320%;
     }
@@ -615,6 +615,7 @@ span {
         margin-top: 0%;
     }
 
+
     .newPassword2 {
         margin-top: 0%;
     }
@@ -647,7 +648,6 @@ span {
 
 @media screen and (max-width: 991px) {
 
-
     /* ===== NAVBAR ===== */
 
     .nav-item {
@@ -663,9 +663,11 @@ span {
         margin-top: 10%;
     }
 
+
     .h1_carousel {
         font-size: 270%;
     }
+
 
     .h3_carousel {
         font-size: 150%;
@@ -709,16 +711,12 @@ span {
         font-size: 130%;
     }
 
-    
-
-
 }
 
 
 /* *************** MEDIA QUERIES 771px *************** */
 
 @media screen and (max-width: 771px) {
-
 
     /* ===== GENERAL ===== */
 
@@ -779,7 +777,6 @@ span {
 
 @media screen and (max-width: 643px) {
 
-
     /* ===== HOME.BLADE ===== */
 
     .h1_carousel {
@@ -797,6 +794,7 @@ span {
     .newPassword1 {
         margin-top: 12%;
     }
+
 
     .newPassword2 {
         margin-top: 12%;
@@ -828,6 +826,7 @@ span {
         font-size: 130%;
     }
 
+
     .h3_carousel {
         font-size: 70%;
     }
@@ -838,7 +837,6 @@ span {
     .h1_article {
         margin-top: 20%;
     }
-
 
 }
 
@@ -860,14 +858,12 @@ span {
         margin-top: 25%;
     }
 
-
 }
 
 
 /* *************** MEDIA QUERIES 474px *************** */
 
 @media screen and (max-width: 474px) {
-
 
     /* ===== GENERAL ===== */
 
@@ -912,14 +908,12 @@ span {
         margin-top: 17%;
     }
 
-
 }
 
 
 /* *************** MEDIA QUERIES 473px *************** */
 
 @media screen and (max-width: 473px) {
-
 
     /* ===== EDIT.BLADE (Mon compte) ===== */
 
@@ -940,6 +934,7 @@ span {
         margin-top: 30%;
     }
 
+
     /* ===== HOME.BLADE ===== */
 
     .carousel {
@@ -956,7 +951,6 @@ span {
 }
 
 
-
 /* *************** MEDIA QUERIES 416px *************** */
 
 @media screen and (max-width: 416px) {
@@ -968,12 +962,12 @@ span {
         margin-top: 20%;
     }
 
+
     .newPrenom {
         margin-top: 20%;
     }
 
 }
-
 
 
 /* *************** MEDIA QUERIES 407px *************** */
@@ -1017,6 +1011,7 @@ span {
         margin-top: 22%;
     }
 
+
     .newPassword2 {
         margin-top: 22%;
     }
@@ -1030,7 +1025,6 @@ span {
     }
 
 }
-
 
 
 /* *************** MEDIA QUERIES 376px *************** */
@@ -1063,13 +1057,16 @@ span {
         margin-top: 40%;
     }
 
+
     .h1_carousel {
         font-size: 90%;
     }
 
+
     .h3_carousel {
         font-size: 50%;
     }
+
 
     /* ===== SHOW.BLADE (articles) ===== */
 
@@ -1090,7 +1087,6 @@ span {
 /* *************** MEDIA QUERIES 350px *************** */
 
 @media screen and (max-width: 350px) {
-
 
     /* ===== GENERAL ===== */
 
@@ -1119,18 +1115,19 @@ span {
 
 @media screen and (max-width: 320px) {
 
-
     /* ===== GENERAL ===== */
 
     .title_h1 {
         margin-top: 45%;
     }
 
+
     /* ===== HOME.BLADE ===== */
 
     .carousel {
         margin-top: 45%;
     }
+
 
     .carousel-caption {
         margin-bottom: 10%;

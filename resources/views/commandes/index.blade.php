@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Mes commandes - Annie fruits
+@endsection
+
 @section('content')
     <!-- ===== TITRE PAGE ===== -->
 

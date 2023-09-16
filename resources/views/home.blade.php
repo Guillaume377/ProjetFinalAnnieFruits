@@ -8,6 +8,10 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 
         <div class="carousel-inner">
+
+
+            <!-- ===== PHOTO ENTREE MAGASIN ===== -->
+
             <div class="carousel-item active">
                 <img src="{{ asset('images/entree.jpg') }}" class="d-block w-100" alt="entrée du magasin">
                 <div class="carousel-caption d-block">
@@ -15,6 +19,9 @@
                     <h3 class="h3_carousel">Votre magasin de proximité à Rochefort.</h3>
                 </div>
             </div>
+
+
+            <!-- ===== PHOTO BARQUETTES DE FRAISES ===== -->
 
             <div class="carousel-item">
                 <img src="{{ asset('images/fraise2.jpg') }}" class="d-block w-100" alt="barquettes de fraises">
@@ -24,6 +31,9 @@
                 </div>
             </div>
 
+
+            <!-- ===== PHOTO RAYON FRUITS ET LEGUMES ===== -->
+
             <div class="carousel-item">
                 <img src="{{ asset('images/rayon.jpg') }}" class="d-block w-100" alt="rayon fruits et légumes">
                 <div class="carousel-caption d-block">
@@ -31,6 +41,9 @@
                     <h3 class="h3_carousel">Votre magasin de proximité à Rochefort.</h3>
                 </div>
             </div>
+
+
+            <!-- ===== PHOTO CORBEILLE DE FRUITS ===== -->
 
             <div class="carousel-item">
                 <img src="{{ asset('images/corbeille3.jpg') }}" class="d-block w-100" alt="corbeille de fruits">
@@ -67,15 +80,24 @@
     <div class="container-fluid bandeau-accueil">
         <div class="row mx-auto d-flex align-content-around align-item-center">
 
+
+            <!-- ===== LOGO MAISON ===== -->
+
             <div class="col-md-4 mt-4 py-3 text-center">
                 <i class="logo_bandeau fa-solid fa-house" style="color: #ffffff;"></i>
                 <p class="text_bandeau">Produits locaux</p>
             </div>
 
+
+            <!-- ===== LOGO POMME ===== -->
+
             <div class="col-md-4 mt-4 py-3 text-center">
                 <i class="logo_bandeau fa-solid fa-apple-whole" style="color: #ffffff;"></i>
                 <p class="text_bandeau">Fraîcheur garantie</p>
             </div>
+
+
+            <!-- ===== LOGO CADDIE ===== -->
 
             <div class="col-md-4 mt-4 py-3 text-center">
                 <i class="logo_bandeau fa-solid fa-cart-shopping" style="color: #ffffff;"></i>

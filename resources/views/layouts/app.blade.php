@@ -124,7 +124,7 @@
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
 
-                                        <!-- ===== LIEN VERS "BACKOFFICE" ===== -->
+                                        <!-- ===== LIEN VERS "BACKOFFICE" (uniquement pour l'administrateur) ===== -->
 
                                         @if (Auth::user()->role_id == 2)
                                             <a class="dropdown-item" href="{{ route('backoffice') }}">
@@ -144,7 +144,7 @@
                                         </form>
 
 
-                                        <!-------------------------------- favoris : uniquement si connecté --------------------------------->
+                                        <!-- ===== LIEN VERS "FAVORIS" (uniquement si connecté) ===== -->
 
                                         <a class="dropdown-item" aria-current="favori"
                                             href="{{ route('favori.index') }}">Favoris</a>
@@ -168,7 +168,7 @@
                             @endguest
 
 
-                            <!-- ===== BOUTON PANIER / LIEN VERS "PANIER" ===== -->
+                            <!-- ===== LIEN VERS "PANIER" (bouton panier) ===== -->
 
                             <li class="nav-item">
                                 <a class="navbar-brand" aria-current="panier" href="{{ route('panier.show') }}">
@@ -258,7 +258,7 @@
 
         <!-- ===== COPYRIGHT ===== -->
 
-        <h5 class="copyright mx-auto mt-3 text-center">© Copyright - 2023</h5>
+        <h5 class="copyright mx-auto mt-3 text-center">© Annie fruits - 2023</h5>
     </footer>
 </body>
 

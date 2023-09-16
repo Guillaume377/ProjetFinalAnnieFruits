@@ -8,7 +8,6 @@
 
 <h1 class="text-center mx-auto">{{ $article->nom }}</h1>
 
-
 <div class="row w-75 mx-auto pt-5">
     @foreach ($articles as $article)
         <div class="col-md-4">

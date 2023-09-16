@@ -13,6 +13,9 @@
     <div class="container mb-3">
         <div class="row">
 
+
+            <!-- ===== IMAGE ===== -->
+
             <div class="col-xl-6 d-flex justify-content-center pe-3 pe-xl-5 pb-5">
                 <img class="img-article" style="object-fit: cover" src="{{ asset("images/$article->image") }} "
                     alt={{ $article->nom }}>
@@ -25,28 +28,28 @@
                 <div class="img-article">
 
 
-                    <!-- ===== titre ===== -->
+                    <!-- ===== TITRE ===== -->
 
                     <div class="text-center py-5">
                         <h5>{{ $article->titre }}</h5>
                     </div>
 
 
-                    <!-- ===== description produit ===== -->
+                    <!-- ===== DESCRIPTION PRODUIT ===== -->
 
                     <div class="description-article px-5">
                         <td> {{ $article->description }}</td>
                     </div>
 
 
-                    <!-- ===== prix ===== -->
+                    <!-- ===== PRIX ===== -->
 
                     <div class="prix_article text-center  my-5">
                         <td class="mx-auto">{{ $article['prix'] }} € / {{ $article['type_prix'] }}</td>
                     </div>
 
 
-                    <!-- ===== Stock ===== -->
+                    <!-- ===== STOCK ===== -->
 
                     <div class="d-flex flex-nowrap justify-content-center">
                         <div class="box-open my-3 ms-2">
@@ -57,8 +60,10 @@
                         <div class="btn_favori mt-3 mx-4">
 
                             @if (Auth::user())
+
                                 <!-- si le produit est déjà dans les favoris-->
                                 @if (Auth::user()->isInFavorites($article))
+
                                     <!-- si dans les favoris-->
                                     <form method="post" action="{{ route('favori.destroy', $article->id) }}">
                                         @csrf
@@ -67,7 +72,9 @@
                                             <i class="fa-solid fa-star fa-xl"></i>
                                         </button>
                                     </form>
+
                                 @else
+
                                     <form method="post" action="{{ route('favori.store') }}">
                                         @csrf
                                         <input type=hidden name="articleId" value="{{ $article->id }}">
@@ -76,6 +83,7 @@
                                             <i class="fa-regular fa-star fa-xl"></i>
                                         </button>
                                     </form>
+
                                 @endif
                             @endif
                         </div>
@@ -129,8 +137,13 @@
 
                     <!-- ===== Je fais apparaitre les avis pour cet article ===== -->
 
+                    <!-- ===== TITRE ===== -->
+
                     <div class="container border-top p-2 mt-3 mb-3">
                         <h3 class="text-center mt-5">Notes et avis sur ce produit</h3>
+
+
+                        <!-- ===== NOTE ===== -->
 
                         <p class="mt-5 fw-bold text-center">Note moyenne : <span
                                 class="px-3">{{ $article->note }}</span>/ 5</p>

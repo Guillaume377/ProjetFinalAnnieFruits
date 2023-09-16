@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
-    Modification article
+    Back office - Modification article - Annie fruits
 @endsection
 
 @section('content')
     <!-- ===== SECTION MODIF ARTICLE ===== -->
+
+    <!-- ===== TITRE ===== -->
 
     <h1 class="title_h1 text-center mx-auto">Modifier l'article " {{ $article->nom }} "</h1>
 
@@ -29,7 +31,6 @@
                         <a href="{{ route('articles.update', $article) }}">
                             <i class="fa-solid fa-xmark text-light fs-5"></i>
                         </a>
-
                     </div>
 
 
@@ -92,7 +93,7 @@
                             </div>
 
 
-                            <!-- ===== TITRE ===== -->
+                            <!-- ===== TITRE (ou slogan) ===== -->
 
                             <div class="col mb-3">
                                 <label for="titre"
@@ -152,6 +153,7 @@
                                             </span>
                                         @enderror
                                     </div>
+
                                 </div>
 
 
@@ -172,6 +174,7 @@
                                             </span>
                                         @enderror
                                     </div>
+                                    
                                 </div>
 
                             </div>

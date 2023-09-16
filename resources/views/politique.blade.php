@@ -1,5 +1,8 @@
 @extends ('layouts.app')
 
+@section('title')
+    Politique de confidentialité et mentions légales - Annie fruits
+@endsection
 
 
 @section('content')
