@@ -61,7 +61,7 @@
 
                                 <!-- ===== IMAGE ===== -->
 
-                                <td><img src="{{ asset('images/' . $favori->image) }}" class="rounded-top"
+                                <td><img src="{{ asset('images/' . $favori->image) }}" class="rounded"
                                         alt="{{ $favori->nom }}" style="width: 7rem"></td>
 
 

@@ -268,6 +268,8 @@
 
                             <!-- Nom -->
                             <th scope="col">Nom</th>
+                            <!-- Titre -->
+                            <th scope="col">Titre</th>
                             <!-- Description -->
                             <th scope="col">Description</th>
                             <!-- Image -->
@@ -295,6 +297,9 @@
 
                                     <!-- Nom -->
                                     <td class="border-end fs-5">{{ $article->nom }}</td>
+
+                                    <!-- Titre -->
+                                    <td class="border-end text-center">{{ $article->titre }}</td>
 
                                     <!-- Description -->
                                     <td class="text-description border-end">{{ $article->description }}</td>
