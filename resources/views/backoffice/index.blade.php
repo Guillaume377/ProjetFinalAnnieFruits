@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="text-center">
-            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 m-3">Section gamme</a>
+            <a href="#creation-gamme" class="btn btn-ghost-bo pt-3 m-3">Section gammes</a>
             <a href="#liste-utilisateurs" class="btn btn-ghost-bo pt-3 m-3">Section utilisateurs</a>
             <a href="#liste-commandes" class="btn btn-ghost-bo pt-3 m-3">Section commandes</a>
         </div>

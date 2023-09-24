@@ -107,7 +107,7 @@ class UserController extends Controller
                 $user->delete();
                 return redirect()->route('backoffice')->with('message', 'Le compte a bien été supprimé');
         } else {
-            return redirect()->back()->withErrors(['erreur' => 'Supression du compte impossible']);
+            return redirect()->back()->withErrors(['erreur' => 'Suppression du compte impossible']);
         }
     }
 

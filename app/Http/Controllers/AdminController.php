@@ -20,8 +20,6 @@ class AdminController extends Controller
 
         $users = User::all();
 
-        // $commandes = Commande::all();
-
         $commandes = Commande::with('user')->orderByDesc('date_retrait')->get();
 
 

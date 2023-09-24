@@ -113,8 +113,10 @@
                                 <!-- ===== Le lien pour retirer un produit du panier ===== -->
 
                                 <td>
+                                    <div class="text-center">
                                     <a href="{{ route('panier.remove', $position) }}" class="btn btn-suppr"
                                         title="Retirer le produit du panier">Retirer</a>
+                                    </div>
                                 </td>
                             </tr>
 
