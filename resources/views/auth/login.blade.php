@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Connexion - Annie fruits
+@endsection
+
 @section('content')
 
 <h1 class="title_h1 text-center mx-auto">Connexion</h1>

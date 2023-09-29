@@ -28,14 +28,13 @@ class CommandeController extends Controller
 
 
         //je retourne les commandes associées au user dans la vue commandes/index
-        return view('commandes.index', ['user' => $user]);
+        return view('commandes.index',['user' => $user]);
     }
 
 
     public function store(Request $request)
     {
         // Créer et sauvegarder la commande
-
         $commande = new Commande();
         $commande->numero = rand(1000000, 9999999);
         $commande->prix = session('totalCommande');
@@ -43,23 +42,14 @@ class CommandeController extends Controller
         $commande->heure_retrait = session('heure_retrait');
         $commande->user_id = Auth::user()->id;
 
-
-
-
         // Sauvegarder la commande articles
-
         $commande->save();
         
-
         // Vider la session créneau après la suavegarde commande (pour obliger le user à valider le créneau horaire après chaque commande)
-
         session()->forget(['date_retrait', 'heure_retrait']);
 
-
         // je récupère le panier (stocké dans une variable), et je boucle dessus
-
         $panier = session()->get("panier");
-
 
         foreach ($panier as $article) {
 
@@ -67,7 +57,6 @@ class CommandeController extends Controller
             $commande->articles()->attach($article['id'], ['quantite' => $article['quantite']]);
 
             // je fais baisser le stock de chaque article (stock actuel - stock commandé)
-
             $articleInDatabase = Article::find($article['id']);
 
             if ($article['type_prix'] == 'kilo') {
@@ -77,10 +66,7 @@ class CommandeController extends Controller
             }
             $articleInDatabase->save();
         }
-
-
         // Redirection et afficher message de succès
-
         return redirect()->route('emptyAfterOrder');
     }
 

@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    Valider ma commande - Annie fruits
+@endsection
+
 @section('content')
 
     <h1 class="title_h1 text-center mx-auto">Valider ma commande</h1>

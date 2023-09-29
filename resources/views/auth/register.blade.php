@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Inscription - Annie fruits
+@endsection
+
 @section('content')
     <h1 class="title_h1 text-center mx-auto">Inscription</h1>
     <div class="container">

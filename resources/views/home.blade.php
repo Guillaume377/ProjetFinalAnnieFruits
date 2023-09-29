@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Accueil - Annie fruits
+@endsection
+
 @section('content')
 
 

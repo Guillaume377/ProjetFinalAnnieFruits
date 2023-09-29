@@ -61,7 +61,7 @@ class RegisterController extends Controller
                     ->mixedCase()   // une minuscule, une majuscule 
                     ->letters()     // min 1 lettre
                     ->numbers()     // Min 1 chiffre
-                    ->symbols()     // carcatère speciaux 
+                    ->symbols()     // carctère speciaux 
             ],
             // nouvelle syntaxe validation mdp, + d'infos : https://laravel.com/docs/8.x/validation#validating-passwords
             'politique' => 'required', 

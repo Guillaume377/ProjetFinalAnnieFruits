@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Réinitilialiser le mot de passe - Annie fruits
+@endsection
+
 @section('content')
 
 <h1 class="title_h1 text-center mx-auto">Mot de passe oublié</h1>

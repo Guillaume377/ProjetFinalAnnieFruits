@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1 class="fw-bold text-center py-5">Politique de confidentialité et mentions légales</h1>
+<h1 class="h1_politique fw-bold text-center py-5">Politique de confidentialité et mentions légales</h1>
 
 <h2 class = h2_politique>Définitions</h2>
 <p><b>Client :</b> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>

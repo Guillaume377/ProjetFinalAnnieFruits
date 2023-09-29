@@ -42,7 +42,8 @@
     11.= REGISTER.BLADE (Inscription)
     12.= EDIT.BLADE (Mon compte)
     13.= BACK OFFICE
-    14.= MEDIA QUERIES
+    14.= POLITIQUE DE CONFIDENTIALITE
+    15.= MEDIA QUERIES
 
 */
 
@@ -551,9 +552,14 @@ span {
     box-shadow: 5px 5px 5px #E2403E;
 }
 
+/* =============== 14. POLITIQUE DE CONFIDENTIALITE =============== */
+
+.h1_politique {
+    padding-top: 10% !important;
+}
 
 
-/* =============== 14. MEDIA QUERIES =============== */
+/* =============== 15. MEDIA QUERIES =============== */
 
 
 /* *************** MEDIA QUERIES 1287px *************** */
@@ -621,6 +627,11 @@ span {
     }
 
 
+    /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+    .h1_politique {
+        padding-top: 15% !important;
+    }
 }
 
 
@@ -680,7 +691,7 @@ span {
         width: 50% !important;
     }
 
-    /* ===== 8. SHOW.BLADE (Panier) ===== */
+    /* ===== SHOW.BLADE (Panier) ===== */
 
     .h3_panier_vide {
         margin-top: 15%;
@@ -709,6 +720,13 @@ span {
 
     .h3_carousel {
         font-size: 130%;
+    }
+
+
+     /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+     .h1_politique {
+        padding-top: 20% !important;
     }
 
 }
@@ -768,6 +786,14 @@ span {
 
     .carousel {
         margin-top: 15%;
+    }
+
+
+     /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+     .h1_politique {
+        padding-top: 25% !important;
+        font-size: x-large;
     }
 
 }
@@ -838,6 +864,12 @@ span {
         margin-top: 20%;
     }
 
+
+     /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+     .h1_politique {
+        padding-top: 30% !important;
+    }
 }
 
 
@@ -856,6 +888,12 @@ span {
 
     .carousel {
         margin-top: 25%;
+    }
+
+     /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+     .h1_politique {
+        padding-top: 40% !important;
     }
 
 }
@@ -1042,6 +1080,12 @@ span {
 
     .newPrenom {
         margin-top: 0%;
+    }
+
+     /* ===== POLITIQUE DE CONFIDENTIALITE ===== */
+
+     .h1_politique {
+        padding-top: 50% !important;
     }
 
 }

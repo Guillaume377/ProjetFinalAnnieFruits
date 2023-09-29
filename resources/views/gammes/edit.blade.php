@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Modifier gamme 
+    Modifier la gamme - Annie fruits
 @endsection
 
 

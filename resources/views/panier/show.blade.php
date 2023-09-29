@@ -1,4 +1,9 @@
 @extends('layouts.app')
+
+@section('title')
+    Mon panier - Annie fruits
+@endsection
+
 @section('content')
 
 

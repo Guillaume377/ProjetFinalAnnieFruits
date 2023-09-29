@@ -74,7 +74,7 @@ Route::get('panier/empty', [App\Http\Controllers\PanierController::class, 'empty
 Route::get('/validation', [App\Http\Controllers\PanierController::class, 'validation'])->name('validation')->middleware('auth');
 // 'validation' pour afficher la page validation
 
-Route::resource('/user', App\Http\Controllers\UserController::class)->except('index', 'create', 'store');
+Route::resource('/user', App\Http\Controllers\UserController::class)->except('index', 'create', 'store', 'show');
 //valider les modifications d'informations personnelles
 
 Route::get('/emptyAfterOrder', [App\Http\Controllers\PanierController::class, 'emptyAfterOrder'])->name('emptyAfterOrder');

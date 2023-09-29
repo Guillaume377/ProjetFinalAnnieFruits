@@ -27,12 +27,12 @@ class Article extends Model
         return $this->belongsToMany(Commande::class, 'commandes_articles')->withPivot('quantite');
     }
 
-    //nom au pluriel car plusieurs articles peuvent être mis dans les favoris
-    // cardinalité 0,n
 
     // relation avec les utilisateurs qui mettent l'article en favori
     // on précise le nom table intermédiaire : favoris (= users_articles)
 
+    //nom au pluriel car plusieurs articles peuvent être mis dans les favoris
+    // cardinalité 0,n
 
     public function users()
     {

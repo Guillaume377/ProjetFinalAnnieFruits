@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Nous contacter - Annie fruits
+@endsection
+
 @section('content')
     <h1 class="title_h1 text-center mx-auto">Nous contacter</h1>
 

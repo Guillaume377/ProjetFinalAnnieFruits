@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Réinitialiser le mot de passe - Annie fruits
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
