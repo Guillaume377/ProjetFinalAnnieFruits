@@ -86,15 +86,6 @@
                                 <button type="submit" class="btn btn-ajout">
                                     {{ __('Se connecter') }}
                                 </button>
-
-
-                                 <!-- ===== MOT DE PASSE OUBLIE ===== -->
-
-                                {{-- @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Mot de passe oublié?') }}
-                                    </a>
-                                @endif --}}
                             </div>
 
                         </div>

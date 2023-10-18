@@ -43,7 +43,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //***************** Route pour la gestion des favoris*****************************/
 
-Route::resource('/favori', \App\Http\Controllers\FavoriController::class)->except('create', 'show', 'update', 'edit')->middleware('auth');
+Route::resource('/favori', \App\Http\Controllers\FavoriController::class)->except('create', 'edit', 'update')->middleware('auth');
 
 
 
@@ -96,12 +96,12 @@ Route::get('/sauvegardeCommande', [App\Http\Controllers\CommandeController::clas
 
 // ******************* Route ressources Articles **************** //
 
-Route::resource('/articles', ArticleController::class);
+Route::resource('/articles', ArticleController::class)->except('index', 'create');
 
 
 // ******************* Route ressources Gammes **************** //
 
-Route::resource('/gammes', GammeController::class);
+Route::resource('/gammes', GammeController::class)->except('create');
 
 
 // ****************************Route Avis ******************** //
