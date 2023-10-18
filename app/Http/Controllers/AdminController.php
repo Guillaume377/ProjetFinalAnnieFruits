@@ -29,8 +29,5 @@ class AdminController extends Controller
             'users'         => $users,
             'commandes'     => $commandes,
         ]);
-
     }
-    
-
 }

@@ -9,26 +9,6 @@ use App\Models\Gamme;
 class ArticleController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        // on renvoie la vue articles/index (catalogue) 
-        // on y injecte la liste des articles, que l'on récupère simultanément
-        return view('articles/index', [
-            'articles' => Article::all(),
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      * 
      * @param  \Illuminate\Http\Request  $request
@@ -51,7 +31,6 @@ class ArticleController extends Controller
         
         // on fait appel au Helper pour charger l'image
         $article->image = isset($request['image']) ? uploadImage($request['image']) : $article->image;
-        
         $article->save();
 
         // on redirige vers l'accueil du back-office
@@ -105,7 +84,6 @@ class ArticleController extends Controller
         
         // on fait appel au Helper pour charger l'image
         $article->image = isset($request['image']) ? uploadImage($request['image']) : $article->image;
-
         $article->save();
 
 

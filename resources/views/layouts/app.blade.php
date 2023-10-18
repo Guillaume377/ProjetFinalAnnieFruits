@@ -18,7 +18,7 @@
 
     <!-- ===== Title ===== -->
 
-    <title>Annie fruits</title>
+    <title>@yield('title')</title>
 
 
     <!-- ===== Fonts ===== -->
