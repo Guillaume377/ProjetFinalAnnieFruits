@@ -21,10 +21,8 @@ use App\Http\Controllers\GammeController;
 
 Auth::routes();
 
-
+//*********************** Route d'affichage de la page home**********************************/
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -32,12 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/users' , \App\Http\Controllers\UserController::class)->except('index', 'create', 'store')->middleware('auth');
 Route::put('/user/updatepassword/{user}', [App\Http\Controllers\UserController::class, 'updatePassword'])->name('updatepassword')->middleware('auth');
-
-
-
-//*********************** Route d'affichage de la page home**********************************/
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
