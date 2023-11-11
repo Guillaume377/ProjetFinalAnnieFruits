@@ -18,7 +18,7 @@
 
     <!-- ===== Title ===== -->
 
-    <title>Annie fruits</title>
+    <title>@yield('title')</title>
 
 
     <!-- ===== Fonts ===== -->
@@ -248,7 +248,7 @@
 
             <div class="col-md-3">
                 <a class="navbar-brand"
-                    href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR">
+                    href="https://www.facebook.com/people/annie-fruits/100067000605161/?locale=fr_FR"target="_blank">
                     <i class="logo-facebook fa-brands fa-square-facebook"></i>
                 </a>
             </div>

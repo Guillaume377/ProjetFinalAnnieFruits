@@ -104,7 +104,7 @@
                 <!-- ===== IMAGE ===== -->
 
                 <div class="col-lg-6 mt-5">
-                    <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayondu magasin">
+                    <img src="{{ asset('images/rayon.jpg') }}" class="photo_contact d-block w-100" alt="rayon du magasin">
                 </div>
 
 
