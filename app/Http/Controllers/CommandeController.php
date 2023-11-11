@@ -19,13 +19,8 @@ class CommandeController extends Controller
         //Je récupère le user connecté dans une variable
         $user = User::find(Auth::user()->id);
 
-        //je récupère les commandes de mon user connecté dans une variable 
+        //je fais un eager loading pour récupérer les commandes de mon user connecté
         $user->load('commandes');
-
-
-        // Autre façon pour récupérer la commande du user connecté
-        //$commandes = Commande::where('user_id', '=', Auth::user()->id)->get();
-
 
         //je retourne les commandes associées au user dans la vue commandes/index
         return view('commandes.index',['user' => $user]);
@@ -45,7 +40,8 @@ class CommandeController extends Controller
         // Sauvegarder la commande articles
         $commande->save();
         
-        // Vider la session créneau après la suavegarde commande (pour obliger le user à valider le créneau horaire après chaque commande)
+        // Vider la session créneau après la sauvegarde commande 
+        //(pour obliger le user à valider le créneau horaire après chaque commande)
         session()->forget(['date_retrait', 'heure_retrait']);
 
         // je récupère le panier (stocké dans une variable), et je boucle dessus
@@ -76,8 +72,7 @@ class CommandeController extends Controller
      */
     public function show(Commande $commande)
     {
-        //je charge les articles de la commande
-        //grace à Models/Commande qui lie cette table par la FK à la table articles
+        //je charge les articles de la commande via un eager loading
         $commande->load('articles');
 
         // je les retourne dans une page de détail et j'injecte les données de ma variable "$commande"

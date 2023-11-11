@@ -63,7 +63,6 @@ class RegisterController extends Controller
                     ->numbers()     // Min 1 chiffre
                     ->symbols()     // carctère speciaux 
             ],
-            // nouvelle syntaxe validation mdp, + d'infos : https://laravel.com/docs/8.x/validation#validating-passwords
             'politique' => 'required', 
             /*--> pour empêcher l’inscription d’une personne qui aurait rendu le bouton
             visible sans cocher la checkbox (en modifiant le code dans l’inspecteur)*/

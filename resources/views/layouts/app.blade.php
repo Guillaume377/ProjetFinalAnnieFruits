@@ -219,7 +219,7 @@
             <!-- ===== LOGO ANNIE FRUITS / LIEN PAGE ACCUEIL ===== -->
 
             <div class="col-md-3">
-                <a class="navbar-brand" href="home#">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     <img class="logo_footer text-center" src="{{ asset('images/logo-annie-fruits.png') }}"
                         alt="Logo">
                 </a>

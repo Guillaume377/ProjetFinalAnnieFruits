@@ -21,29 +21,21 @@ use App\Http\Controllers\GammeController;
 
 Auth::routes();
 
-
+//*********************** Route d'affichage de la page home**********************************/
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
 //*********************** Routes d'affichage "user" **********************************/
 
-Route::resource('/users' , \App\Http\Controllers\UserController::class)->except('index', 'create', 'store');
-Route::put('/user/updatepassword/{user}', [App\Http\Controllers\UserController::class, 'updatePassword'])->name('updatepassword');
-
-
-
-//*********************** Route d'affichage de la page home**********************************/
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/users' , \App\Http\Controllers\UserController::class)->except('index', 'create', 'store')->middleware('auth');
+Route::put('/user/updatepassword/{user}', [App\Http\Controllers\UserController::class, 'updatePassword'])->name('updatepassword')->middleware('auth');
 
 
 
 //***************** Route pour la gestion des favoris*****************************/
 
-Route::resource('/favori', \App\Http\Controllers\FavoriController::class)->except('create', 'show', 'update', 'edit');
+Route::resource('/favori', \App\Http\Controllers\FavoriController::class)->except('create', 'edit', 'update')->middleware('auth');
 
 
 
@@ -74,20 +66,20 @@ Route::get('panier/empty', [App\Http\Controllers\PanierController::class, 'empty
 Route::get('/validation', [App\Http\Controllers\PanierController::class, 'validation'])->name('validation')->middleware('auth');
 // 'validation' pour afficher la page validation
 
-Route::resource('/user', App\Http\Controllers\UserController::class)->except('index', 'create', 'store', 'show');
+Route::resource('/user', App\Http\Controllers\UserController::class)->except('index', 'create', 'store', 'show')->middleware('auth');
 //valider les modifications d'informations personnelles
 
-Route::get('/emptyAfterOrder', [App\Http\Controllers\PanierController::class, 'emptyAfterOrder'])->name('emptyAfterOrder');
+Route::get('/emptyAfterOrder', [App\Http\Controllers\PanierController::class, 'emptyAfterOrder'])->name('emptyAfterOrder')->middleware('auth');
 // pour vider le panier après validation de la commande
 
-Route::post('validation/reservation', [App\Http\Controllers\PanierController::class, 'reservation'])->name('reservation');
+Route::post('validation/reservation', [App\Http\Controllers\PanierController::class, 'reservation'])->name('reservation')->middleware('auth');
 // 'reservation' pour enregistrer l'heure et le jour de retrait de la commande
 
 
 
 // ******************* Les routes de la page Commandes **************** //
 
-Route::resource('/commandes', App\Http\Controllers\CommandeController::class)->except('create', 'store', 'edit', 'update', 'destroy');
+Route::resource('/commandes', App\Http\Controllers\CommandeController::class)->except('create', 'store', 'edit', 'update', 'destroy')->middleware('auth');
 
 Route::get('/sauvegardeCommande', [App\Http\Controllers\CommandeController::class, 'store'])->name('commandes.store');
 // 'store' pour sauvegarder la commande en BDD après validation de la commande
@@ -96,22 +88,22 @@ Route::get('/sauvegardeCommande', [App\Http\Controllers\CommandeController::clas
 
 // ******************* Route ressources Articles **************** //
 
-Route::resource('/articles', ArticleController::class);
+Route::resource('/articles', ArticleController::class)->except('index', 'create');
 
 
 // ******************* Route ressources Gammes **************** //
 
-Route::resource('/gammes', GammeController::class);
+Route::resource('/gammes', GammeController::class)->except('create');
 
 
 // ****************************Route Avis ******************** //
 
-Route::post('avis', [App\Http\Controllers\AvisController::class, 'store'])->name('avis.store');
+Route::post('avis', [App\Http\Controllers\AvisController::class, 'store'])->name('avis.store')->middleware('auth');
 
 
 // ******************* Route pour la gestion du back-office ************************************/
 
-Route::get('/backoffice', [AdminController::class, 'index'])->name('backoffice');
+Route::get('/backoffice', [AdminController::class, 'index'])->name('backoffice')->middleware('admin');
 
 
 // ******************* Route Politique de confidentialité ************************************/

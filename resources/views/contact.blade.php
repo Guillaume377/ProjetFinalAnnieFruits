@@ -13,7 +13,7 @@
 
     <h3 class="text-center pt-5 my-5">Horaires d'ouverture du magasin</h3>
 
-    
+
     <div class="container pt-3">
         <div class="row">
 
@@ -92,15 +92,15 @@
 
         <!-- =================== BLOC COORDONNEES ====================== -->
 
-       <!-- ===== TITRE ===== -->
+        <!-- ===== TITRE ===== -->
 
-       <h3 class="text-center pt-5 my-5">Nos coordonnées</h3>
-       
-       
+        <h3 class="text-center pt-5 my-5">Nos coordonnées</h3>
+
+
         <div class="container pt-5">
             <div class="row">
 
-                
+
                 <!-- ===== IMAGE ===== -->
 
                 <div class="col-lg-6 mt-5">
@@ -109,7 +109,7 @@
 
 
                 <!-- ===== TABLEAU ===== -->
-                
+
                 <div class="col-lg-6">
                     <div class="coordonnees">
                         <div class="tableau table-responsive my-5">
@@ -118,7 +118,7 @@
                                 <thead class="thead-dark">
                                     <tr>
                                         <th>Adresse</th>
-                                        <th>Téléphone / email</th>           
+                                        <th>Téléphone / email</th>
                                         <th>Réseau social</th>
                                     </tr>
                                 </thead>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-               
+
 
                 <!-- =================== CARTE GOOGLE MAP ====================== -->
 
@@ -157,4 +157,4 @@
                 </div>
             </div>
         </div>
-            @endsection
+    @endsection
